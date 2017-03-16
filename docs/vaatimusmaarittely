@@ -1,0 +1,24 @@
+Mobiiliprojekti
+
+Alusta: Android
+	versio:
+
+idea:
+	Peli... Idle/clicker
+	clikkaamalla saa resurssia A jonka voi muuttaa resurssiksi B jolla voi ostaa generaatoreita jotka generoivat Resurssia A.
+	Pelin Voi reseroida jolloin saa kertoimia jotka lisäävät resurssien tuloa.
+
+
+Toiminnallisuus:
+	Toimittava sulavasti ilman lagia.
+	Ei saa olla riippuvainen paikkannus palvelusta eikä verkkoyhteydestä.
+	pyrittävä minimoimaan oikeuksien tarve.
+
+Tekninenspesifikaatio:
+	pääasiass käyttö älypuhelimella eli noin 5 tuumaisella näytöllä.
+	Optional: toikmii myös isoilla näytöillä(tableteilla).
+	Ei tarvitse toikmia emulaattoreissa.
+
+Käytettävyys:
+	Käytön täytyy onnistuva ilman ohjeita.
+
