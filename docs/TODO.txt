@@ -1,4 +1,7 @@
-#TODO
+#TODO:
 	vaatimusmäärittely
 	backlog(scrum)
 	projektisuunnitelma
+
+Yritys: Sector 8
+pelin nimi:Purrfect Evolution

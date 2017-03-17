@@ -1,7 +1,7 @@
 Mobiiliprojekti
 
 Alusta: Android
-	versio:
+	versio:6.0 marshmallow api level 23
 
 idea:
 	Peli... Idle/clicker
@@ -13,11 +13,14 @@ Toiminnallisuus:
 	Toimittava sulavasti ilman lagia.
 	Ei saa olla riippuvainen paikkannus palvelusta eikä verkkoyhteydestä.
 	pyrittävä minimoimaan oikeuksien tarve.
+	Google play achievments.	
 
 Tekninenspesifikaatio:
 	pääasiass käyttö älypuhelimella eli noin 5 tuumaisella näytöllä.
 	Optional: toikmii myös isoilla näytöillä(tableteilla).
-	Ei tarvitse toikmia emulaattoreissa.
+	Ei tarvitse toikmia emulaattoreissa. 
+	Ei käytettä valmista engineä.
+	Toteuttu Android Studiolla.
 
 Käytettävyys:
 	Käytön täytyy onnistuva ilman ohjeita.
