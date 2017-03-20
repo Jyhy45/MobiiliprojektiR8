@@ -1,0 +1,37 @@
+-Pageswapper
+
+-Sivut
+KissaMain
+-Sivulla Kissa
+-Kissaa voi clickata
+-Kun kissaa clickkaa sydän kuva liikkuu ylös ja katoaa.
+-5 min välein extra banana, josta voi saada premium currencyä tai sydämmiä tai rahaa.
+
+RakennusSivu
+-sivulla Tontteja.
+-Tontteja voi täpätä.
+-täppäys tekee dropdown listan rakennuksista joita voi valita minkä rakentaa.
+-jos tontilla on jo rakennus, niin dropdownissa on upgrade tai destroy.
+-Rakennukset pumppaavat sydämmiä samaan tapaan kuin clickattu kissa. Eri rakennukset eri tavalla.
+-esimerkkejä rakennuksista "raapimapuu - tuottaa sydämiä tasaiseen tahtiin", "ruokakuppi, tuottaa ison sydämmen kerran minuutissa ja kun sitä täppää se antaa paljon sydämmiä."
+
+KauppaSivu
+-Anna Rahea.
+
+Options
+-tarvittavat optionssit, ainakin Kill all animations.
+
+CustomizationSivu/Cattube
+-Sivulla Kissa.
+-Kissan osia voi täpätä.
+-kun kissan osia täppää, magiaa tapahtuu ja pelaaja voi valita minkä näköiseksi kehittää kissan osan.
+-Sivulla myös Kamera? kun kameraa täppää, niin kissasta otetaan screen shot, jonka voi jakaa facebookkiin.
+Samalla sydämmiä muuttuu rahaksi/ rahaa tulee kerättyjen sydämmien mukaan. Subscriberit vaikuttaa saadun rahan määrään.
+
+
+
+GameEngine
+-täppää kissaa, saa Sydämmiä, myy kissankuvia, saa rahaa, osta kissalle rakennuksia-> lisää sydämmiä, repeat.
+-tikittää myös kun peli pois päältä.
+-peli matematiikka
+-Reset, aloittaa pelin alusta, mutta pelaajalla on alussa n subcriberia.
