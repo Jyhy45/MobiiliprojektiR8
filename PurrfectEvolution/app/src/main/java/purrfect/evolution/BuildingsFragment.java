@@ -16,22 +16,22 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-public class OptionsFragment extends Fragment {
+public class BuildingsFragment extends Fragment {
     /**
      * The fragment argument representing the section number for this
      * fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
 
-    public OptionsFragment() {
+    public BuildingsFragment() {
     }
 
     /**
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static OptionsFragment newInstance(int sectionNumber) {
-        OptionsFragment fragment = new OptionsFragment();
+    public static BuildingsFragment newInstance(int sectionNumber) {
+        BuildingsFragment fragment = new BuildingsFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
@@ -45,7 +45,7 @@ public class OptionsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_options , container, false);
         TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        textView.setText("Options fragment");
+        textView.setText("Buildings fragment");
         return rootView;
     }
 

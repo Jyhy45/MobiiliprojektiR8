@@ -109,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
             switch (position){
                 case 3:
                     return OptionsFragment.newInstance(1);
+                case 2:
+                    return BuildingsFragment.newInstance(1);
                 default:
                     return PlaceholderFragment.newInstance(position + 1);
             }
