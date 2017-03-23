@@ -41,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    
+    ImageButton imageButton2;
+    ImageView image;
+    List<ImageView> imageList;
+    List<Animation> animationList;
+    int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +62,10 @@ public class MainActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
-
+        
+        imageList = new ArrayList<ImageView>();
+        animationList = new ArrayList<Animation>();
+        imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
     }
 
 
@@ -95,17 +103,10 @@ public class MainActivity extends AppCompatActivity {
             // Show 4 total pages.
             return 4;
         }
-
-
+     
     }
 
-    ImageView image;
-    List<ImageView> imageList;
-    List<Animation> animationList;
-    int i;
-
-
-    public void onCatClick()
+    public void onCatClick(View view)
     {
         image = new ImageView(this);
 
@@ -115,20 +116,18 @@ public class MainActivity extends AppCompatActivity {
 
         // Keksi tapa lisätä "täyttö animaatio" luotaviin kuviin.
         //imageList.get(i).setBackgroundResource((ImageView) findViewById(R.drawable.animation_list_filling));
-        RelativeLayout r1 = (RelativeLayout) findViewById(R.id.main_content);
+        RelativeLayout r1 = (RelativeLayout) findViewById(R.id.cat_layout);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
-        //lp.addRule(RelativeLayout.BELOW, R.id.button);
-        lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+        lp.addRule(RelativeLayout.ALIGN_START, R.id.imageButton2);
+        lp.addRule(RelativeLayout.ALIGN_BOTTOM, R.id.imageButton2);
 
         r1.addView(imageList.get(i),lp);
 
         animationList.add(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move));
 
         //animationList.get(i).setAnimationListener(this);
-
-
 
         imageList.get(i).startAnimation(animationList.get(i));
         i++;
