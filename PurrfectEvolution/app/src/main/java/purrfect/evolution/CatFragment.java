@@ -1,5 +1,6 @@
 package purrfect.evolution;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,22 +17,25 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-public class OptionsFragment extends Fragment {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class CatFragment extends Fragment {
     /**
      * The fragment argument representing the section number for this
      * fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
 
-    public OptionsFragment() {
+    public CatFragment() {
     }
 
     /**
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static OptionsFragment newInstance(int sectionNumber) {
-        OptionsFragment fragment = new OptionsFragment();
+    public static CatFragment newInstance(int sectionNumber) {
+        CatFragment fragment = new CatFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
@@ -43,9 +47,9 @@ public class OptionsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_options , container, false);
+        View rootView = inflater.inflate(R.layout.fragment_cat , container, false);
         TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        textView.setText("Options fragment");
+        textView.setText("Cat fragment");
         return rootView;
     }
 
