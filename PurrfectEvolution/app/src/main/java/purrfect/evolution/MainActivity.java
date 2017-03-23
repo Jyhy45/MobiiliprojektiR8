@@ -17,7 +17,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -93,9 +99,39 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    ImageView image;
+    List<ImageView> imageList;
+    List<Animation> animationList;
+    int i;
+
+
     public void onCatClick()
     {
-        
+        image = new ImageView(this);
+
+
+        imageList.add(image);
+        imageList.get(i).setImageResource(R.drawable.ic_heart_0);
+
+        // Keksi tapa lisätä "täyttö animaatio" luotaviin kuviin.
+        //imageList.get(i).setBackgroundResource((ImageView) findViewById(R.drawable.animation_list_filling));
+        RelativeLayout r1 = (RelativeLayout) findViewById(R.id.main_content);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT);
+        //lp.addRule(RelativeLayout.BELOW, R.id.button);
+        lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+
+        r1.addView(imageList.get(i),lp);
+
+        animationList.add(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move));
+
+        //animationList.get(i).setAnimationListener(this);
+
+
+
+        imageList.get(i).startAnimation(animationList.get(i));
+        i++;
     }
 
 }
