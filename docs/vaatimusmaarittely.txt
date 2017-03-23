@@ -4,26 +4,16 @@ Alusta: Android
 	versio:6.0 marshmallow api level 23
 
 idea:
-	Peli... Idle/clicker (incremental game)
-	Eli kyseessä on Clicker peli. Clicker tyyppisissä peleissä tarkoituksena on clikata jotain objectia, mistä saa jokaisella clikillä resursseja. Clickaamista voi tehostaa eri päivytyksillä esim. yhdestä clikistä saa 1 resurssin sijaan {2,3,4,5...} resurssia.
-	Toinen tapa saada resursseja on rakentaa rakennuksia jotka generoi resursseja tietyn määrän per aikayksikkö esim 100/sekunti.
-	Ruudulle saattaa aina välillä ilmesty objekteja tietyn aikavälein(TBD), mitä voi clikata jolloin objekti häviää ja antaa joko resursseja taikka premium currencya taikka jonkinlaisen tilapäisen boostin(esim. 30 sekunnniksi 500% enemmän resursseja clikeistä).
-	Pääasiallinen tapa tehostaa resursejen saantia on resetointi mekaaniikka, millä peli alkaa alusta (antaen resetti resurssia joka toimii kertoimena kaikille saaduille resurseille (esim. base_income*(resettiresurssi/skaalauskerroin)))
-
-
-	Purrfect Evolutionissa on takoitust olla kaksi resurssia raha ja kissan onnellisuus(working name). Resetti resurssina toimii Cattuben suscripaajat joita saa resetoimilla pelin.
-	Onnellisuutta saa clickaamalla kissaa. Onnellisuutta voi muuttaa rahaksi Cattuben kautta.
-	Rahalle saa kertoimia suscripaajista ja rakennus pivityksistä ja Évoluutioista.
-	Onnellisuudelle saa kertoikmia rakennuspäivityksistä ja Evoluutioista.
-	Jotta pelisaadaan eroamaan massasta on kissalla evoluutio mahdollisuus, joilla saa eri boosteja rakennuksille. Evolluutiolla voi muuttaa kissan ulkonäköä(pää,keho,jalat,korvat,häntä).
-	Rakennuksia rakentamall sadaan kertoikmia eriresurssien tuotantoon. Rakennukset ovat 9x9 gridissä jonne ne voi sijoittaa vapaasti. Riippuen rakennuksen sijainnista ne saavat bonuksia kissan eri evoluutioista.
+	Peli... Idle/clicker
+	clikkaamalla saa resurssia A jonka voi muuttaa resurssiksi B jolla voi ostaa generaatoreita jotka generoivat Resurssia A.
+	Pelin Voi reseroida jolloin saa kertoimia jotka lisäävät resurssien tuloa.
 
 
 Toiminnallisuus:
 	Toimittava sulavasti ilman lagia.
 	Ei saa olla riippuvainen paikkannus palvelusta eikä verkkoyhteydestä.
 	pyrittävä minimoimaan oikeuksien tarve.
-	Google play achievments(or not ilmeisesti vaatisi pääsyn devoloper consoliin mikä vaatii maksullisen rekisteröinnin).	
+	Google play achievments.	
 
 Tekninenspesifikaatio:
 	pääasiass käyttö älypuhelimella eli noin 5 tuumaisella näytöllä.
