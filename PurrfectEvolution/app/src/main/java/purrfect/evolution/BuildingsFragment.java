@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -24,7 +25,31 @@ public class BuildingsFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     public BuildingsFragment() {
+
+
     }
+
+    public static void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.building1:
+                break;
+            case R.id.building2:
+                break;
+            case R.id.building3:
+                break;
+            case R.id.building4:
+                break;
+            case R.id.building5:
+                break;
+            case R.id.building6:
+                break;
+            case R.id.building7:
+                break;
+            case R.id.building8:
+                break;
+            case R.id.building9:
+                break;
+        }}
 
     /**
      * Returns a new instance of this fragment for the given section
@@ -43,9 +68,11 @@ public class BuildingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_buildings , container, false);
-        TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        textView.setText("Buildings fragment");
+
+
         return rootView;
     }
+
+
 
 }

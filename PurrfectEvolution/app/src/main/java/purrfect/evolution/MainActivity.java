@@ -1,5 +1,6 @@
 package purrfect.evolution;
 
+import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -50,10 +51,15 @@ public class MainActivity extends AppCompatActivity {
     List<Animation> animationList;
     int i;
 
+    BuildingsFragment BuildingFragment;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -107,6 +113,13 @@ public class MainActivity extends AppCompatActivity {
         }
      
     }
+
+    public void onClickBuilding(View view)
+    {
+        BuildingsFragment.onClick(view);
+    }
+
+
 
     public void onCatClick(View view)
     {
