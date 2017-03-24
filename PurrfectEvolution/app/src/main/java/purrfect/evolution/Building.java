@@ -49,6 +49,17 @@ public abstract class Building {
     public void setmBuildingLevel(double mBuildingLevel) {
         this.mBuildingLevel = mBuildingLevel;
     }
+    protected void setmBaseCost(double mBaseCost) {
+        this.mBaseCost = mBaseCost;
+    }
+
+    protected void setmBaseProductionAmount(double mBaseProductionAmount) {
+        this.mBaseProductionAmount = mBaseProductionAmount;
+    }
+
+    protected void setmBaseProductionTime(double mBaseProductionTime) {
+        this.mBaseProductionTime = mBaseProductionTime;
+    }
 
     public abstract double getCurrentProductionAmount();
     public abstract double getCurrentProductionTime();

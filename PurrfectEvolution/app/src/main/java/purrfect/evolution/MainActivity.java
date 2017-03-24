@@ -26,6 +26,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
+//TODO: add some statistic calculations
+
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -152,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Commit the edits!
         editor.commit();
+
     }
 
 }
