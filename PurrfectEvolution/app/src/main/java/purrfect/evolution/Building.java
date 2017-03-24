@@ -23,36 +23,36 @@ public abstract class Building {
     Building(){
 
     }
-    private float mBaseProductionTime;
-    private float mBaseProductionAmount;
-    private float mBuildingLevel=0;
-    private float mBaseCost;
+    private double mBaseProductionTime;
+    private double mBaseProductionAmount;
+    private double mBuildingLevel=0;
+    private double mBaseCost;
     public int mImagePath;                  //=R.drawable.ic_heart_0;
     public int mAnimationPath;              //=R.drawable.animation_list_filling;
 
-    private float getmBaseCost() {
+    private double getmBaseCost() {
         return mBaseCost;
     }
 
-    public float getmBaseProductionAmount() {
+    public double getmBaseProductionAmount() {
         return mBaseProductionAmount;
     }
 
-    public float getmBaseProductionTime() {
+    public double getmBaseProductionTime() {
         return mBaseProductionTime;
     }
 
-    public float getmBuildingLevel() {
+    public double getmBuildingLevel() {
         return mBuildingLevel;
     }
 
-    public void setmBuildingLevel(float mBuildingLevel) {
+    public void setmBuildingLevel(double mBuildingLevel) {
         this.mBuildingLevel = mBuildingLevel;
     }
 
-    public abstract float getCurrentProductionAmount();
-    public abstract float getCurrentProductionTime();
-    public abstract float getCurrentCost();
+    public abstract double getCurrentProductionAmount();
+    public abstract double getCurrentProductionTime();
+    public abstract double getCurrentCost();
 
 
 }
