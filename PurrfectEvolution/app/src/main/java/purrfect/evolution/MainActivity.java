@@ -78,15 +78,15 @@ public class MainActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position){
                 case 3:
-                    return OptionsFragment.newInstance(1);
+                    return OptionsFragment.newInstance();
                 case 2:
-                    return BuildingsFragment.newInstance(1);
+                    return BuildingsFragment.newInstance();
                 case 1:
-                    return EvolutionFragment.newInstance(1);
+                    return EvolutionFragment.newInstance();
                 case 0:
-                    return CatFragment.newInstance(1);
+                    return CatFragment.newInstance();
                 default:
-                    return CatFragment.newInstance(1);
+                    return CatFragment.newInstance();
             }
 
         }

@@ -30,10 +30,9 @@ public class BuildingsFragment extends Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static BuildingsFragment newInstance(int sectionNumber) {
+    public static BuildingsFragment newInstance() {
         BuildingsFragment fragment = new BuildingsFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }

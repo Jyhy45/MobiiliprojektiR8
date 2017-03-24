@@ -34,10 +34,9 @@ public class EvolutionFragment extends Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static EvolutionFragment newInstance(int sectionNumber) {
+    public static EvolutionFragment newInstance() {
         EvolutionFragment fragment = new EvolutionFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }
