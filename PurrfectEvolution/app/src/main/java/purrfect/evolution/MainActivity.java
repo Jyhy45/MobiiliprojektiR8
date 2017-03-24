@@ -1,6 +1,7 @@
 package purrfect.evolution;
 
 import android.os.Build;
+import android.support.annotation.IdRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -44,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    
+
     ImageButton imageButton2;
     ImageView image;
     List<ImageView> imageList;
     List<Animation> animationList;
     int i;
 
-    BuildingsFragment BuildingFragment;
+    BuildingsFragment buildingsFragment;
 
 
     @Override
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        buildingsFragment = new BuildingsFragment();
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -116,8 +117,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickBuilding(View view)
     {
-        BuildingsFragment.onClick(view);
+        buildingsFragment.onClick(view);
     }
+
+
 
 
 

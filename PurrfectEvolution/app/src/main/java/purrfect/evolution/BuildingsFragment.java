@@ -1,5 +1,6 @@
 package purrfect.evolution;
 
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,11 +11,15 @@ import android.support.v4.view.ViewPager;
 import android.content.Context;
 import android.os.Bundle;
 
+import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static android.R.attr.button;
 
 
 public class BuildingsFragment extends Fragment {
@@ -23,15 +28,29 @@ public class BuildingsFragment extends Fragment {
      * fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
+    ImageButton imageButton;
+
 
     public BuildingsFragment() {
 
-
     }
 
-    public static void onClick(View v) {
+    public void popUpInflater()
+    {
+        //Creating the instance of PopupMenu
+        PopupMenu popup = new PopupMenu(getContext(), imageButton);
+        //Inflating the Popup using xml file
+        popup.getMenuInflater()
+                .inflate(R.menu.popup_menu, popup.getMenu());
+
+        popup.show();
+    }
+
+
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.building1:
+                popUpInflater();
                 break;
             case R.id.building2:
                 break;
@@ -61,6 +80,8 @@ public class BuildingsFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
+
 
 
 
