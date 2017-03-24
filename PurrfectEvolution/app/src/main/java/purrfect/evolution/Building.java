@@ -27,7 +27,8 @@ public abstract class Building {
     private float mBaseProductionAmount;
     private float mBuildingLevel=0;
     private float mBaseCost;
-
+    public int mImagePath;                  //=R.drawable.ic_heart_0;
+    public int mAnimationPath;              //=R.drawable.animation_list_filling;
 
     private float getmBaseCost() {
         return mBaseCost;
