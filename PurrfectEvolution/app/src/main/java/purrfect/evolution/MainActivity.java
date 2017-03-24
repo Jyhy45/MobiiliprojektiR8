@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -117,21 +118,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Keksi tapa lisätä "täyttö animaatio" luotaviin kuviin.
         //imageList.get(i).setBackgroundResource((ImageView) findViewById(R.drawable.animation_list_filling));
-<<<<<<< HEAD
         RelativeLayout r1 = (RelativeLayout) findViewById(R.id.cat_fragment);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
         lp.addRule(RelativeLayout.BELOW, R.id.imageButton2);
         lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT, R.id.imageButton2);
-=======
-        RelativeLayout r1 = (RelativeLayout) findViewById(R.id.cat_layout);
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT);
-        lp.addRule(RelativeLayout.ALIGN_START, R.id.imageButton2);
-        lp.addRule(RelativeLayout.ALIGN_BOTTOM, R.id.imageButton2);
->>>>>>> origin/master
 
         r1.addView(imageList.get(i),lp);
 
