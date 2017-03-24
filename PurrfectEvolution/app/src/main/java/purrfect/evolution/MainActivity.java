@@ -1,5 +1,6 @@
 package purrfect.evolution;
 
+import android.content.SharedPreferences;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -56,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+
+        //saving preferences meyby make to its own function
+        SharedPreferences settings = getPreferences(0);
+        //boolean silent = settings.getBoolean("silentMode", false);
+
 
 
     }
@@ -132,6 +139,19 @@ public class MainActivity extends AppCompatActivity {
 
         imageList.get(i).startAnimation(animationList.get(i));
         i++;
+    }
+    @Override
+    protected void onStop(){
+        super.onStop();
+
+        // We need an Editor object to make preference changes.
+        // All objects are from android.context.Context
+        SharedPreferences settings = getPreferences(0);
+        SharedPreferences.Editor editor = settings.edit();
+        //editor.putBoolean("silentMode", mSilentMode);
+
+        // Commit the edits!
+        editor.commit();
     }
 
 }
