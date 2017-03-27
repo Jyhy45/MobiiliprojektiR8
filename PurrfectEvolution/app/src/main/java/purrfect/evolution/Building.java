@@ -5,20 +5,20 @@ import android.os.Bundle;
 /**
  * Created by jyhy on 3/24/17.
  */
-enum BuildingType{
-    SCRATCHINPOST,      //produces happines
-    FEEDING_STATION,    //produces happines
-    CHEW_MOUSE,         //produces happines
-    YARN_BALL,          //creates yarnballs in to the cat screen that can tapped --> gives happines
-    CATNIP,             //produces happines
 
-
-}
 
 
 public abstract class Building {
 
+    static enum BuildingType{
+        SCRATCHINPOST,      //produces happines
+        FEEDING_STATION,    //produces happines
+        CHEW_MOUSE,         //produces happines
+        YARN_BALL,          //creates yarnballs in to the cat screen that can tapped --> gives happines
+        CATNIP,             //produces happines
 
+
+    }
 
     Building(){
 
