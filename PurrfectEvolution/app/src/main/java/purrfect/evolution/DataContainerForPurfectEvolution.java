@@ -68,4 +68,11 @@ final class DataContainerForPurfectEvolution {
         mThisCycleMoneyEarnings=0;
     }
 
+    public static double getmCurrentMoney() {
+        return mCurrentMoney;
+    }
+
+    public static double getmCurrentHappines() {
+        return mCurrentHappines;
+    }
 }
