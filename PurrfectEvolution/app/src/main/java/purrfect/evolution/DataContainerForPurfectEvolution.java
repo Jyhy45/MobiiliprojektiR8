@@ -1,7 +1,10 @@
 package purrfect.evolution;
 
+import android.content.SharedPreferences;
+
 /**
  * Created by jyhy on 3/27/17.
+ *
  */
 
 final class DataContainerForPurfectEvolution {
@@ -24,8 +27,15 @@ final class DataContainerForPurfectEvolution {
     {
 
     }
+    public static boolean loadDataFromPreference(SharedPreferences data){
+        mThisCycleHappinesEarnings = Double.longBitsToDouble(data.getLong("mThisCycleHappinesEarnings",0));
+        return true;
+    }
+    public static boolean saveDataToPreference(SharedPreferences.Editor editor){
+        editor.putLong("mThisCycleHappinesEarnings",Double.doubleToRawLongBits(mThisCycleHappinesEarnings) );
+        return true;
+    }
 
-    
     /**
      * Increment all click variables
      * */
