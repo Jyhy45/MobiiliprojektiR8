@@ -19,20 +19,20 @@ final class DataContainerForPurfectEvolution {
     static double mSessionMoneyEarnings=0;
     static double mThisCycleMoneyEarnings=0;
 
-    static double mLifeTimeHappinesEarnings=0;
-    static double mSessionHappinesEarnings=0;
-    static double mThisCycleHappinesEarnings=0;
+    static double mLifeTimeHappinessEarnings =0;
+    static double mSessionHappinessEarnings =0;
+    static double mThisCycleHappinessEarnings =0;
 
     private DataContainerForPurfectEvolution()
     {
 
     }
     public static boolean loadDataFromPreference(SharedPreferences data){
-        mThisCycleHappinesEarnings = Double.longBitsToDouble(data.getLong("mThisCycleHappinesEarnings",0));
+        mThisCycleHappinessEarnings = Double.longBitsToDouble(data.getLong("mThisCycleHappinessEarnings",0));
         return true;
     }
     public static boolean saveDataToPreference(SharedPreferences.Editor editor){
-        editor.putLong("mThisCycleHappinesEarnings",Double.doubleToRawLongBits(mThisCycleHappinesEarnings) );
+        editor.putLong("mThisCycleHappinessEarnings",Double.doubleToRawLongBits(mThisCycleHappinessEarnings) );
         return true;
     }
 
@@ -65,9 +65,9 @@ final class DataContainerForPurfectEvolution {
      * @param happines amount of happpines to added to variables
      * */
     public static void earnedHappines(double happines){
-        mLifeTimeHappinesEarnings+=happines;
-        mSessionHappinesEarnings+=happines;
-        mThisCycleHappinesEarnings+=happines;
+        mLifeTimeHappinessEarnings +=happines;
+        mSessionHappinessEarnings +=happines;
+        mThisCycleHappinessEarnings +=happines;
         mCurrentHappines+=happines;
 
     }
@@ -112,7 +112,7 @@ final class DataContainerForPurfectEvolution {
     /** Resets cycle variables*/
     public static void resetCycle(){
         mThisCycleClicks=0;
-        mThisCycleHappinesEarnings=0;
+        mThisCycleHappinessEarnings =0;
         mThisCycleMoneyEarnings=0;
     }
 
