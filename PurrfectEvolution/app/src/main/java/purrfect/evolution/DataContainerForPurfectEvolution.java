@@ -32,8 +32,38 @@ final class DataContainerForPurfectEvolution {
     {
 
     }
-    public static boolean loadDataFromPreference(SharedPreferences data){
-        mThisCycleHappinessEarnings = Double.longBitsToDouble(data.getLong("mThisCycleHappinessEarnings",0));
+    public boolean loadDataFromPreference(SharedPreferences data){
+        //mThisCycleHappinessEarnings = Double.longBitsToDouble(data.getLong("mThisCycleHappinessEarnings",0));
+        Class<?> c = this.getClass();
+        for(Field field :c.getDeclaredFields()){
+            field.setAccessible(true);
+            Class<?> ctb = field.getType();
+            if(long.class.equals(ctb)){
+                try {
+                    String _name = field.getName();
+                    long _value =data.getLong(_name,0);
+                    field.setLong(c,_value);
+                    Log.d(TAG, "loadDataFromPreference: Success name "+_name+" value "+_value);
+
+                } catch (Exception exc){
+                    Log.e(TAG, "loadDataFromPreference: long FAIL",exc );
+                    return false;
+                }
+
+            }else if(double.class.equals(ctb)) {
+                try {
+                    String _name = field.getName();
+                    double _value = Double.longBitsToDouble(data.getLong(_name,0));
+                    field.setDouble(c,_value);
+                    Log.d(TAG, "loadDataFromPreference: Success name "+_name+" value "+_value);
+                }catch (Exception exc){
+                    Log.e(TAG, "loadDataFromPreference: double FAIL ",exc );
+                }
+
+            }
+
+        }
+
 
         return true;
     }
