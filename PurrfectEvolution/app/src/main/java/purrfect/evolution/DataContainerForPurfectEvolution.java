@@ -28,15 +28,15 @@ final class DataContainerForPurfectEvolution {
     static double mSessionHappinessEarnings =0;
     static double mThisCycleHappinessEarnings =0;
 
-    private DataContainerForPurfectEvolution()
+    public DataContainerForPurfectEvolution()
     {
 
     }
     /**
      * Loads values for all variables from sharedPreferences
-     * @param data is intance of SharedPreferences in which persisting data is stored between sessions.
+     * @param data is instance of SharedPreferences in which persisting data is stored between sessions.
      *          
-     * @return Should return true if load was succesful needs some TLC           
+     * @return Should return true if load was successful needs some TLC
      * */
     
     public boolean loadDataFromPreference(SharedPreferences data){
@@ -143,29 +143,29 @@ final class DataContainerForPurfectEvolution {
 
 
     /**
-     * Encerements all happines variables
-     * @param happines amount of happpines to added to variables
+     * Incerements all happiness variables
+     * @param happiness amount of happiness to added to variables
      * */
-    public static void earnedHappines(double happines){
-        mLifeTimeHappinessEarnings +=happines;
-        mSessionHappinessEarnings +=happines;
-        mThisCycleHappinessEarnings +=happines;
-        mCurrentHappines+=happines;
+    public static void earnedHappiness(double happiness){
+        mLifeTimeHappinessEarnings +=happiness;
+        mSessionHappinessEarnings +=happiness;
+        mThisCycleHappinessEarnings +=happiness;
+        mCurrentHappines+=happiness;
 
     }
 
 
     /**
-     * Spends happines if there is enaugh happines to spend
-     * @param mSpentHappines amount of happines to be spent will only spend happines
-     *                       if there is enough happines
+     * Spends happiness if there is enough happiness to spend
+     * @param mSpentHappiness amount of happiness to be spent will only spend happiness
+     *                       if there is enough happiness
      *
-     * @return Return true if happines was used; return false if happines was not spent
+     * @return Return true if happiness was used; return false if happiness was not spent
      * */
-    public static boolean spentHappines(double mSpentHappines){
-        if (Double.compare(mSpentHappines,mCurrentMoney)>=0)
+    public static boolean spentHappiness(double mSpentHappiness){
+        if (Double.compare(mSpentHappiness,mCurrentMoney)>=0)
         {
-            mCurrentMoney-=mSpentHappines;
+            mCurrentMoney-=mSpentHappiness;
             return true;
         }else{
             return false;
