@@ -1,6 +1,11 @@
 package purrfect.evolution;
 
 import android.content.SharedPreferences;
+import android.util.Log;
+
+import java.lang.reflect.Field;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by jyhy on 3/27/17.
@@ -29,10 +34,43 @@ final class DataContainerForPurfectEvolution {
     }
     public static boolean loadDataFromPreference(SharedPreferences data){
         mThisCycleHappinessEarnings = Double.longBitsToDouble(data.getLong("mThisCycleHappinessEarnings",0));
+
         return true;
     }
-    public static boolean saveDataToPreference(SharedPreferences.Editor editor){
-        editor.putLong("mThisCycleHappinessEarnings",Double.doubleToRawLongBits(mThisCycleHappinessEarnings) );
+    public boolean saveDataToPreference(SharedPreferences.Editor editor){
+        //editor.putLong("mThisCycleHappinessEarnings",Double.doubleToRawLongBits(mThisCycleHappinessEarnings) );
+        Class<?> c = this.getClass();
+        for (Field field : c.getDeclaredFields()){
+            Class<?> classToBeInspected = field.getType();
+            if (long.class.equals(classToBeInspected)){
+                try {
+                    String _name=field.getName();
+                    long _value= field.getLong(c);
+                    editor.putLong(_name,_value);
+                    Log.d(TAG,"saveDataToPreference: name: "+_name+" value"+_value);
+
+                } catch (Exception exc){
+                    Log.e(TAG, "saveDataToPreference: ",exc);
+                    return false;
+                }
+
+
+            }else if (double.class.equals(classToBeInspected)) {
+                try {
+                    String _name=field.getName();
+                    double _value= field.getDouble(c);
+                    editor.putLong(_name,Double.doubleToRawLongBits(_value));
+                    Log.d(TAG,"saveDataToPreference: name: "+_name+" value"+_value);
+                } catch (Exception exc){
+                    Log.e(TAG, "saveDataToPreference: ",exc);
+
+                    return false;
+                }
+            }else{
+                Log.d(TAG, "saveDataToPreference: Unhandled variable type");
+                return false;
+            }
+        }
         return true;
     }
 
