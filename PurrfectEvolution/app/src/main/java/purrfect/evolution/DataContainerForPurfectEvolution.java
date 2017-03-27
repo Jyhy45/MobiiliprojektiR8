@@ -32,7 +32,16 @@ final class DataContainerForPurfectEvolution {
     {
 
     }
+    /**
+     * Loads values for all variables from sharedPreferences
+     * @param data is intance of SharedPreferences in which persisting data is stored between sessions.
+     *          
+     * @return Should return true if load was succesful needs some TLC           
+     * */
+    
     public boolean loadDataFromPreference(SharedPreferences data){
+        // TODO: 27.3.2017 Add resetting session variables.
+        // FIXME: 27.3.2017 Return values and test if it actually load values correctly.
         //mThisCycleHappinessEarnings = Double.longBitsToDouble(data.getLong("mThisCycleHappinessEarnings",0));
         Class<?> c = this.getClass();
         for(Field field :c.getDeclaredFields()){
@@ -67,6 +76,11 @@ final class DataContainerForPurfectEvolution {
 
         return true;
     }
+    /**
+     * Saves all variables to sharedpreferences.
+     * @param editor SharedPreferences.Editor instance for saving data.. remember to commit changes.
+     * @return should return true if saving was successful.
+     * */
     public boolean saveDataToPreference(SharedPreferences.Editor editor){
         //editor.putLong("mThisCycleHappinessEarnings",Double.doubleToRawLongBits(mThisCycleHappinessEarnings) );
         Class<?> c = this.getClass();
