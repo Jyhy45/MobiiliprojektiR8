@@ -97,6 +97,29 @@ public class BuildingsFragment extends Fragment {
         popup.show();
     }
 
+    public void popUpInflater2(final View view, final Context context) {
+        //Creating the instance of PopupMenu
+        PopupMenu popup = new PopupMenu(context, view);
+        //Inflating the Popup using xml file
+        popup.getMenuInflater()
+                .inflate(R.menu.popup_menu2, popup.getMenu());
+
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+
+                switch (view.getId()) {
+                    case R.id.building1:
+                        
+                        break;
+                }
+
+                return true;
+            }
+        });
+
+        popup.show();
+    }
+
     public Building buildingSelector(MenuItem item, Building building)
     {
 
