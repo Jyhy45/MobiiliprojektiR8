@@ -125,13 +125,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void popUpInflater()
+    public void popUpInflater(View view)
     {
 
 
 
         //Creating the instance of PopupMenu
-        PopupMenu popup = new PopupMenu(MainActivity.this, imageButton2);
+        PopupMenu popup = new PopupMenu(MainActivity.this, view);
         //Inflating the Popup using xml file
         popup.getMenuInflater()
                 .inflate(R.menu.popup_menu, popup.getMenu());
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCatClick(View view)
     {
-        popUpInflater();
+        popUpInflater(view);
 
         image = new ImageView(this);
 
