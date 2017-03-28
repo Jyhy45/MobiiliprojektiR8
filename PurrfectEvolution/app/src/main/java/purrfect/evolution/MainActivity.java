@@ -118,33 +118,33 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickBuilding(View view)
     {
-        //buildingsFragment.onClick(view);
+        buildingsFragment.onClick(view);
 
 
 
     }
 
 
-    public void popUpInflater(View view)
-    {
-
-
-
-        //Creating the instance of PopupMenu
-        PopupMenu popup = new PopupMenu(MainActivity.this, view);
-        //Inflating the Popup using xml file
-        popup.getMenuInflater()
-                .inflate(R.menu.popup_menu, popup.getMenu());
-
-        popup.show();
-    }
+//    public void popUpInflater(View view)
+//    {
+//
+//
+//
+//        //Creating the instance of PopupMenu
+//        PopupMenu popup = new PopupMenu(MainActivity.this, view);
+//        //Inflating the Popup using xml file
+//        popup.getMenuInflater()
+//                .inflate(R.menu.popup_menu, popup.getMenu());
+//
+//        popup.show();
+//    }
 
 
 
 
     public void onCatClick(View view)
     {
-        popUpInflater(view);
+
 
         image = new ImageView(this);
 

@@ -35,13 +35,13 @@ public class BuildingsFragment extends Fragment {
 
     }
 
-    public void popUpInflater()
+    public void popUpInflater(View view)
     {
 
 
 
         //Creating the instance of PopupMenu
-        PopupMenu popup = new PopupMenu(getContext(), imageButton);
+        PopupMenu popup = new PopupMenu(getContext(), view);
         //Inflating the Popup using xml file
         popup.getMenuInflater()
                 .inflate(R.menu.popup_menu, popup.getMenu());
@@ -53,7 +53,7 @@ public class BuildingsFragment extends Fragment {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.building1:
-                popUpInflater();
+                popUpInflater(v);
                 break;
             case R.id.building2:
                 break;
