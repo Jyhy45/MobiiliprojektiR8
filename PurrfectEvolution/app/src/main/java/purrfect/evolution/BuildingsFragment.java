@@ -32,7 +32,7 @@ public class BuildingsFragment extends Fragment {
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
 
-    BuildingGrid buildingGrid;
+    BuildingGrid buildingGrid = new BuildingGrid();
 
     public BuildingsFragment() {
 
@@ -52,44 +52,44 @@ public class BuildingsFragment extends Fragment {
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
                 Building building = new Building();
-                buildingSelector(item, building);
                 switch (view.getId()) {
                     case R.id.building1:
-                        buildingGrid.setBuilding1(building);
+
+                        buildingGrid.setBuilding1(buildingSelector(item, building));
                         Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding1().getmBType(),Toast.LENGTH_SHORT).show();
                         break;
-//                    case R.id.building2:
-//                        buildingGrid.setBuilding1(buildingSelector(item, building));
-//                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding2().getmBType(),Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case R.id.building3:
-//                        buildingGrid.setBuilding1(buildingSelector(item, building));
-//                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding3().getmBType(),Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case R.id.building4:
-//                        buildingGrid.setBuilding1(buildingSelector(item, building));
-//                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding4().getmBType(),Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case R.id.building5:
-//                        buildingGrid.setBuilding1(buildingSelector(item, building));
-//                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding5().getmBType(),Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case R.id.building6:
-//                        buildingGrid.setBuilding1(buildingSelector(item, building));
-//                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding6().getmBType(),Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case R.id.building7:
-//                        buildingGrid.setBuilding1(buildingSelector(item, building));
-//                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding7().getmBType(),Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case R.id.building8:
-//                        buildingGrid.setBuilding1(buildingSelector(item, building));
-//                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding8().getmBType(),Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case R.id.building9:
-//                        buildingGrid.setBuilding1(buildingSelector(item, building));
-//                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding9().getmBType(),Toast.LENGTH_SHORT).show();
-//                        break;
+                    case R.id.building2:
+                        buildingGrid.setBuilding1(buildingSelector(item, building));
+                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding2().getmBType(),Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.building3:
+                        buildingGrid.setBuilding1(buildingSelector(item, building));
+                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding3().getmBType(),Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.building4:
+                        buildingGrid.setBuilding1(buildingSelector(item, building));
+                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding4().getmBType(),Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.building5:
+                        buildingGrid.setBuilding1(buildingSelector(item, building));
+                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding5().getmBType(),Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.building6:
+                        buildingGrid.setBuilding1(buildingSelector(item, building));
+                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding6().getmBType(),Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.building7:
+                        buildingGrid.setBuilding1(buildingSelector(item, building));
+                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding7().getmBType(),Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.building8:
+                        buildingGrid.setBuilding1(buildingSelector(item, building));
+                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding8().getmBType(),Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.building9:
+                        buildingGrid.setBuilding1(buildingSelector(item, building));
+                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding9().getmBType(),Toast.LENGTH_SHORT).show();
+                        break;
                 }
 
 
@@ -103,7 +103,7 @@ public class BuildingsFragment extends Fragment {
 
     }
 
-    public void buildingSelector(MenuItem item, Building building)
+    public Building buildingSelector(MenuItem item, Building building)
     {
 
         switch(item.getItemId()) {
@@ -124,6 +124,8 @@ public class BuildingsFragment extends Fragment {
                 break;
 
         }
+
+        return building;
 
     }
 
