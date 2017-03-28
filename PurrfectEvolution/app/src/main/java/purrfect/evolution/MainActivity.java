@@ -196,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
 
         imageList.get(i).startAnimation(animationList.get(i));
         i++;
+        mDataContainer.receivedClick();
     }
     @Override
     protected void onStop(){
@@ -205,10 +206,12 @@ public class MainActivity extends AppCompatActivity {
         // All objects are from android.context.Context
         SharedPreferences settings = getPreferences(0);
         SharedPreferences.Editor editor = settings.edit();
+        mDataContainer.saveDataToPreference(editor);
         //editor.putBoolean("silentMode", mSilentMode);
 
         // Commit the edits!
         editor.commit();
+        Log.d(TAG, "onStop: now here");
 
     }
 
