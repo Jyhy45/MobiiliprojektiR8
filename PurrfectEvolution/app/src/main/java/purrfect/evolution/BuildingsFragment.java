@@ -53,7 +53,6 @@ public class BuildingsFragment extends Fragment {
     public void onClick(View v,Context context) {
         switch (v.getId()) {
             case R.id.building1:
-                popUpInflater(v, context);
                 break;
             case R.id.building2:
                 break;
@@ -71,7 +70,10 @@ public class BuildingsFragment extends Fragment {
                 break;
             case R.id.building9:
                 break;
-        }}
+        }
+
+        popUpInflater(v, context);
+    }
 
     /**
      * Returns a new instance of this fragment for the given section
