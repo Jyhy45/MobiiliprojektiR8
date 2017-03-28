@@ -56,7 +56,7 @@ final class DataContainerForPurfectEvolution {
 
                 } catch (Exception exc){
                     Log.e(TAG, "loadDataFromPreference: long FAIL",exc );
-                    return false;
+                    //return false;
                 }
 
             }else if(double.class.equals(ctb)) {
@@ -69,6 +69,8 @@ final class DataContainerForPurfectEvolution {
                     Log.e(TAG, "loadDataFromPreference: double FAIL ",exc );
                 }
 
+            }else{
+                Log.d(TAG, "loadDataFromPreference: last else datatype not regokniced");
             }
 
         }
