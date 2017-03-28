@@ -11,6 +11,8 @@ import android.support.v4.view.ViewPager;
 import android.content.Context;
 import android.os.Bundle;
 
+import android.support.v7.view.menu.MenuBuilder;
+import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +30,6 @@ public class BuildingsFragment extends Fragment {
      * fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
-    ImageButton imageButton;
 
 
     public BuildingsFragment() {
@@ -46,7 +47,16 @@ public class BuildingsFragment extends Fragment {
         popup.getMenuInflater()
                 .inflate(R.menu.popup_menu, popup.getMenu());
 
+        MenuBuilder mMenu = new MenuBuilder(context);
+
+
+
+        MenuPopupHelper menuHelper = new MenuPopupHelper(context,mMenu,view );
+        menuHelper.setForceShowIcon(true);
+        menuHelper.show();
+
         popup.show();
+
     }
 
 
