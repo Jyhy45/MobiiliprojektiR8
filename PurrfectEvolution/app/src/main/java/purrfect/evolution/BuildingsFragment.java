@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,9 +40,6 @@ public class BuildingsFragment extends Fragment {
 
     public void popUpInflater(final View view, final Context context)
     {
-
-
-
         //Creating the instance of PopupMenu
         PopupMenu popup = new PopupMenu(context, view);
         //Inflating the Popup using xml file
@@ -97,9 +95,6 @@ public class BuildingsFragment extends Fragment {
         });
 
         popup.show();
-
-
-
     }
 
     public Building buildingSelector(MenuItem item, Building building)
@@ -130,7 +125,100 @@ public class BuildingsFragment extends Fragment {
 
 
     public void onClick(View v,Context context) {
-        popUpInflater(v, context);
+
+        switch (v.getId()) {
+            case R.id.building1:
+                if(buildingGrid.getBuilding1() == null)
+                {
+                    popUpInflater(v, context);
+                }
+                else
+                {
+
+                }
+                break;
+            case R.id.building2:
+                if(buildingGrid.getBuilding2() == null)
+                {
+                    popUpInflater(v, context);
+                }
+                else
+                {
+
+                }
+                break;
+            case R.id.building3:
+                if(buildingGrid.getBuilding3() == null)
+                {
+                    popUpInflater(v, context);
+                }
+                else
+                {
+
+                }
+                break;
+            case R.id.building4:
+                if(buildingGrid.getBuilding4() == null)
+                {
+                    popUpInflater(v, context);
+                }
+                else
+                {
+
+                }
+                break;
+            case R.id.building5:
+                if(buildingGrid.getBuilding5() == null)
+                {
+                    popUpInflater(v, context);
+                }
+                else
+                {
+
+                }
+                break;
+            case R.id.building6:
+                if(buildingGrid.getBuilding6() == null)
+                {
+                    popUpInflater(v, context);
+                }
+                else
+                {
+
+                }
+                break;
+            case R.id.building7:
+                if(buildingGrid.getBuilding7() == null)
+                {
+                    popUpInflater(v, context);
+                }
+                else
+                {
+
+                }
+                break;
+            case R.id.building8:
+                if(buildingGrid.getBuilding8() == null)
+                {
+                    popUpInflater(v, context);
+                }
+                else
+                {
+
+                }
+                break;
+            case R.id.building9:
+                if(buildingGrid.getBuilding9() == null)
+                {
+                    popUpInflater(v, context);
+                }
+                else
+                {
+
+                }
+                break;
+        }
+
     }
 
     /**
