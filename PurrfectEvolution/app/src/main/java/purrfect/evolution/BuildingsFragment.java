@@ -15,6 +15,7 @@ import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -36,7 +37,7 @@ public class BuildingsFragment extends Fragment {
 
     }
 
-    public void popUpInflater(View view, Context context)
+    public void popUpInflater(final View view, final Context context)
     {
 
 
@@ -47,42 +48,44 @@ public class BuildingsFragment extends Fragment {
         popup.getMenuInflater()
                 .inflate(R.menu.popup_menu, popup.getMenu());
 
-        MenuBuilder mMenu = new MenuBuilder(context);
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (view.getId()) {
+                    case R.id.building1:
+                        Toast.makeText(context,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.building2:
+                        Toast.makeText(context,"laalaalaa",Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.building3:
+                        break;
+                    case R.id.building4:
+                        break;
+                    case R.id.building5:
+                        break;
+                    case R.id.building6:
+                        break;
+                    case R.id.building7:
+                        break;
+                    case R.id.building8:
+                        break;
+                    case R.id.building9:
+                        break;
+                }
 
 
-
-        MenuPopupHelper menuHelper = new MenuPopupHelper(context,mMenu,view );
-        menuHelper.setForceShowIcon(true);
-        menuHelper.show();
+                return true;
+            }
+        });
 
         popup.show();
+
+
 
     }
 
 
     public void onClick(View v,Context context) {
-
-
-        switch (v.getId()) {
-            case R.id.building1:
-                break;
-            case R.id.building2:
-                break;
-            case R.id.building3:
-                break;
-            case R.id.building4:
-                break;
-            case R.id.building5:
-                break;
-            case R.id.building6:
-                break;
-            case R.id.building7:
-                break;
-            case R.id.building8:
-                break;
-            case R.id.building9:
-                break;
-        }
         popUpInflater(v, context);
     }
 

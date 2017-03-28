@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <item
         android:id="@+id/one"
         android:icon="@drawable/ic_heart_0"
-        android:title="One" />
+        android:title="Scratching Post" />
 
     <item
         android:id="@+id/two"
         android:icon="@mipmap/ic_launcher"
-        android:title="Two" />
+        android:title="Feeding Station" />
 
     <item
         android:id="@+id/three"
         android:icon="@mipmap/ic_launcher"
-        android:title="Three" />
+        android:title="Chew Mouse" />
+
+    <item
+        android:id="@+id/four"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Yarn Ball" />
+
+    <item
+        android:id="@+id/five"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Catnip" />
 
 
 </menu>
