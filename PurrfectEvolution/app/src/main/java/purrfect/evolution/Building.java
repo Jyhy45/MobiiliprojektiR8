@@ -23,10 +23,10 @@ public abstract class Building {
     Building(){
 
     }
-    private double mBaseProductionTime;
-    private double mBaseProductionAmount;
+    private double mBaseProductionTime=0;
+    private double mBaseProductionAmount=0;
     private double mBuildingLevel=0;
-    private double mBaseCost;
+    private double mBaseCost=0;
     public int mImagePath;                  //=R.drawable.ic_heart_0;
     public int mAnimationPath;              //=R.drawable.animation_list_filling;
 
