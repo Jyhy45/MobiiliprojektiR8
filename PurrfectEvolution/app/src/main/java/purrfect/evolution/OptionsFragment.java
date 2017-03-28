@@ -30,10 +30,9 @@ public class OptionsFragment extends Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static OptionsFragment newInstance(int sectionNumber) {
+    public static OptionsFragment newInstance() {
         OptionsFragment fragment = new OptionsFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }

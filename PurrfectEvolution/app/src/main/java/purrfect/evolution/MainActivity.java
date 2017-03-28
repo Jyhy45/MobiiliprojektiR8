@@ -1,9 +1,13 @@
 package purrfect.evolution;
 
 import android.content.SharedPreferences;
+import android.content.Context;
+import android.os.Build;
+import android.support.annotation.IdRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -51,17 +55,22 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    
+
     ImageButton imageButton2;
     ImageView image;
     List<ImageView> imageList;
     List<Animation> animationList;
     int i;
 
+    BuildingsFragment buildingsFragment;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        buildingsFragment = new BuildingsFragment();
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Log.d(TAG, "onCreate: now here");
@@ -110,15 +119,15 @@ public class MainActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position){
                 case 3:
-                    return OptionsFragment.newInstance(1);
+                    return OptionsFragment.newInstance();
                 case 2:
-                    return BuildingsFragment.newInstance(1);
+                    return BuildingsFragment.newInstance();
                 case 1:
-                    return EvolutionFragment.newInstance(1);
+                    return EvolutionFragment.newInstance();
                 case 0:
-                    return CatFragment.newInstance(1);
+                    return CatFragment.newInstance();
                 default:
-                    return CatFragment.newInstance(1);
+                    return CatFragment.newInstance();
             }
 
         }
@@ -131,8 +140,39 @@ public class MainActivity extends AppCompatActivity {
      
     }
 
+    public void onClickBuilding(View view)
+    {
+
+        Context context = MainActivity.this;
+
+        buildingsFragment.onClick(view, context);
+
+
+
+    }
+
+
+//    public void popUpInflater(View view)
+//    {
+//
+//
+//
+//        //Creating the instance of PopupMenu
+//        PopupMenu popup = new PopupMenu(MainActivity.this, view);
+//        //Inflating the Popup using xml file
+//        popup.getMenuInflater()
+//                .inflate(R.menu.popup_menu, popup.getMenu());
+//
+//        popup.show();
+//    }
+
+
+
+
     public void onCatClick(View view)
     {
+
+
         image = new ImageView(this);
 
 
@@ -141,12 +181,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Keksi tapa lisätä "täyttö animaatio" luotaviin kuviin.
         //imageList.get(i).setBackgroundResource((ImageView) findViewById(R.drawable.animation_list_filling));
-        RelativeLayout r1 = (RelativeLayout) findViewById(R.id.cat_layout);
+        RelativeLayout r1 = (RelativeLayout) findViewById(R.id.cat_fragment);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
-        lp.addRule(RelativeLayout.ALIGN_START, R.id.imageButton2);
-        lp.addRule(RelativeLayout.ALIGN_BOTTOM, R.id.imageButton2);
+        lp.addRule(RelativeLayout.BELOW, R.id.imageButton2);
+        lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT, R.id.imageButton2);
 
         r1.addView(imageList.get(i),lp);
 

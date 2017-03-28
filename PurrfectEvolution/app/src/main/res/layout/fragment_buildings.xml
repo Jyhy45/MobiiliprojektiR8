@@ -10,15 +10,92 @@
     app:columnCount="10"
     app:rowCount="30">
 
-    <TextView
-        android:id="@+id/section_label"
+
+    <ImageButton
+        android:id="@+id/building1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="33dp"
-        android:text="TextView" />
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="26dp"
+        android:onClick="onClickBuilding"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/building2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/building1"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClickBuilding"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/building3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/building2"
+        android:layout_marginEnd="47dp"
+        android:onClick="onClickBuilding"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/building4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/building1"
+        android:layout_below="@+id/building1"
+        android:layout_marginTop="105dp"
+        android:onClick="onClickBuilding"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/building5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/building2"
+        android:layout_alignTop="@+id/building4"
+        android:onClick="onClickBuilding"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/building6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/building3"
+        android:layout_alignTop="@+id/building5"
+        android:onClick="onClickBuilding"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/building7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/building4"
+        android:layout_below="@+id/building4"
+        android:layout_marginTop="82dp"
+        android:onClick="onClickBuilding"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/building8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/building5"
+        android:layout_alignTop="@+id/building7"
+        android:onClick="onClickBuilding"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/building9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/building6"
+        android:layout_alignTop="@+id/building8"
+        android:onClick="onClickBuilding"
+        app:srcCompat="@mipmap/ic_launcher" />
 </RelativeLayout>
 
 

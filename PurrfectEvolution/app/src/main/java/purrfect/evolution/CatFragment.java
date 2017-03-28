@@ -34,10 +34,9 @@ public class CatFragment extends Fragment {
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static CatFragment newInstance(int sectionNumber) {
+    public static CatFragment newInstance() {
         CatFragment fragment = new CatFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
     }
