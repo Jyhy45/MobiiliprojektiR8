@@ -32,6 +32,7 @@ public class BuildingsFragment extends Fragment {
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
 
+    BuildingGrid buildingGrid;
 
     public BuildingsFragment() {
 
@@ -89,6 +90,9 @@ public class BuildingsFragment extends Fragment {
     {
         switch(item.getItemId()) {
             case R.id.Scratching_Post:
+                //Building building = new Building();
+
+                //buildingGrid.setBuilding1(building);
                 break;
             case R.id.Feeding_Station:
                 break;
