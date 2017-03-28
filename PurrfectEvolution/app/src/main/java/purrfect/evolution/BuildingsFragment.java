@@ -35,25 +35,25 @@ public class BuildingsFragment extends Fragment {
 
     }
 
-//    public void popUpInflater(View view)
-//    {
-//
-//
-//
-//        //Creating the instance of PopupMenu
-//        PopupMenu popup = new PopupMenu(getContext(), view);
-//        //Inflating the Popup using xml file
-//        popup.getMenuInflater()
-//                .inflate(R.menu.popup_menu, popup.getMenu());
-//
-//        popup.show();
-//    }
+    public void popUpInflater(View view, Context context)
+    {
 
 
-    public void onClick(View v) {
+
+        //Creating the instance of PopupMenu
+        PopupMenu popup = new PopupMenu(context, view);
+        //Inflating the Popup using xml file
+        popup.getMenuInflater()
+                .inflate(R.menu.popup_menu, popup.getMenu());
+
+        popup.show();
+    }
+
+
+    public void onClick(View v,Context context) {
         switch (v.getId()) {
             case R.id.building1:
-                //popUpInflater(v);
+                popUpInflater(v, context);
                 break;
             case R.id.building2:
                 break;

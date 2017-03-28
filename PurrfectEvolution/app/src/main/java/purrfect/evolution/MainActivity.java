@@ -1,5 +1,6 @@
 package purrfect.evolution;
 
+import android.content.Context;
 import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.design.widget.FloatingActionButton;
@@ -118,26 +119,29 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickBuilding(View view)
     {
-        //buildingsFragment.onClick(view);
 
-        popUpInflater(view);
+        Context context = MainActivity.this;
+
+        buildingsFragment.onClick(view, context);
+
+
 
     }
 
 
-    public void popUpInflater(View view)
-    {
-
-
-
-        //Creating the instance of PopupMenu
-        PopupMenu popup = new PopupMenu(MainActivity.this, view);
-        //Inflating the Popup using xml file
-        popup.getMenuInflater()
-                .inflate(R.menu.popup_menu, popup.getMenu());
-
-        popup.show();
-    }
+//    public void popUpInflater(View view)
+//    {
+//
+//
+//
+//        //Creating the instance of PopupMenu
+//        PopupMenu popup = new PopupMenu(MainActivity.this, view);
+//        //Inflating the Popup using xml file
+//        popup.getMenuInflater()
+//                .inflate(R.menu.popup_menu, popup.getMenu());
+//
+//        popup.show();
+//    }
 
 
 
