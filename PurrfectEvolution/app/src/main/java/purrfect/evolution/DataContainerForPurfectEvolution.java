@@ -201,6 +201,14 @@ final class DataContainerForPurfectEvolution {
         mThisCycleMoneyEarnings=0;
     }
 
+    public void resetSoft(){
+        //TODO:reset most variables and gain suscripers
+    }
+    public void resetHard(){
+        //TODO:reset all variables to their default values
+
+    }
+
     public  double getmCurrentMoney() {
         return mCurrentMoney;
     }
