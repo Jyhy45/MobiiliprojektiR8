@@ -51,7 +51,7 @@ final class DataContainerForPurfectEvolution {
                 try {
                     String _name = field.getName();
                     long _value =data.getLong(_name,0);
-                    field.setLong(c,_value);
+                    field.setLong(this,_value);
                     Log.d(TAG, "loadDataFromPreference: Success name "+_name+" value "+_value);
 
                 } catch (Exception exc){
@@ -63,7 +63,8 @@ final class DataContainerForPurfectEvolution {
                 try {
                     String _name = field.getName();
                     double _value = Double.longBitsToDouble(data.getLong(_name,0));
-                    field.setDouble(c,_value);
+                    field.setDouble(this,_value);
+
                     Log.d(TAG, "loadDataFromPreference: Success name "+_name+" value "+_value);
                 }catch (Exception exc){
                     Log.e(TAG, "loadDataFromPreference: double FAIL "+c+"  ",exc );
@@ -91,7 +92,7 @@ final class DataContainerForPurfectEvolution {
             if (long.class.equals(classToBeInspected)){
                 try {
                     String _name=field.getName();
-                    long _value= field.getLong(c);
+                    long _value= field.getLong(this);
                     editor.putLong(_name,_value);
                     Log.d(TAG,"saveDataToPreference: name: "+_name+" value"+_value);
 
@@ -104,7 +105,7 @@ final class DataContainerForPurfectEvolution {
             }else if (double.class.equals(classToBeInspected)) {
                 try {
                     String _name=field.getName();
-                    double _value= field.getDouble(c);
+                    double _value= field.getDouble(this);
                     editor.putLong(_name,Double.doubleToRawLongBits(_value));
                     Log.d(TAG,"saveDataToPreference: name: "+_name+" value"+_value);
                 } catch (Exception exc){
