@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Creating the instance of PopupMenu
-        PopupMenu popup = new PopupMenu(this, imageButton2);
+        PopupMenu popup = new PopupMenu(MainActivity.this, imageButton2);
         //Inflating the Popup using xml file
         popup.getMenuInflater()
                 .inflate(R.menu.popup_menu, popup.getMenu());
