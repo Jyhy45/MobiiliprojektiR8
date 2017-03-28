@@ -5,6 +5,7 @@ import android.support.annotation.IdRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -117,15 +118,34 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickBuilding(View view)
     {
-        buildingsFragment.onClick(view);
+        //buildingsFragment.onClick(view);
+
+
+
     }
 
+
+    public void popUpInflater()
+    {
+
+
+
+        //Creating the instance of PopupMenu
+        PopupMenu popup = new PopupMenu(this, imageButton2);
+        //Inflating the Popup using xml file
+        popup.getMenuInflater()
+                .inflate(R.menu.popup_menu, popup.getMenu());
+
+        popup.show();
+    }
 
 
 
 
     public void onCatClick(View view)
     {
+        popUpInflater();
+
         image = new ImageView(this);
 
 

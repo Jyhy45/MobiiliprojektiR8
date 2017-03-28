@@ -37,6 +37,9 @@ public class BuildingsFragment extends Fragment {
 
     public void popUpInflater()
     {
+
+
+
         //Creating the instance of PopupMenu
         PopupMenu popup = new PopupMenu(getContext(), imageButton);
         //Inflating the Popup using xml file
