@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 
 
-public abstract class Building {
+public  class Building {
 
     static enum BuildingType{
         SCRATCHINPOST,      //produces happines
@@ -24,22 +24,36 @@ public abstract class Building {
 
     }
     private double mBaseProductionTime=0;
+    private BuildingType mBType;
     private double mBaseProductionAmount=0;
     private double mBuildingLevel=0;
     private double mBaseCost=0;
     public int mImagePath;                  //=R.drawable.ic_heart_0;
     public int mAnimationPath;              //=R.drawable.animation_list_filling;
 
-    private double getmBaseCost() {
-        return mBaseCost;
+
+    public double getmBaseProductionTime() {
+        return mBaseProductionTime;
+    }
+
+    public void setmBaseProductionTime(double mBaseProductionTime) {
+        this.mBaseProductionTime = mBaseProductionTime;
+    }
+
+    public BuildingType getmBType() {
+        return mBType;
+    }
+
+    public void setmBType(BuildingType mBType) {
+        this.mBType = mBType;
     }
 
     public double getmBaseProductionAmount() {
         return mBaseProductionAmount;
     }
 
-    public double getmBaseProductionTime() {
-        return mBaseProductionTime;
+    public void setmBaseProductionAmount(double mBaseProductionAmount) {
+        this.mBaseProductionAmount = mBaseProductionAmount;
     }
 
     public double getmBuildingLevel() {
@@ -49,21 +63,28 @@ public abstract class Building {
     public void setmBuildingLevel(double mBuildingLevel) {
         this.mBuildingLevel = mBuildingLevel;
     }
-    protected void setmBaseCost(double mBaseCost) {
+
+    public double getmBaseCost() {
+        return mBaseCost;
+    }
+
+    public void setmBaseCost(double mBaseCost) {
         this.mBaseCost = mBaseCost;
     }
 
-    protected void setmBaseProductionAmount(double mBaseProductionAmount) {
-        this.mBaseProductionAmount = mBaseProductionAmount;
+    public int getmImagePath() {
+        return mImagePath;
     }
 
-    protected void setmBaseProductionTime(double mBaseProductionTime) {
-        this.mBaseProductionTime = mBaseProductionTime;
+    public void setmImagePath(int mImagePath) {
+        this.mImagePath = mImagePath;
     }
 
-    public abstract double getCurrentProductionAmount();
-    public abstract double getCurrentProductionTime();
-    public abstract double getCurrentCost();
+    public int getmAnimationPath() {
+        return mAnimationPath;
+    }
 
-
+    public void setmAnimationPath(int mAnimationPath) {
+        this.mAnimationPath = mAnimationPath;
+    }
 }
