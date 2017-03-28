@@ -1,5 +1,6 @@
 package purrfect.evolution;
 
+import android.content.SharedPreferences;
 import android.content.Context;
 import android.os.Build;
 import android.support.annotation.IdRes;
@@ -14,6 +15,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,8 +30,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import static android.content.ContentValues.TAG;
+
 import java.util.ArrayList;
 import java.util.List;
+
+//TODO: add some statistic calculations
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    private DataContainerForPurfectEvolution mDataContainer;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -65,10 +73,11 @@ public class MainActivity extends AppCompatActivity {
         buildingsFragment = new BuildingsFragment();
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        Log.d(TAG, "onCreate: now here");
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mDataContainer = new DataContainerForPurfectEvolution();
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -77,8 +86,22 @@ public class MainActivity extends AppCompatActivity {
         imageList = new ArrayList<ImageView>();
         animationList = new ArrayList<Animation>();
         imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
+
+
+        //saving preferences meyby make to its own function
+        SharedPreferences data = getPreferences(0);
+        mDataContainer.loadDataFromPreference(data);
+        //boolean silent = settings.getBoolean("silentMode", false);
+
+
+
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart: now here");
+    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -173,6 +196,20 @@ public class MainActivity extends AppCompatActivity {
 
         imageList.get(i).startAnimation(animationList.get(i));
         i++;
+    }
+    @Override
+    protected void onStop(){
+        super.onStop();
+
+        // We need an Editor object to make preference changes.
+        // All objects are from android.context.Context
+        SharedPreferences settings = getPreferences(0);
+        SharedPreferences.Editor editor = settings.edit();
+        //editor.putBoolean("silentMode", mSilentMode);
+
+        // Commit the edits!
+        editor.commit();
+
     }
 
 }
