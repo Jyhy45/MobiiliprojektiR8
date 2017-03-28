@@ -13,20 +13,20 @@ import static android.content.ContentValues.TAG;
  */
 
 final class DataContainerForPurfectEvolution {
-    static double mCurrentMoney=0;
-    static double mCurrentHappines=0;
+     double mCurrentMoney=0;
+    double mCurrentHappines=0;
 
-    static long mLifeTimeClicks=0;
-    static long mSessionClicks=0;
-    static long mThisCycleClicks=0;
+     long mLifeTimeClicks=0;
+     long mSessionClicks=0;
+     long mThisCycleClicks=0;
 
-    static double mLifeTimeMoneyEarnings=0;
-    static double mSessionMoneyEarnings=0;
-    static double mThisCycleMoneyEarnings=0;
+     double mLifeTimeMoneyEarnings=0;
+     double mSessionMoneyEarnings=0;
+     double mThisCycleMoneyEarnings=0;
 
-    static double mLifeTimeHappinessEarnings =0;
-    static double mSessionHappinessEarnings =0;
-    static double mThisCycleHappinessEarnings =0;
+     double mLifeTimeHappinessEarnings =0;
+     double mSessionHappinessEarnings =0;
+     double mThisCycleHappinessEarnings =0;
 
     public DataContainerForPurfectEvolution()
     {
@@ -51,11 +51,11 @@ final class DataContainerForPurfectEvolution {
                 try {
                     String _name = field.getName();
                     long _value =data.getLong(_name,0);
-                    field.setLong(c,_value);
+                    field.setLong(this,_value);
                     Log.d(TAG, "loadDataFromPreference: Success name "+_name+" value "+_value);
 
                 } catch (Exception exc){
-                    Log.e(TAG, "loadDataFromPreference: long FAIL",exc );
+                    Log.e(TAG, "loadDataFromPreference: long FAIL"+c+" ",exc );
                     //return false;
                 }
 
@@ -63,10 +63,11 @@ final class DataContainerForPurfectEvolution {
                 try {
                     String _name = field.getName();
                     double _value = Double.longBitsToDouble(data.getLong(_name,0));
-                    field.setDouble(c,_value);
+                    field.setDouble(this,_value);
+
                     Log.d(TAG, "loadDataFromPreference: Success name "+_name+" value "+_value);
                 }catch (Exception exc){
-                    Log.e(TAG, "loadDataFromPreference: double FAIL ",exc );
+                    Log.e(TAG, "loadDataFromPreference: double FAIL "+c+"  ",exc );
                 }
 
             }else{
@@ -91,30 +92,30 @@ final class DataContainerForPurfectEvolution {
             if (long.class.equals(classToBeInspected)){
                 try {
                     String _name=field.getName();
-                    long _value= field.getLong(c);
+                    long _value= field.getLong(this);
                     editor.putLong(_name,_value);
                     Log.d(TAG,"saveDataToPreference: name: "+_name+" value"+_value);
 
                 } catch (Exception exc){
                     Log.e(TAG, "saveDataToPreference: ",exc);
-                    return false;
+                    //return false;
                 }
 
 
             }else if (double.class.equals(classToBeInspected)) {
                 try {
                     String _name=field.getName();
-                    double _value= field.getDouble(c);
+                    double _value= field.getDouble(this);
                     editor.putLong(_name,Double.doubleToRawLongBits(_value));
                     Log.d(TAG,"saveDataToPreference: name: "+_name+" value"+_value);
                 } catch (Exception exc){
                     Log.e(TAG, "saveDataToPreference: ",exc);
 
-                    return false;
+                    //return false;
                 }
             }else{
                 Log.d(TAG, "saveDataToPreference: Unhandled variable type");
-                return false;
+                //return false;
             }
         }
         return true;
@@ -123,7 +124,7 @@ final class DataContainerForPurfectEvolution {
     /**
      * Increment all click variables
      * */
-    public static void receivedClick(){
+    public  void receivedClick(){
         mLifeTimeClicks++;
         mSessionClicks++;
         mThisCycleClicks++;
@@ -135,7 +136,7 @@ final class DataContainerForPurfectEvolution {
      * Increments all money variables
      * @param money Amount of money to be incremented
      * */
-    public static void earnedMoney(double money){
+    public  void earnedMoney(double money){
         mLifeTimeMoneyEarnings+=money;
         mSessionMoneyEarnings+=money;
         mThisCycleMoneyEarnings+=money;
@@ -148,7 +149,7 @@ final class DataContainerForPurfectEvolution {
      * Incerements all happiness variables
      * @param happiness amount of happiness to added to variables
      * */
-    public static void earnedHappiness(double happiness){
+    public  void earnedHappiness(double happiness){
         mLifeTimeHappinessEarnings +=happiness;
         mSessionHappinessEarnings +=happiness;
         mThisCycleHappinessEarnings +=happiness;
@@ -164,7 +165,7 @@ final class DataContainerForPurfectEvolution {
      *
      * @return Return true if happiness was used; return false if happiness was not spent
      * */
-    public static boolean spentHappiness(double mSpentHappiness){
+    public  boolean spentHappiness(double mSpentHappiness){
         if (Double.compare(mSpentHappiness,mCurrentMoney)>=0)
         {
             mCurrentMoney-=mSpentHappiness;
@@ -182,7 +183,7 @@ final class DataContainerForPurfectEvolution {
      *
      * @return Return true if money was used; return false if money was not spent
      * */
-    public static boolean spentMoney(double mSpentMoney){
+    public  boolean spentMoney(double mSpentMoney){
         if (Double.compare(mSpentMoney,mCurrentMoney)>=0)
         {
             mCurrentMoney-=mSpentMoney;
@@ -194,17 +195,25 @@ final class DataContainerForPurfectEvolution {
 
 
     /** Resets cycle variables*/
-    public static void resetCycle(){
+    public  void resetCycle(){
         mThisCycleClicks=0;
         mThisCycleHappinessEarnings =0;
         mThisCycleMoneyEarnings=0;
     }
 
-    public static double getmCurrentMoney() {
+    public void resetSoft(){
+        //TODO:reset most variables and gain suscripers
+    }
+    public void resetHard(){
+        //TODO:reset all variables to their default values
+
+    }
+
+    public  double getmCurrentMoney() {
         return mCurrentMoney;
     }
 
-    public static double getmCurrentHappines() {
+    public  double getmCurrentHappines() {
         return mCurrentHappines;
     }
 }

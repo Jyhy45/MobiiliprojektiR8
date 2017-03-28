@@ -52,6 +52,7 @@ public class BuildingsFragment extends Fragment {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (view.getId()) {
                     case R.id.building1:
+                        buildingSelector(item);
                         Toast.makeText(context,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.building2:
@@ -81,6 +82,24 @@ public class BuildingsFragment extends Fragment {
         popup.show();
 
 
+
+    }
+
+    public void buildingSelector(MenuItem item)
+    {
+        switch(item.getItemId()) {
+            case R.id.Scratching_Post:
+                break;
+            case R.id.Feeding_Station:
+                break;
+            case R.id.Chew_Mouse:
+                break;
+            case R.id.Yarn_Ball:
+                break;
+            case R.id.Catnip:
+                break;
+
+        }
 
     }
 
