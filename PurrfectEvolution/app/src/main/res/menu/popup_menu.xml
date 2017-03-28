@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/one"
+        android:id="@+id/Scratching_Post"
         android:icon="@drawable/ic_heart_0"
         android:title="Scratching Post" />
 
     <item
-        android:id="@+id/two"
+        android:id="@+id/Feeding_Station"
         android:icon="@mipmap/ic_launcher"
         android:title="Feeding Station" />
 
     <item
-        android:id="@+id/three"
+        android:id="@+id/Chew_Mouse"
         android:icon="@mipmap/ic_launcher"
         android:title="Chew Mouse" />
 
     <item
-        android:id="@+id/four"
+        android:id="@+id/Yarn_Ball"
         android:icon="@mipmap/ic_launcher"
         android:title="Yarn Ball" />
 
     <item
-        android:id="@+id/five"
+        android:id="@+id/Catnip"
         android:icon="@mipmap/ic_launcher"
         android:title="Catnip" />
 
