@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +24,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import static android.content.ContentValues.TAG;
 
 import java.util.List;
 
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    private DataContainerForPurfectEvolution mDataContainer;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -52,10 +56,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        Log.d(TAG, "onCreate: now here");
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mDataContainer = new DataContainerForPurfectEvolution();
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -63,13 +68,19 @@ public class MainActivity extends AppCompatActivity {
 
 
         //saving preferences meyby make to its own function
-        SharedPreferences settings = getPreferences(0);
+        SharedPreferences data = getPreferences(0);
+        mDataContainer.loadDataFromPreference(data);
         //boolean silent = settings.getBoolean("silentMode", false);
 
 
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart: now here");
+    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
