@@ -1,0 +1,69 @@
+package purrfect.evolution;
+
+
+import android.os.Bundle;
+/**
+ * Created by jyhy on 3/24/17.
+ */
+
+
+
+public abstract class Building {
+
+    static enum BuildingType{
+        SCRATCHINPOST,      //produces happines
+        FEEDING_STATION,    //produces happines
+        CHEW_MOUSE,         //produces happines
+        YARN_BALL,          //creates yarnballs in to the cat screen that can tapped --> gives happines
+        CATNIP,             //produces happines
+
+
+    }
+
+    Building(){
+
+    }
+    private double mBaseProductionTime=0;
+    private double mBaseProductionAmount=0;
+    private double mBuildingLevel=0;
+    private double mBaseCost=0;
+    public int mImagePath;                  //=R.drawable.ic_heart_0;
+    public int mAnimationPath;              //=R.drawable.animation_list_filling;
+
+    private double getmBaseCost() {
+        return mBaseCost;
+    }
+
+    public double getmBaseProductionAmount() {
+        return mBaseProductionAmount;
+    }
+
+    public double getmBaseProductionTime() {
+        return mBaseProductionTime;
+    }
+
+    public double getmBuildingLevel() {
+        return mBuildingLevel;
+    }
+
+    public void setmBuildingLevel(double mBuildingLevel) {
+        this.mBuildingLevel = mBuildingLevel;
+    }
+    protected void setmBaseCost(double mBaseCost) {
+        this.mBaseCost = mBaseCost;
+    }
+
+    protected void setmBaseProductionAmount(double mBaseProductionAmount) {
+        this.mBaseProductionAmount = mBaseProductionAmount;
+    }
+
+    protected void setmBaseProductionTime(double mBaseProductionTime) {
+        this.mBaseProductionTime = mBaseProductionTime;
+    }
+
+    public abstract double getCurrentProductionAmount();
+    public abstract double getCurrentProductionTime();
+    public abstract double getCurrentCost();
+
+
+}
