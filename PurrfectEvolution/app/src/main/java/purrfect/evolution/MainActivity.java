@@ -71,6 +71,15 @@ public class MainActivity extends AppCompatActivity {
 
     BuildingsFragment buildingsFragment;
     private Handler handler = new Handler();
+
+    public int getmInterval() {
+        return mInterval;
+    }
+
+    public void setmInterval(int mInterval) {
+        this.mInterval = mInterval;
+    }
+
     private int mInterval = 500;
     private Runnable runnable = new Runnable() {
         @Override
