@@ -180,6 +180,7 @@ public class BuildingsFragment extends Fragment {
             case R.id.Destroy:
                 building.setmBType(null);
                 building.setmBuildingLevel(0);
+                building = null;
                 break;
 
         }
