@@ -72,15 +72,18 @@ public class MainActivity extends AppCompatActivity {
     BuildingsFragment buildingsFragment;
     private Handler handler = new Handler();
 
-    public int getmInterval() {
+
+
+    private static int mInterval = 500;
+    public static int getmInterval() {
         return mInterval;
     }
 
-    public void setmInterval(int mInterval) {
-        this.mInterval = mInterval;
+    public static void setmInterval(int Interval) {
+        mInterval = Interval;
     }
 
-    private int mInterval = 500;
+
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
@@ -136,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         Log.d(TAG, "onRestart: LIFECYCLE");
     }
-    
+
     @Override
     public void onPause() {
         Log.d(TAG, "onPause: LIFECYCLE");

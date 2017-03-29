@@ -276,8 +276,8 @@ final class DataContainerForPurfectEvolution {
     }
     public void tickTime(){
         //TODO:implement this
-        mCurrentHappines+=0;
-        mCurrentMoney+=0;
+        mCurrentHappines+=(2)*(MainActivity.getmInterval()/1000);
+        mCurrentMoney+=(2)*(MainActivity.getmInterval()/1000);
     }
 
     public  double getmCurrentMoney() {
