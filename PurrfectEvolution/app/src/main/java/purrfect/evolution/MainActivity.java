@@ -86,11 +86,13 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             mDataContainer.tickTime();
             handler.postDelayed(runnable, mInterval);
+            Log.d(TAG, "run: now at update ticker");
         }
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate: LIFECYCLE");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -125,12 +127,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
+        Log.d(TAG, "onStart: LIFECYCLE");
         super.onStart();
-        Log.d(TAG, "onStart: now here");
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart: LIFECYCLE");
+    }
+    
+    @Override
     public void onPause() {
+        Log.d(TAG, "onPause: LIFECYCLE");
         super.onPause();
         handler.removeCallbacks(runnable);
 
@@ -232,6 +241,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onStop(){
+        Log.d(TAG, "onStop: LIFECYCLE");
         super.onStop();
 
         // We need an Editor object to make preference changes.
