@@ -11,12 +11,29 @@ import android.os.Bundle;
 public  class Building {
 
     static enum BuildingType{
-        SCRATCHINPOST,      //produces happines
-        FEEDING_STATION,    //produces happines
-        CHEW_MOUSE,         //produces happines
-        YARN_BALL,          //creates yarnballs in to the cat screen that can tapped --> gives happines
-        CATNIP,             //produces happines
+        NONE(0),               //no type assigned
+        SCRATCHINPOST(1),      //produces happines
+        FEEDING_STATION(2),    //produces happines
+        CHEW_MOUSE(3),         //produces happines
+        YARN_BALL(4),          //creates yarnballs in to the cat screen that can tapped --> gives happines
+        CATNIP(5);           //produces happines
 
+        private int _value;
+
+        BuildingType(int value) {
+            this._value = value;
+        }
+        public int get_value(){
+            return _value;
+        }
+
+        public static BuildingType fromInt(int i) {
+            for (BuildingType b : BuildingType.values()){
+                if (b.get_value() == i){return b;}
+            }
+        return null;
+
+        }
 
     }
 
