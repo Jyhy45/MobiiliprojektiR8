@@ -1,5 +1,6 @@
 package purrfect.evolution;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.util.Log;
 
@@ -15,6 +16,8 @@ import static android.content.ContentValues.TAG;
 final class DataContainerForPurfectEvolution {
     double mCurrentSuscripers = 0;
     double mSuscripersToBeGained = 0;
+    double mCurrentMoneyIncrease = 0;
+    double mCurrentHappinessIncrease = 0;
 
     double mCurrentMoney = 0;
     double mCurrentHappines = 0;
@@ -276,8 +279,14 @@ final class DataContainerForPurfectEvolution {
     }
     public void tickTime(){
         //TODO:implement this
-        mCurrentHappines+=(2)*(MainActivity.getmInterval()/1000);
-        mCurrentMoney+=(2)*(MainActivity.getmInterval()/1000);
+        mCurrentHappines+=(mCurrentHappinessIncrease);
+        mCurrentMoney+=(mCurrentMoneyIncrease);
+
+        Log.d(TAG, "tickTime: Happines "+mCurrentHappines+" money "+mCurrentMoney);
+        Log.d(TAG, "tickTime: Increase Happines " +mCurrentHappinessIncrease+" money:" +mCurrentMoneyIncrease);
+
+        //TODO: run this when buildings change .. not here .. only here for testing
+        calculateEverything();
     }
 
     public  double getmCurrentMoney() {
@@ -336,4 +345,38 @@ final class DataContainerForPurfectEvolution {
         return true;
     }
 
+    public void calculateMoneyIncrease(){
+        mCurrentMoneyIncrease=0;
+        for (Building b: MainActivity.getMbuildingGrid().getBuildingArray()) {
+            if (false){
+                //TODO:this
+            }
+        }
+
+
+    }
+    public void calculateHappinesIncrease(){
+        mCurrentHappinessIncrease=0;
+        for (Building b: MainActivity.getMbuildingGrid().getBuildingArray()){
+            if (b.getmBType()== Building.BuildingType.FEEDING_STATION||
+                    b.getmBType()== Building.BuildingType.CATNIP||
+                    b.getmBType()== Building.BuildingType.CHEW_MOUSE||
+                    b.getmBType()== Building.BuildingType.YARN_BALL||
+                    b.getmBType()== Building.BuildingType.SCRATCHINPOST){
+                mCurrentHappinessIncrease+=b.getmProductionAmountPerSecond();
+
+            }
+        }
+    }
+
+    public void calculateEverything(){
+        Log.d(TAG, "calculateEverything: Now Running");
+        for (Building b: MainActivity.getMbuildingGrid().getBuildingArray()) {
+            b.calculateAndSetBuildingLevelUpCost();
+            b.calculateAndSetProductionAmountPerSecond();
+        }
+        calculateHappinesIncrease();
+        calculateMoneyIncrease();
+        Log.d(TAG, "calculateEverything: Now ended");
+    }
 }

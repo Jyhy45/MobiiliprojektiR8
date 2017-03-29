@@ -68,15 +68,15 @@ public  class Building {
         if (mBType == BuildingType.NONE){
             mProductionAmountPerSecond =0;
         }else if (mBType == BuildingType.SCRATCHINPOST){
-            mProductionAmountPerSecond =1*this.mBuildingLevel;
+            mProductionAmountPerSecond =1*this.mBuildingLevel+1;
         }else if(mBType == BuildingType.FEEDING_STATION){
-            mProductionAmountPerSecond =5*this.mBuildingLevel;
+            mProductionAmountPerSecond =5*this.mBuildingLevel+1;
         }else if(mBType == BuildingType.CHEW_MOUSE){
-            mProductionAmountPerSecond =10*this.mBuildingLevel;
+            mProductionAmountPerSecond =10*this.mBuildingLevel+1;
         }else if(mBType == BuildingType.YARN_BALL){
-            mProductionAmountPerSecond =100*this.mBuildingLevel;
+            mProductionAmountPerSecond =100*this.mBuildingLevel+1;
         }else if(mBType == BuildingType.CATNIP){
-            mProductionAmountPerSecond =300*this.mBuildingLevel;
+            mProductionAmountPerSecond =300*this.mBuildingLevel+1;
         }else{
             mProductionAmountPerSecond =0;
         }

@@ -1,13 +1,28 @@
 package purrfect.evolution;
 
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by jyhy on 3/28/17.
  */
 
 public class BuildingGrid {
 
-    BuildingGrid(){}
+    BuildingGrid(){
+        buildingArray = new ArrayList<>();
+        buildingArray.add(building1);
+        buildingArray.add(building2);
+        buildingArray.add(building3);
+        buildingArray.add(building4);
+        buildingArray.add(building5);
+        buildingArray.add(building6);
+        buildingArray.add(building7);
+        buildingArray.add(building8);
+        buildingArray.add(building9);
+    }
 
     private Building building1 = new Building();
     private Building building2 = new Building();
@@ -18,6 +33,13 @@ public class BuildingGrid {
     private Building building7 = new Building();
     private Building building8 = new Building();
     private Building building9 = new Building();
+
+    public ArrayList<Building> getBuildingArray() {
+        return buildingArray;
+    }
+
+    private ArrayList<Building> buildingArray;
+
 
     public Building getBuilding1() {
         return building1;

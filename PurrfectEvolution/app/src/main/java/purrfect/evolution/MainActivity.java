@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private static int mInterval = 500;
+    private static int mInterval = 1000;
     public static int getmInterval() {
         return mInterval;
     }
@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
         mDataContainer.loadBuildingDataToGrid(mbuildingGrid);
         //boolean silent = settings.getBoolean("silentMode", false);
 
+        mDataContainer.calculateEverything();
         handler.postDelayed(runnable,mInterval);
 
 
@@ -250,6 +251,7 @@ public class MainActivity extends AppCompatActivity {
         // We need an Editor object to make preference changes.
         // All objects are from android.context.Context
         handler.removeCallbacks(runnable);
+        mDataContainer.calculateEverything();
         mDataContainer.saveBuildingDataToDataContainer(mbuildingGrid);
 
         SharedPreferences settings = getPreferences(0);
