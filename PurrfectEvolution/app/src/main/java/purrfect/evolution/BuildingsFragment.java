@@ -119,28 +119,84 @@ public class BuildingsFragment extends Fragment {
                         }
                         break;
                     case R.id.building2:
-                        actionSelector(item, buildingGrid.getBuilding2());
+                        if(actionSelector(item, buildingGrid.getBuilding2())== 1)
+                        {
+                            buildingGrid.setBuilding2(null);
+                        }
+                        else
+                        {
+
+                        }
                         break;
                     case R.id.building3:
-                        actionSelector(item, buildingGrid.getBuilding3());
+                        if(actionSelector(item, buildingGrid.getBuilding3())== 1)
+                        {
+                            buildingGrid.setBuilding3(null);
+                        }
+                        else
+                        {
+
+                        }
                         break;
                     case R.id.building4:
-                        actionSelector(item, buildingGrid.getBuilding4());
+                        if(actionSelector(item, buildingGrid.getBuilding4())== 1)
+                        {
+                            buildingGrid.setBuilding4(null);
+                        }
+                        else
+                        {
+
+                        }
                         break;
                     case R.id.building5:
-                        actionSelector(item, buildingGrid.getBuilding5());
+                        if(actionSelector(item, buildingGrid.getBuilding5())== 1)
+                        {
+                            buildingGrid.setBuilding5(null);
+                        }
+                        else
+                        {
+
+                        }
                         break;
                     case R.id.building6:
-                        actionSelector(item, buildingGrid.getBuilding6());
+                        if(actionSelector(item, buildingGrid.getBuilding6())== 1)
+                        {
+                            buildingGrid.setBuilding6(null);
+                        }
+                        else
+                        {
+
+                        }
                         break;
                     case R.id.building7:
-                        actionSelector(item, buildingGrid.getBuilding7());
+                        if(actionSelector(item, buildingGrid.getBuilding7())== 1)
+                        {
+                            buildingGrid.setBuilding7(null);
+                        }
+                        else
+                        {
+
+                        }
                         break;
                     case R.id.building8:
-                        actionSelector(item, buildingGrid.getBuilding8());
+                        if(actionSelector(item, buildingGrid.getBuilding8())== 1)
+                        {
+                            buildingGrid.setBuilding8(null);
+                        }
+                        else
+                        {
+
+                        }
                         break;
                     case R.id.building9:
-                        actionSelector(item, buildingGrid.getBuilding9());
+                        if(actionSelector(item, buildingGrid.getBuilding9())== 1)
+                        {
+                            buildingGrid.setBuilding9(null);
+                        }
+                        else
+                        {
+
+                        }
                         break;
                 }
 
