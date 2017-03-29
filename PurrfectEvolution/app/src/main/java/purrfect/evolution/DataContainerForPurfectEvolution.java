@@ -276,6 +276,8 @@ final class DataContainerForPurfectEvolution {
     }
     public void tickTime(){
         //TODO:implement this
+        mCurrentHappines+=0;
+        mCurrentMoney+=0;
     }
 
     public  double getmCurrentMoney() {

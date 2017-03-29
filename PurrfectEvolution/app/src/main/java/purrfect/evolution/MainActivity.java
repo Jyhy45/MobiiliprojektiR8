@@ -3,6 +3,7 @@ package purrfect.evolution;
 import android.content.SharedPreferences;
 import android.content.Context;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.IdRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -69,7 +70,15 @@ public class MainActivity extends AppCompatActivity {
     int i;
 
     BuildingsFragment buildingsFragment;
-
+    private Handler handler = new Handler();
+    private int mInterval = 500;
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            mDataContainer.tickTime();
+            handler.postDelayed(runnable, mInterval);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
         mDataContainer.loadBuildingDataToGrid(mbuildingGrid);
         //boolean silent = settings.getBoolean("silentMode", false);
 
+        handler.postDelayed(runnable,mInterval);
 
 
     }
@@ -110,6 +120,12 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onStart: now here");
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        handler.removeCallbacks(runnable);
+
+    }
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -211,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
 
         // We need an Editor object to make preference changes.
         // All objects are from android.context.Context
-
+        handler.removeCallbacks(runnable);
         mDataContainer.saveBuildingDataToDataContainer(mbuildingGrid);
 
         SharedPreferences settings = getPreferences(0);
