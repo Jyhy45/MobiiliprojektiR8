@@ -37,9 +37,15 @@ public  class Building {
 
     }
 
-    Building(){
-
+    public Building(BuildingType buildingType,int buildingLevel){
+        this.mBuildingLevel = buildingLevel;
+        this.mBType = buildingType;
     }
+    public Building(){
+        this(BuildingType.NONE,0);
+    }
+
+
     private double mBaseProductionTime=0;
     private BuildingType mBType;
     private double mBaseProductionAmount=0;

@@ -9,15 +9,15 @@ public class BuildingGrid {
 
     BuildingGrid(){}
 
-    private Building building1;
-    private Building building2;
-    private Building building3;
-    private Building building4;
-    private Building building5;
-    private Building building6;
-    private Building building7;
-    private Building building8;
-    private Building building9;
+    private Building building1 = new Building();
+    private Building building2 = new Building();
+    private Building building3 = new Building();
+    private Building building4 = new Building();
+    private Building building5 = new Building();
+    private Building building6 = new Building();
+    private Building building7 = new Building();
+    private Building building8 = new Building();
+    private Building building9 = new Building();
 
     public Building getBuilding1() {
         return building1;

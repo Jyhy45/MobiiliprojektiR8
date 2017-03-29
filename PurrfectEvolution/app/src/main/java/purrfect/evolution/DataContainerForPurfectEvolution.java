@@ -29,8 +29,32 @@ final class DataContainerForPurfectEvolution {
     double mThisCycleHappinessEarnings = 0;
 
     //Variables for buildings for saving purposes
+    int mTypeBuilding1 = 0;
+    double mLevelBuilding1 = 0;
 
+    int mTypeBuilding2 = 0;
+    double mLevelBuilding2 = 0;
 
+    int mTypeBuilding3 = 0;
+    double mLevelBuilding3 = 0;
+
+    int mTypeBuilding4 = 0;
+    double mLevelBuilding4 = 0;
+
+    int mTypeBuilding5 = 0;
+    double mLevelBuilding5 = 0;
+
+    int mTypeBuilding6 = 0;
+    double mLevelBuilding6 = 0;
+
+    int mTypeBuilding7 = 0;
+    double mLevelBuilding7 = 0;
+
+    int mTypeBuilding8 = 0;
+    double mLevelBuilding8 = 0;
+
+    int mTypeBuilding9 = 0;
+    double mLevelBuilding9 = 0;
 
 
     public DataContainerForPurfectEvolution()
@@ -221,4 +245,53 @@ final class DataContainerForPurfectEvolution {
     public  double getmCurrentHappines() {
         return mCurrentHappines;
     }
+
+    public boolean saveBuildingDataToDataContainer(BuildingGrid g){
+        mLevelBuilding1 = g.getBuilding1().getmBuildingLevel();
+        mLevelBuilding2 = g.getBuilding2().getmBuildingLevel();
+        mLevelBuilding3 = g.getBuilding3().getmBuildingLevel();
+        mLevelBuilding4 = g.getBuilding4().getmBuildingLevel();
+        mLevelBuilding5 = g.getBuilding5().getmBuildingLevel();
+        mLevelBuilding6 = g.getBuilding6().getmBuildingLevel();
+        mLevelBuilding7 = g.getBuilding7().getmBuildingLevel();
+        mLevelBuilding8 = g.getBuilding8().getmBuildingLevel();
+        mLevelBuilding9 = g.getBuilding9().getmBuildingLevel();
+
+        mTypeBuilding1 = g.getBuilding1().getmBType().get_value();
+        mTypeBuilding2 = g.getBuilding2().getmBType().get_value();
+        mTypeBuilding3 = g.getBuilding3().getmBType().get_value();
+        mTypeBuilding4 = g.getBuilding4().getmBType().get_value();
+        mTypeBuilding5 = g.getBuilding5().getmBType().get_value();
+        mTypeBuilding6 = g.getBuilding6().getmBType().get_value();
+        mTypeBuilding7 = g.getBuilding7().getmBType().get_value();
+        mTypeBuilding8 = g.getBuilding8().getmBType().get_value();
+        mTypeBuilding9 = g.getBuilding9().getmBType().get_value();
+
+        
+        return true;
+    }
+    public boolean loadBuildingDataToGrid(BuildingGrid g){
+        g.getBuilding1().setmBType(Building.BuildingType.fromInt(mTypeBuilding1));
+        g.getBuilding2().setmBType(Building.BuildingType.fromInt(mTypeBuilding2));
+        g.getBuilding3().setmBType(Building.BuildingType.fromInt(mTypeBuilding3));
+        g.getBuilding4().setmBType(Building.BuildingType.fromInt(mTypeBuilding4));
+        g.getBuilding5().setmBType(Building.BuildingType.fromInt(mTypeBuilding5));
+        g.getBuilding6().setmBType(Building.BuildingType.fromInt(mTypeBuilding6));
+        g.getBuilding7().setmBType(Building.BuildingType.fromInt(mTypeBuilding7));
+        g.getBuilding8().setmBType(Building.BuildingType.fromInt(mTypeBuilding8));
+        g.getBuilding9().setmBType(Building.BuildingType.fromInt(mTypeBuilding9));
+
+        g.getBuilding1().setmBuildingLevel(mLevelBuilding1);
+        g.getBuilding2().setmBuildingLevel(mLevelBuilding2);
+        g.getBuilding3().setmBuildingLevel(mLevelBuilding3);
+        g.getBuilding4().setmBuildingLevel(mLevelBuilding4);
+        g.getBuilding5().setmBuildingLevel(mLevelBuilding5);
+        g.getBuilding6().setmBuildingLevel(mLevelBuilding6);
+        g.getBuilding7().setmBuildingLevel(mLevelBuilding7);
+        g.getBuilding8().setmBuildingLevel(mLevelBuilding8);
+        g.getBuilding9().setmBuildingLevel(mLevelBuilding9);
+
+        return true;
+    }
+
 }
