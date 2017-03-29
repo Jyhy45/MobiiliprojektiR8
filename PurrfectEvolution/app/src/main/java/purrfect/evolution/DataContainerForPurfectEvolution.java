@@ -13,20 +13,25 @@ import static android.content.ContentValues.TAG;
  */
 
 final class DataContainerForPurfectEvolution {
-     double mCurrentMoney=0;
-    double mCurrentHappines=0;
+    double mCurrentMoney = 0;
+    double mCurrentHappines = 0;
 
-     long mLifeTimeClicks=0;
-     long mSessionClicks=0;
-     long mThisCycleClicks=0;
+    long mLifeTimeClicks = 0;
+    long mSessionClicks = 0;
+    long mThisCycleClicks = 0;
 
-     double mLifeTimeMoneyEarnings=0;
-     double mSessionMoneyEarnings=0;
-     double mThisCycleMoneyEarnings=0;
+    double mLifeTimeMoneyEarnings = 0;
+    double mSessionMoneyEarnings = 0;
+    double mThisCycleMoneyEarnings = 0;
 
-     double mLifeTimeHappinessEarnings =0;
-     double mSessionHappinessEarnings =0;
-     double mThisCycleHappinessEarnings =0;
+    double mLifeTimeHappinessEarnings = 0;
+    double mSessionHappinessEarnings = 0;
+    double mThisCycleHappinessEarnings = 0;
+
+    //Variables for buildings for saving purposes
+
+
+
 
     public DataContainerForPurfectEvolution()
     {
