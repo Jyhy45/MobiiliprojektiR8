@@ -109,7 +109,14 @@ public class BuildingsFragment extends Fragment {
 
                 switch (view.getId()) {
                     case R.id.building1:
-                        actionSelector(item, buildingGrid.getBuilding1());
+                        if(actionSelector(item, buildingGrid.getBuilding1())== 1)
+                        {
+                            buildingGrid.setBuilding1(null);
+                        }
+                        else
+                        {
+
+                        }
                         break;
                     case R.id.building2:
                         actionSelector(item, buildingGrid.getBuilding2());
@@ -170,21 +177,20 @@ public class BuildingsFragment extends Fragment {
 
     }
 
-    public void actionSelector(MenuItem item, Building building) {
+    public int actionSelector(MenuItem item, Building building) {
 
         switch (item.getItemId()) {
             case R.id.Upgrade:
                 double oldLVL = building.getmBuildingLevel();
                 building.setmBuildingLevel(oldLVL +1);
-                break;
+                return 0;
+
             case R.id.Destroy:
-                building.setmBType(null);
-                building.setmBuildingLevel(0);
-                building = null;
-                break;
+                return 1;
+
 
         }
-
+        return 0;
     }
 
 
