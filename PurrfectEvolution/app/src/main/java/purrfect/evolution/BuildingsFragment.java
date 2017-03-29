@@ -109,7 +109,31 @@ public class BuildingsFragment extends Fragment {
 
                 switch (view.getId()) {
                     case R.id.building1:
-                        
+                        actionSelector(item, buildingGrid.getBuilding1());
+                        break;
+                    case R.id.building2:
+                        actionSelector(item, buildingGrid.getBuilding2());
+                        break;
+                    case R.id.building3:
+                        actionSelector(item, buildingGrid.getBuilding3());
+                        break;
+                    case R.id.building4:
+                        actionSelector(item, buildingGrid.getBuilding4());
+                        break;
+                    case R.id.building5:
+                        actionSelector(item, buildingGrid.getBuilding5());
+                        break;
+                    case R.id.building6:
+                        actionSelector(item, buildingGrid.getBuilding6());
+                        break;
+                    case R.id.building7:
+                        actionSelector(item, buildingGrid.getBuilding7());
+                        break;
+                    case R.id.building8:
+                        actionSelector(item, buildingGrid.getBuilding8());
+                        break;
+                    case R.id.building9:
+                        actionSelector(item, buildingGrid.getBuilding9());
                         break;
                 }
 
@@ -146,6 +170,22 @@ public class BuildingsFragment extends Fragment {
 
     }
 
+    public void actionSelector(MenuItem item, Building building) {
+
+        switch (item.getItemId()) {
+            case R.id.Upgrade:
+                double oldLVL = building.getmBuildingLevel();
+                building.setmBuildingLevel(oldLVL +1);
+                break;
+            case R.id.Destroy:
+                building.setmBType(null);
+                building.setmBuildingLevel(0);
+                break;
+
+        }
+
+    }
+
 
     public void onClick(View v,Context context) {
 
@@ -157,7 +197,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building2:
@@ -167,7 +207,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building3:
@@ -177,7 +217,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building4:
@@ -187,7 +227,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building5:
@@ -197,7 +237,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building6:
@@ -207,7 +247,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building7:
@@ -217,7 +257,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building8:
@@ -227,7 +267,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building9:
@@ -237,7 +277,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
         }
