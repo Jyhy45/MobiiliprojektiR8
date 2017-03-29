@@ -13,6 +13,9 @@ import static android.content.ContentValues.TAG;
  */
 
 final class DataContainerForPurfectEvolution {
+    double mCurrentSuscripers = 0;
+    double mSuscripersToBeGained = 0;
+
     double mCurrentMoney = 0;
     double mCurrentHappines = 0;
 
@@ -248,18 +251,31 @@ final class DataContainerForPurfectEvolution {
 
 
     /** Resets cycle variables*/
-    public  void resetCycle(){
-        mThisCycleClicks=0;
-        mThisCycleHappinessEarnings =0;
-        mThisCycleMoneyEarnings=0;
+    public  void resetSessio(){
+        mSessionClicks=0;
+        mSessionHappinessEarnings =0;
+        mSessionMoneyEarnings=0;
     }
 
     public void resetSoft(){
         //TODO:reset most variables and gain suscripers
+        //resets cycle variables
+        mThisCycleClicks = 0;
+        mThisCycleHappinessEarnings = 0;
+        mThisCycleMoneyEarnings = 0;
+
+        //resets current resources
+        mCurrentMoney = 0;
+        mCurrentHappines = 0;
+
+        //TODO:gain suscripers
     }
     public void resetHard(){
         //TODO:reset all variables to their default values
 
+    }
+    public void tickTime(){
+        //TODO:implement this
     }
 
     public  double getmCurrentMoney() {
