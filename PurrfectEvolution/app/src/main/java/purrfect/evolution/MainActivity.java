@@ -49,7 +49,13 @@ public class MainActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
-    private DataContainerForPurfectEvolution mDataContainer;
+    private static DataContainerForPurfectEvolution mDataContainer;
+
+    public static BuildingGrid getMbuildingGrid() {
+        return mbuildingGrid;
+    }
+
+    private static BuildingGrid mbuildingGrid = new BuildingGrid();
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -91,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         //saving preferences meyby make to its own function
         SharedPreferences data = getPreferences(0);
         mDataContainer.loadDataFromPreference(data);
+        mDataContainer.loadBuildingDataToGrid(mbuildingGrid);
         //boolean silent = settings.getBoolean("silentMode", false);
 
 
@@ -204,6 +211,9 @@ public class MainActivity extends AppCompatActivity {
 
         // We need an Editor object to make preference changes.
         // All objects are from android.context.Context
+
+        mDataContainer.saveBuildingDataToDataContainer(mbuildingGrid);
+
         SharedPreferences settings = getPreferences(0);
         SharedPreferences.Editor editor = settings.edit();
         mDataContainer.saveDataToPreference(editor);

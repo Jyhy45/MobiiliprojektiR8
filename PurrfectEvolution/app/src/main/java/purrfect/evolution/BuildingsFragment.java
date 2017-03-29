@@ -32,7 +32,7 @@ public class BuildingsFragment extends Fragment {
      * fragment.
      */
 
-    BuildingGrid buildingGrid = new BuildingGrid();
+    BuildingGrid buildingGrid = MainActivity.getMbuildingGrid();
 
     public BuildingsFragment() {
 
