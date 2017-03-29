@@ -99,6 +99,18 @@ final class DataContainerForPurfectEvolution {
                     Log.e(TAG, "loadDataFromPreference: double FAIL "+c+"  ",exc );
                 }
 
+            }else if (int.class.equals(ctb)){
+                try {
+                    String _name = field.getName();
+                    int _value =data.getInt(_name,0);
+                    field.setInt(this,_value);
+                    Log.d(TAG, "loadDataFromPreference: Success name "+_name+" value "+_value);
+
+                } catch (Exception exc){
+                    Log.e(TAG, "loadDataFromPreference: long FAIL"+c+" ",exc );
+                    //return false;
+                }
+
             }else{
                 Log.d(TAG, "loadDataFromPreference: last else datatype not regokniced");
             }
@@ -142,6 +154,18 @@ final class DataContainerForPurfectEvolution {
 
                     //return false;
                 }
+            }else if (int.class.equals(classToBeInspected)){
+                try {
+                    String _name=field.getName();
+                    int _value= field.getInt(this);
+                    editor.putInt(_name,_value);
+                    Log.d(TAG,"saveDataToPreference: name: "+_name+" value"+_value);
+                } catch (Exception exc){
+                    Log.e(TAG, "saveDataToPreference: ",exc);
+
+                    //return false;
+                }
+
             }else{
                 Log.d(TAG, "saveDataToPreference: Unhandled variable type");
                 //return false;
