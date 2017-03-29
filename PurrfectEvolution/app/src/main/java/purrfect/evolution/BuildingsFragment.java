@@ -109,7 +109,94 @@ public class BuildingsFragment extends Fragment {
 
                 switch (view.getId()) {
                     case R.id.building1:
-                        
+                        if(actionSelector(item, buildingGrid.getBuilding1())== 1)
+                        {
+                            buildingGrid.setBuilding1(null);
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                    case R.id.building2:
+                        if(actionSelector(item, buildingGrid.getBuilding2())== 1)
+                        {
+                            buildingGrid.setBuilding2(null);
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                    case R.id.building3:
+                        if(actionSelector(item, buildingGrid.getBuilding3())== 1)
+                        {
+                            buildingGrid.setBuilding3(null);
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                    case R.id.building4:
+                        if(actionSelector(item, buildingGrid.getBuilding4())== 1)
+                        {
+                            buildingGrid.setBuilding4(null);
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                    case R.id.building5:
+                        if(actionSelector(item, buildingGrid.getBuilding5())== 1)
+                        {
+                            buildingGrid.setBuilding5(null);
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                    case R.id.building6:
+                        if(actionSelector(item, buildingGrid.getBuilding6())== 1)
+                        {
+                            buildingGrid.setBuilding6(null);
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                    case R.id.building7:
+                        if(actionSelector(item, buildingGrid.getBuilding7())== 1)
+                        {
+                            buildingGrid.setBuilding7(null);
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                    case R.id.building8:
+                        if(actionSelector(item, buildingGrid.getBuilding8())== 1)
+                        {
+                            buildingGrid.setBuilding8(null);
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                    case R.id.building9:
+                        if(actionSelector(item, buildingGrid.getBuilding9())== 1)
+                        {
+                            buildingGrid.setBuilding9(null);
+                        }
+                        else
+                        {
+
+                        }
                         break;
                 }
 
@@ -146,6 +233,22 @@ public class BuildingsFragment extends Fragment {
 
     }
 
+    public int actionSelector(MenuItem item, Building building) {
+
+        switch (item.getItemId()) {
+            case R.id.Upgrade:
+                double oldLVL = building.getmBuildingLevel();
+                building.setmBuildingLevel(oldLVL +1);
+                return 0;
+
+            case R.id.Destroy:
+                return 1;
+
+
+        }
+        return 0;
+    }
+
 
     public void onClick(View v,Context context) {
 
@@ -157,7 +260,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building2:
@@ -167,7 +270,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building3:
@@ -177,7 +280,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building4:
@@ -187,7 +290,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building5:
@@ -197,7 +300,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building6:
@@ -207,7 +310,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building7:
@@ -217,7 +320,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building8:
@@ -227,7 +330,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
             case R.id.building9:
@@ -237,7 +340,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 else
                 {
-
+                    popUpInflater2(v,context);
                 }
                 break;
         }
