@@ -65,11 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
 
-
-    TextView rahe;
-    TextView onni;
-
-
     ImageButton imageButton2;
     ImageView image;
     List<ImageView> imageList;
@@ -106,10 +101,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: LIFECYCLE");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        rahe = (TextView) findViewById(R.id.textView);
-        onni = (TextView) findViewById(R.id.textView2);
-
 
         buildingsFragment = new BuildingsFragment();
         catFragment = new CatFragment();
@@ -223,8 +214,10 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_fragment);
         catFragment.onCatClick(view, context, v);
 
-        //rahe.setText("Cash: ");
-        //onni.setText("Happiness: ");
+        TextView rahe = (TextView) v.findViewById(R.id.textView);
+        TextView onni = (TextView) v.findViewById(R.id.textView);
+        rahe.setText("Cash: " + mDataContainer.getmCurrentMoney());
+        onni.setText("Happiness: " + mDataContainer.getmCurrentHappines());
 
         mDataContainer.receivedClick();
 
