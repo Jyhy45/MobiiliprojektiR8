@@ -48,43 +48,42 @@ public class BuildingsFragment extends Fragment {
 
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
-                Building building = new Building();
                 switch (view.getId()) {
                     case R.id.building1:
 
-                        buildingGrid.setBuilding1(buildingSelector(item, building));
+                        buildingGrid.setBuilding1(buildingSelector(item, buildingGrid.getBuilding1()));
                         Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding1().getmBType(),Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.building2:
-                        buildingGrid.setBuilding2(buildingSelector(item, building));
+                        buildingGrid.setBuilding2(buildingSelector(item, buildingGrid.getBuilding2()));
                         Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding2().getmBType(),Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.building3:
-                        buildingGrid.setBuilding3(buildingSelector(item, building));
+                        buildingGrid.setBuilding3(buildingSelector(item, buildingGrid.getBuilding3()));
                         Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding3().getmBType(),Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.building4:
-                        buildingGrid.setBuilding4(buildingSelector(item, building));
+                        buildingGrid.setBuilding4(buildingSelector(item, buildingGrid.getBuilding4()));
                         Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding4().getmBType(),Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.building5:
-                        buildingGrid.setBuilding5(buildingSelector(item, building));
+                        buildingGrid.setBuilding5(buildingSelector(item, buildingGrid.getBuilding5()));
                         Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding5().getmBType(),Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.building6:
-                        buildingGrid.setBuilding6(buildingSelector(item, building));
+                        buildingGrid.setBuilding6(buildingSelector(item, buildingGrid.getBuilding6()));
                         Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding6().getmBType(),Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.building7:
-                        buildingGrid.setBuilding7(buildingSelector(item, building));
+                        buildingGrid.setBuilding7(buildingSelector(item, buildingGrid.getBuilding7()));
                         Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding7().getmBType(),Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.building8:
-                        buildingGrid.setBuilding8(buildingSelector(item, building));
+                        buildingGrid.setBuilding8(buildingSelector(item, buildingGrid.getBuilding8()));
                         Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding8().getmBType(),Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.building9:
-                        buildingGrid.setBuilding9(buildingSelector(item, building));
+                        buildingGrid.setBuilding9(buildingSelector(item, buildingGrid.getBuilding9()));
                         Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding9().getmBType(),Toast.LENGTH_SHORT).show();
                         break;
                 }
@@ -111,7 +110,8 @@ public class BuildingsFragment extends Fragment {
                     case R.id.building1:
                         if(actionSelector(item, buildingGrid.getBuilding1())== 1)
                         {
-                            buildingGrid.setBuilding1(null);
+                            buildingGrid.getBuilding1().setmBType(Building.BuildingType.NONE);
+                            buildingGrid.getBuilding1().setmBuildingLevel(0);
                         }
                         else
                         {
@@ -121,7 +121,8 @@ public class BuildingsFragment extends Fragment {
                     case R.id.building2:
                         if(actionSelector(item, buildingGrid.getBuilding2())== 1)
                         {
-                            buildingGrid.setBuilding2(null);
+                            buildingGrid.getBuilding2().setmBType(Building.BuildingType.NONE);
+                            buildingGrid.getBuilding2().setmBuildingLevel(0);
                         }
                         else
                         {
@@ -131,7 +132,8 @@ public class BuildingsFragment extends Fragment {
                     case R.id.building3:
                         if(actionSelector(item, buildingGrid.getBuilding3())== 1)
                         {
-                            buildingGrid.setBuilding3(null);
+                            buildingGrid.getBuilding3().setmBType(Building.BuildingType.NONE);
+                            buildingGrid.getBuilding3().setmBuildingLevel(0);
                         }
                         else
                         {
@@ -141,7 +143,8 @@ public class BuildingsFragment extends Fragment {
                     case R.id.building4:
                         if(actionSelector(item, buildingGrid.getBuilding4())== 1)
                         {
-                            buildingGrid.setBuilding4(null);
+                            buildingGrid.getBuilding4().setmBType(Building.BuildingType.NONE);
+                            buildingGrid.getBuilding4().setmBuildingLevel(0);
                         }
                         else
                         {
@@ -151,7 +154,8 @@ public class BuildingsFragment extends Fragment {
                     case R.id.building5:
                         if(actionSelector(item, buildingGrid.getBuilding5())== 1)
                         {
-                            buildingGrid.setBuilding5(null);
+                            buildingGrid.getBuilding5().setmBType(Building.BuildingType.NONE);
+                            buildingGrid.getBuilding5().setmBuildingLevel(0);
                         }
                         else
                         {
@@ -161,7 +165,8 @@ public class BuildingsFragment extends Fragment {
                     case R.id.building6:
                         if(actionSelector(item, buildingGrid.getBuilding6())== 1)
                         {
-                            buildingGrid.setBuilding6(null);
+                            buildingGrid.getBuilding6().setmBType(Building.BuildingType.NONE);
+                            buildingGrid.getBuilding6().setmBuildingLevel(0);
                         }
                         else
                         {
@@ -171,7 +176,8 @@ public class BuildingsFragment extends Fragment {
                     case R.id.building7:
                         if(actionSelector(item, buildingGrid.getBuilding7())== 1)
                         {
-                            buildingGrid.setBuilding7(null);
+                            buildingGrid.getBuilding7().setmBType(Building.BuildingType.NONE);
+                            buildingGrid.getBuilding7().setmBuildingLevel(0);
                         }
                         else
                         {
@@ -181,7 +187,8 @@ public class BuildingsFragment extends Fragment {
                     case R.id.building8:
                         if(actionSelector(item, buildingGrid.getBuilding8())== 1)
                         {
-                            buildingGrid.setBuilding8(null);
+                            buildingGrid.getBuilding8().setmBType(Building.BuildingType.NONE);
+                            buildingGrid.getBuilding8().setmBuildingLevel(0);
                         }
                         else
                         {
@@ -191,7 +198,8 @@ public class BuildingsFragment extends Fragment {
                     case R.id.building9:
                         if(actionSelector(item, buildingGrid.getBuilding9())== 1)
                         {
-                            buildingGrid.setBuilding9(null);
+                            buildingGrid.getBuilding9().setmBType(Building.BuildingType.NONE);
+                            buildingGrid.getBuilding9().setmBuildingLevel(0);
                         }
                         else
                         {
@@ -254,7 +262,7 @@ public class BuildingsFragment extends Fragment {
 
         switch (v.getId()) {
             case R.id.building1:
-                if(buildingGrid.getBuilding1() == null)
+                if(buildingGrid.getBuilding1().getmBType() == Building.BuildingType.NONE)
                 {
                     popUpInflater(v, context);
                 }
@@ -264,7 +272,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 break;
             case R.id.building2:
-                if(buildingGrid.getBuilding2() == null)
+                if(buildingGrid.getBuilding2().getmBType() == Building.BuildingType.NONE)
                 {
                     popUpInflater(v, context);
                 }
@@ -274,7 +282,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 break;
             case R.id.building3:
-                if(buildingGrid.getBuilding3() == null)
+                if(buildingGrid.getBuilding3().getmBType() == Building.BuildingType.NONE)
                 {
                     popUpInflater(v, context);
                 }
@@ -284,7 +292,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 break;
             case R.id.building4:
-                if(buildingGrid.getBuilding4() == null)
+                if(buildingGrid.getBuilding4().getmBType() == Building.BuildingType.NONE)
                 {
                     popUpInflater(v, context);
                 }
@@ -294,7 +302,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 break;
             case R.id.building5:
-                if(buildingGrid.getBuilding5() == null)
+                if(buildingGrid.getBuilding5().getmBType() == Building.BuildingType.NONE)
                 {
                     popUpInflater(v, context);
                 }
@@ -304,7 +312,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 break;
             case R.id.building6:
-                if(buildingGrid.getBuilding6() == null)
+                if(buildingGrid.getBuilding6().getmBType() == Building.BuildingType.NONE)
                 {
                     popUpInflater(v, context);
                 }
@@ -314,7 +322,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 break;
             case R.id.building7:
-                if(buildingGrid.getBuilding7() == null)
+                if(buildingGrid.getBuilding7().getmBType() == Building.BuildingType.NONE)
                 {
                     popUpInflater(v, context);
                 }
@@ -324,7 +332,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 break;
             case R.id.building8:
-                if(buildingGrid.getBuilding8() == null)
+                if(buildingGrid.getBuilding8().getmBType() == Building.BuildingType.NONE)
                 {
                     popUpInflater(v, context);
                 }
@@ -334,7 +342,7 @@ public class BuildingsFragment extends Fragment {
                 }
                 break;
             case R.id.building9:
-                if(buildingGrid.getBuilding9() == null)
+                if(buildingGrid.getBuilding9().getmBType() == Building.BuildingType.NONE)
                 {
                     popUpInflater(v, context);
                 }
