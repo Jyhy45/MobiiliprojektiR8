@@ -1,11 +1,13 @@
 package purrfect.evolution;
 
 import android.content.SharedPreferences;
+import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +18,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -60,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * The {@link ViewPager} that will host the section contents.
      */
+
+    private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
 
     ImageButton imageButton2;
@@ -70,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     BuildingsFragment buildingsFragment;
 
+    CatFragment catFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         buildingsFragment = new BuildingsFragment();
+        catFragment = new CatFragment();
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
+        catFragment.setScreenSize(height,width);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Log.d(TAG, "onCreate: now here");
@@ -89,11 +103,7 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         
-        imageList = new ArrayList<ImageView>();
-        animationList = new ArrayList<Animation>();
-        imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
-
-
+        
         //saving preferences meyby make to its own function
         SharedPreferences data = getPreferences(0);
         mDataContainer.loadDataFromPreference(data);
@@ -136,7 +146,6 @@ public class MainActivity extends AppCompatActivity {
                 default:
                     return CatFragment.newInstance();
             }
-
         }
 
         @Override
@@ -144,7 +153,12 @@ public class MainActivity extends AppCompatActivity {
             // Show 4 total pages.
             return 4;
         }
-     
+    }
+
+    public void onCatClick(View view) {
+        Context context = MainActivity.this;
+        RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_layout);
+        catFragment.onCatClick(view, context, v);
     }
 
     public void onClickBuilding(View view)
