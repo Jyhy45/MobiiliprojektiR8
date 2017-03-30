@@ -28,7 +28,8 @@
         android:onClick="onCatClick"
         app:srcCompat="@drawable/kissu2"
         android:layout_below="@+id/section_label"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@null"/>
 
     <ImageView
         android:id="@+id/imageView"
