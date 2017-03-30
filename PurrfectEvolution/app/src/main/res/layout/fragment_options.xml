@@ -8,7 +8,8 @@
     tools:context="purrfect.evolution.OptionsFragment"
     android:visibility="visible"
     app:columnCount="10"
-    app:rowCount="30">
+    app:rowCount="30"
+    android:background="@drawable/kissatausta1">
 
     <TextView
         android:id="@+id/section_label"
