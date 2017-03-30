@@ -78,8 +78,9 @@ public class MainActivity extends AppCompatActivity {
     private Runnable updateTickRunnable = new Runnable() {
         @Override
         public void run() {
-            mDataContainer.tickTime();
             handler.postDelayed(updateTickRunnable, mInterval);
+            mDataContainer.tickTime();
+            updateText();
             Log.d(TAG, "run: now at update ticker");
         }
     };
@@ -193,8 +194,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void updateText(RelativeLayout v)
+    public void updateText()
     {
+        RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_fragment);
         TextView rahe = (TextView) v.findViewById(R.id.textView);
         TextView onni = (TextView) v.findViewById(R.id.textView);
         rahe.setText("Cash: " + mDataContainer.getmCurrentMoney());
@@ -210,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_fragment);
         catFragment.onCatClick(view, context, v);
 
-        updateText(v);
+
 
         mDataContainer.receivedClick();
 
