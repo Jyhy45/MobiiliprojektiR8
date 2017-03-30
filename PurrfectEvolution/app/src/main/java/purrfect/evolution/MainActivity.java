@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
     TextView rahe;
     TextView onni;
+
+
     ImageButton imageButton2;
     ImageView image;
     List<ImageView> imageList;
@@ -105,10 +107,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_fragment);
-        
-        rahe = (TextView) v.findViewById(R.id.textView);
-        onni = (TextView) v.findViewById(R.id.textView2);
+        rahe = (TextView) findViewById(R.id.textView);
+        onni = (TextView) findViewById(R.id.textView2);
+
 
         buildingsFragment = new BuildingsFragment();
         catFragment = new CatFragment();
@@ -222,10 +223,12 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_fragment);
         catFragment.onCatClick(view, context, v);
 
+        //rahe.setText("Cash: ");
+        //onni.setText("Happiness: ");
+
         mDataContainer.receivedClick();
 
-        rahe.setText("Cash: ");
-        onni.setText("Happiness: ");
+
     }
     @Override
     protected void onStop(){
