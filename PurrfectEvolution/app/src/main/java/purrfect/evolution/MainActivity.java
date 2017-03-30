@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_fragment);
         catFragment.onCatClick(view, context, v);
 
-
+        updateText();
 
         mDataContainer.receivedClick();
 
