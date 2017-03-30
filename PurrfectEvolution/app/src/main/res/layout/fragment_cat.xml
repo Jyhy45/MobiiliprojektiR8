@@ -9,7 +9,8 @@
     tools:context="purrfect.evolution.OptionsFragment"
     android:visibility="visible"
     app:columnCount="10"
-    app:rowCount="30">
+    app:rowCount="30"
+    android:background="@drawable/kissatausta1">
 
     <TextView
         android:id="@+id/section_label"
@@ -35,14 +36,15 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/section_label"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/section_label"
-        android:gravity="top"
         android:adjustViewBounds="true"
+        android:gravity="top"
         android:scaleY="0.5"
+        android:visibility="invisible"
         app:srcCompat="@drawable/ic_heart_100"
-        tools:scaleX="0.5"
-        android:layout_alignEnd="@+id/section_label" />
+        tools:scaleX="0.5" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -51,6 +53,7 @@
         android:layout_alignBottom="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:gravity="bottom"
+        android:visibility="invisible"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
@@ -58,9 +61,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:gravity="bottom"
         android:layout_toEndOf="@+id/imageView"
-        android:text="TextView" />
+        android:gravity="bottom"
+        android:text="TextView"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/textView2"
@@ -69,7 +73,8 @@
         android:layout_alignBottom="@+id/textView"
         android:layout_toEndOf="@+id/imageView2"
         android:gravity="bottom"
-        android:text="TextView" />
+        android:text="TextView"
+        android:visibility="invisible" />
 
 </RelativeLayout>
 
