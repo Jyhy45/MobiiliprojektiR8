@@ -220,8 +220,8 @@ public class MainActivity extends AppCompatActivity {
 
         mDataContainer.receivedClick();
 
-        rahe.setText("Cash: " + mDataContainer.getmCurrentMoney());
-        onni.setText("Happiness: " + mDataContainer.getmCurrentHappines());
+        rahe.setText("Cash: ");
+        onni.setText("Happiness: ");
     }
     @Override
     protected void onStop(){
