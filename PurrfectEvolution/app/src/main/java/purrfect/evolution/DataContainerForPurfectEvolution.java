@@ -187,6 +187,8 @@ final class DataContainerForPurfectEvolution {
         mLifeTimeClicks++;
         mSessionClicks++;
         mThisCycleClicks++;
+        //TODO: encrease happines by corrent amount.
+        earnedHappiness(2);
 
     }
 
