@@ -1,16 +1,8 @@
 package purrfect.evolution;
 
 import android.content.SharedPreferences;
-import android.app.Activity;
 import android.content.Context;
-import android.os.Build;
-import android.support.annotation.IdRes;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.PopupMenu;
-import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,11 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.DisplayMetrics;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -31,11 +19,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import static android.content.ContentValues.TAG;
 
-import java.util.ArrayList;
 import java.util.List;
 
 //TODO: add some statistic calculations
@@ -64,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
 
-    private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
 
     ImageButton imageButton2;
@@ -155,11 +140,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onCatClick(View view) {
-        Context context = MainActivity.this;
-        RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_layout);
-        catFragment.onCatClick(view, context, v);
-    }
 
     public void onClickBuilding(View view)
     {
@@ -173,50 +153,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//    public void popUpInflater(View view)
-//    {
-//
-//
-//
-//        //Creating the instance of PopupMenu
-//        PopupMenu popup = new PopupMenu(MainActivity.this, view);
-//        //Inflating the Popup using xml file
-//        popup.getMenuInflater()
-//                .inflate(R.menu.popup_menu, popup.getMenu());
-//
-//        popup.show();
-//    }
-
 
 
 
     public void onCatClick(View view)
     {
+        Context context = MainActivity.this;
+        RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_fragment);
+        catFragment.onCatClick(view, context, v);
 
-
-        image = new ImageView(this);
-
-
-        imageList.add(image);
-        imageList.get(i).setImageResource(R.drawable.ic_heart_0);
-
-        // Keksi tapa lisätä "täyttö animaatio" luotaviin kuviin.
-        //imageList.get(i).setBackgroundResource((ImageView) findViewById(R.drawable.animation_list_filling));
-        RelativeLayout r1 = (RelativeLayout) findViewById(R.id.cat_fragment);
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT);
-        lp.addRule(RelativeLayout.BELOW, R.id.imageButton2);
-        lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT, R.id.imageButton2);
-
-        r1.addView(imageList.get(i),lp);
-
-        animationList.add(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move));
-
-        //animationList.get(i).setAnimationListener(this);
-
-        imageList.get(i).startAnimation(animationList.get(i));
-        i++;
         mDataContainer.receivedClick();
     }
     @Override
