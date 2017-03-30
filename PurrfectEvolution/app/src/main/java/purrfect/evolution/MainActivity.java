@@ -205,6 +205,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void updateText(RelativeLayout v)
+    {
+        TextView rahe = (TextView) v.findViewById(R.id.textView);
+        TextView onni = (TextView) v.findViewById(R.id.textView);
+        rahe.setText("Cash: " + mDataContainer.getmCurrentMoney());
+        onni.setText("Happiness: " + mDataContainer.getmCurrentHappines());
+    }
+
 
 
 
@@ -214,10 +222,7 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_fragment);
         catFragment.onCatClick(view, context, v);
 
-        TextView rahe = (TextView) v.findViewById(R.id.textView);
-        TextView onni = (TextView) v.findViewById(R.id.textView);
-        rahe.setText("Cash: " + mDataContainer.getmCurrentMoney());
-        onni.setText("Happiness: " + mDataContainer.getmCurrentHappines());
+        updateText(v);
 
         mDataContainer.receivedClick();
 
