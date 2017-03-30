@@ -6,30 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/cat_layout"
-    tools:context="purrfect.evolution.OptionsFragment"
     android:visibility="visible"
     app:columnCount="10"
     app:rowCount="30">
-
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="33dp"
-        android:text="TextView" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/section_label"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="143dp"
         android:onClick="onCatClick"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp" />
 
 </RelativeLayout>
 

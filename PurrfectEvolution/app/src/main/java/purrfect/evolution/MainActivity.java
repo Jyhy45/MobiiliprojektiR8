@@ -1,7 +1,10 @@
 package purrfect.evolution;
 
+import android.app.Activity;
+import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -10,6 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,10 +23,12 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,23 +41,29 @@ public class MainActivity extends AppCompatActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
 
     /**
      * The {@link ViewPager} that will host the section contents.
      */
+
+    private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
-    
-    ImageButton imageButton2;
-    ImageView image;
-    List<ImageView> imageList;
-    List<Animation> animationList;
-    int i;
+
+    CatFragment catFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        catFragment = new CatFragment();
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
+        catFragment.setScreenSize(height,width);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -62,10 +74,6 @@ public class MainActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        
-        imageList = new ArrayList<ImageView>();
-        animationList = new ArrayList<Animation>();
-        imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
     }
 
 
@@ -95,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
                 default:
                     return CatFragment.newInstance(1);
             }
-
         }
 
         @Override
@@ -103,34 +110,14 @@ public class MainActivity extends AppCompatActivity {
             // Show 4 total pages.
             return 4;
         }
-     
     }
 
-    public void onCatClick(View view)
-    {
-        image = new ImageView(this);
-
-
-        imageList.add(image);
-        imageList.get(i).setImageResource(R.drawable.ic_heart_0);
-
-        // Keksi tapa lisätä "täyttö animaatio" luotaviin kuviin.
-        //imageList.get(i).setBackgroundResource((ImageView) findViewById(R.drawable.animation_list_filling));
-        RelativeLayout r1 = (RelativeLayout) findViewById(R.id.cat_layout);
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT);
-        lp.addRule(RelativeLayout.ALIGN_START, R.id.imageButton2);
-        lp.addRule(RelativeLayout.ALIGN_BOTTOM, R.id.imageButton2);
-
-        r1.addView(imageList.get(i),lp);
-
-        animationList.add(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move));
-
-        //animationList.get(i).setAnimationListener(this);
-
-        imageList.get(i).startAnimation(animationList.get(i));
-        i++;
+    public void onCatClick(View view) {
+        Context context = MainActivity.this;
+        RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_layout);
+        catFragment.onCatClick(view, context, v);
     }
+
+
 
 }
