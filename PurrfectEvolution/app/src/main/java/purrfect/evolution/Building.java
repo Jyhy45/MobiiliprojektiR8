@@ -1,7 +1,6 @@
 package purrfect.evolution;
 
 
-import android.os.Bundle;
 /**
  * Created by jyhy on 3/24/17.
  */
@@ -50,9 +49,58 @@ public  class Building {
     private BuildingType mBType;
     private double mBaseProductionAmount=0;
     private double mBuildingLevel=0;
-    private double mBaseCost=0;
+    private double mBaseCost=20;
     public int mImagePath;                  //=R.drawable.ic_heart_0;
     public int mAnimationPath;              //=R.drawable.animation_list_filling;
+    private double mProductionAmountPerSecond;
+
+    public double getmCurrentBuildingCost() {
+        return mCurrentBuildingCost;
+    }
+
+    private double mCurrentBuildingCost;
+
+    public double getmProductionAmountPerSecond() {
+        return mProductionAmountPerSecond;
+    }
+    public void calculateAndSetProductionAmountPerSecond(){
+
+        if (mBType == BuildingType.NONE){
+            mProductionAmountPerSecond =0;
+        }else if (mBType == BuildingType.SCRATCHINPOST){
+            mProductionAmountPerSecond =1*this.mBuildingLevel+1;
+        }else if(mBType == BuildingType.FEEDING_STATION){
+            mProductionAmountPerSecond =5*this.mBuildingLevel+1;
+        }else if(mBType == BuildingType.CHEW_MOUSE){
+            mProductionAmountPerSecond =10*this.mBuildingLevel+1;
+        }else if(mBType == BuildingType.YARN_BALL){
+            mProductionAmountPerSecond =100*this.mBuildingLevel+1;
+        }else if(mBType == BuildingType.CATNIP){
+            mProductionAmountPerSecond =300*this.mBuildingLevel+1;
+        }else{
+            mProductionAmountPerSecond =0;
+        }
+    }
+    public void calculateAndSetBuildingLevelUpCost(){
+        if (mBType == BuildingType.NONE){
+            mCurrentBuildingCost = Double.MAX_VALUE;
+        }else if (mBType == BuildingType.SCRATCHINPOST){
+            mCurrentBuildingCost =1*this.mBuildingLevel;
+        }else if(mBType == BuildingType.FEEDING_STATION){
+            mCurrentBuildingCost =5*this.mBuildingLevel;
+        }else if(mBType == BuildingType.CHEW_MOUSE){
+            mCurrentBuildingCost =10*this.mBuildingLevel;
+        }else if(mBType == BuildingType.YARN_BALL){
+            mCurrentBuildingCost =100*this.mBuildingLevel;
+        }else if(mBType == BuildingType.CATNIP){
+            mCurrentBuildingCost =300*this.mBuildingLevel;
+        }else{
+            mCurrentBuildingCost = Double.MAX_VALUE;
+        }
+    }
+
+
+
 
 
     public double getmBaseProductionTime() {
