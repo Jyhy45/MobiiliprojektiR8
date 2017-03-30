@@ -41,46 +41,27 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
+    
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private static DataContainerForPurfectEvolution mDataContainer;
+    private static BuildingGrid mbuildingGrid = new BuildingGrid();
+    private ViewPager mViewPager;
+    private static int mInterval = 1000;
 
     public static BuildingGrid getMbuildingGrid() {
         return mbuildingGrid;
     }
-
-    private static BuildingGrid mbuildingGrid = new BuildingGrid();
-
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-
-    private ViewPager mViewPager;
-
-    ImageButton imageButton2;
-    ImageView image;
-    List<ImageView> imageList;
-    List<Animation> animationList;
-    int i;
-
     BuildingsFragment buildingsFragment;
+
     private Handler handler = new Handler();
+
 
     CatFragment catFragment;
 
-
-    private static int mInterval = 1000;
     public static int getmInterval() {
         return mInterval;
     }
+
 
     public static void setmInterval(int Interval) {
         mInterval = Interval;
