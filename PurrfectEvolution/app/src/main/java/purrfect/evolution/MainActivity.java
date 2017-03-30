@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
      */
 
     private ViewPager mViewPager;
+
+
     TextView rahe;
     TextView onni;
     ImageButton imageButton2;
@@ -103,8 +105,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        rahe = (TextView) findViewById(R.id.textView);
-        onni = (TextView) findViewById(R.id.textView2);
+        RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_fragment);
+        
+        rahe = (TextView) v.findViewById(R.id.textView);
+        onni = (TextView) v.findViewById(R.id.textView2);
 
         buildingsFragment = new BuildingsFragment();
         catFragment = new CatFragment();
