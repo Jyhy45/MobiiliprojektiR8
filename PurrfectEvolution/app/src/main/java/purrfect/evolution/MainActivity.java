@@ -29,7 +29,7 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    
+
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private static DataContainerForPurfectEvolution mDataContainer;
     private static BuildingGrid mbuildingGrid = new BuildingGrid();
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             handler.postDelayed(updateTickRunnable, mInterval);
             mDataContainer.tickTime();
-            updateText();
+            updateText(); //TODO: Aiheuttaa crashin viimesessä fragmentissä koska kursuu findbyId eikä kyseistä objektia ole
             Log.d(TAG, "run: now at update ticker");
         }
     };
