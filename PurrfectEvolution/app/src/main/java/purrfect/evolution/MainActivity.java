@@ -2,14 +2,8 @@ package purrfect.evolution;
 
 import android.content.SharedPreferences;
 import android.content.Context;
-import android.os.Build;
 import android.os.Handler;
-import android.support.annotation.IdRes;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.PopupMenu;
-import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,16 +11,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.ViewGroup;
 
 import android.view.WindowManager;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -34,7 +23,6 @@ import android.widget.TextView;
 
 import static android.content.ContentValues.TAG;
 
-import java.util.ArrayList;
 import java.util.List;
 
 //TODO: add some statistic calculations
@@ -68,11 +56,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private Runnable runnable = new Runnable() {
+    private Runnable updateTickRunnable = new Runnable() {
         @Override
         public void run() {
+            handler.postDelayed(updateTickRunnable, mInterval);
             mDataContainer.tickTime();
-            handler.postDelayed(runnable, mInterval);
+            updateText();
             Log.d(TAG, "run: now at update ticker");
         }
     };
@@ -112,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         //boolean silent = settings.getBoolean("silentMode", false);
 
         mDataContainer.calculateEverything();
-        handler.postDelayed(runnable,mInterval);
+        handler.postDelayed(updateTickRunnable,mInterval);
 
 
     }
@@ -133,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
     public void onPause() {
         Log.d(TAG, "onPause: LIFECYCLE");
         super.onPause();
-        handler.removeCallbacks(runnable);
+        handler.removeCallbacks(updateTickRunnable);
 
     }
     /**
@@ -175,6 +164,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClickBuilding(View view)
     {
 
+
+
         Context context = MainActivity.this;
 
         buildingsFragment.onClick(view, context);
@@ -183,6 +174,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    public void updateText()
+    {
+        RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_fragment);
+        TextView rahe = (TextView) v.findViewById(R.id.textView);
+        TextView onni = (TextView) v.findViewById(R.id.textView);
+        rahe.setText("Cash: " + mDataContainer.getmCurrentMoney());
+        onni.setText("Happiness: " + mDataContainer.getmCurrentHappines());
+    }
 
 
 
@@ -193,7 +193,11 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_fragment);
         catFragment.onCatClick(view, context, v);
 
+        updateText();
+
         mDataContainer.receivedClick();
+
+
     }
     @Override
     protected void onStop(){
@@ -202,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
 
         // We need an Editor object to make preference changes.
         // All objects are from android.context.Context
-        handler.removeCallbacks(runnable);
+        handler.removeCallbacks(updateTickRunnable);
         mDataContainer.calculateEverything();
         mDataContainer.saveBuildingDataToDataContainer(mbuildingGrid);
 
