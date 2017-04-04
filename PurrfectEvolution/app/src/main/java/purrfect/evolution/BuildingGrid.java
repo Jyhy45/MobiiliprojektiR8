@@ -23,6 +23,22 @@ public class BuildingGrid {
         buildingArray.add(building8);
         buildingArray.add(building9);
     }
+    public void reset_buildings(){
+        for (Building b:
+             buildingArray) {
+            b.setmBuildingLevel(0);
+            b.setmBType(Building.BuildingType.NONE);
+        }
+
+    }
+    public void reset_building(int indexOfArray){
+        buildingArray.get(indexOfArray).setmBuildingLevel(0);
+        buildingArray.get(indexOfArray).setmBType(Building.BuildingType.NONE);
+    }
+    public void reset_building(Building b){
+        b.setmBType(Building.BuildingType.NONE);
+        b.setmBuildingLevel(0);
+    }
 
     private Building building1 = new Building();
     private Building building2 = new Building();

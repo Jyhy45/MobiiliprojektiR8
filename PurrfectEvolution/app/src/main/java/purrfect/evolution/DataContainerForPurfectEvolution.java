@@ -265,18 +265,98 @@ final class DataContainerForPurfectEvolution {
     public void resetSoft(){
         //TODO:reset most variables and gain suscripers
         //resets cycle variables
-        mThisCycleClicks = 0;
-        mThisCycleHappinessEarnings = 0;
-        mThisCycleMoneyEarnings = 0;
+        mCurrentMoneyIncrease = 0;
+        mCurrentHappinessIncrease = 0;
 
-        //resets current resources
         mCurrentMoney = 0;
         mCurrentHappines = 0;
 
+        mThisCycleClicks = 0;
+
+        mThisCycleMoneyEarnings = 0;
+
+        mThisCycleHappinessEarnings = 0;
+
+
+        mTypeBuilding1 = 0;
+        mLevelBuilding1 = 0;
+
+        mTypeBuilding2 = 0;
+        mLevelBuilding2 = 0;
+
+        mTypeBuilding3 = 0;
+        mLevelBuilding3 = 0;
+
+        mTypeBuilding4 = 0;
+        mLevelBuilding4 = 0;
+
+        mTypeBuilding5 = 0;
+        mLevelBuilding5 = 0;
+
+        mTypeBuilding6 = 0;
+        mLevelBuilding6 = 0;
+
+        mTypeBuilding7 = 0;
+        mLevelBuilding7 = 0;
+
+        mTypeBuilding8 = 0;
+        mLevelBuilding8 = 0;
+
+        mTypeBuilding9 = 0;
+        mLevelBuilding9 = 0;
+        MainActivity.getMbuildingGrid().reset_buildings();
         //TODO:gain suscripers
     }
     public void resetHard(){
-        //TODO:reset all variables to their default values
+        //TODO:might have to call save to preferences and reset buildinggrid
+        mCurrentSuscripers = 0;
+        mSuscripersToBeGained = 0;
+        mCurrentMoneyIncrease = 0;
+        mCurrentHappinessIncrease = 0;
+
+        mCurrentMoney = 0;
+        mCurrentHappines = 0;
+
+        mLifeTimeClicks = 0;
+        mSessionClicks = 0;
+        mThisCycleClicks = 0;
+
+        mLifeTimeMoneyEarnings = 0;
+        mSessionMoneyEarnings = 0;
+        mThisCycleMoneyEarnings = 0;
+
+        mLifeTimeHappinessEarnings = 0;
+        mSessionHappinessEarnings = 0;
+        mThisCycleHappinessEarnings = 0;
+
+
+        mTypeBuilding1 = 0;
+        mLevelBuilding1 = 0;
+
+        mTypeBuilding2 = 0;
+        mLevelBuilding2 = 0;
+
+        mTypeBuilding3 = 0;
+        mLevelBuilding3 = 0;
+
+        mTypeBuilding4 = 0;
+        mLevelBuilding4 = 0;
+
+        mTypeBuilding5 = 0;
+        mLevelBuilding5 = 0;
+
+        mTypeBuilding6 = 0;
+        mLevelBuilding6 = 0;
+
+        mTypeBuilding7 = 0;
+        mLevelBuilding7 = 0;
+
+        mTypeBuilding8 = 0;
+        mLevelBuilding8 = 0;
+
+        mTypeBuilding9 = 0;
+        mLevelBuilding9 = 0;
+        MainActivity.getMbuildingGrid().reset_buildings();
 
     }
     public void tickTime(){
