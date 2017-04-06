@@ -199,9 +199,9 @@ public class MainActivity extends AppCompatActivity {
     public void updateText()
     {
 
-        String raheString = String.format("Money: %f", mDataContainer.getmCurrentMoney());
+        String raheString = String.format("Money: .0%f", mDataContainer.getmCurrentMoney());
         rahe.setText(raheString);
-        String onniString = String.format("Happiness: %f", mDataContainer.getmCurrentHappines());
+        String onniString = String.format("Happiness: .0%f", mDataContainer.getmCurrentHappines());
         onni.setText(onniString);
     }
 
