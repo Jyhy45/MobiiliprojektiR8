@@ -3,7 +3,7 @@
             <Item
                 android:drawable="@drawable/kissu" />
 
-            <item android:drawable="@drawable/ic_heart_0" />
+            <item android:drawable="@drawable/kissu" />
 
             <item android:drawable="@drawable/kissu2" />
 
