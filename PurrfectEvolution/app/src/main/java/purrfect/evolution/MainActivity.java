@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         buildingsFragment = new BuildingsFragment();
         catFragment = new CatFragment();
 
+        // Get screen size and pass it to catFragment
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         catFragment.setScreenSize(height,width);
 
+        // Set program to fullscreen "mode"
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Log.d(TAG, "onCreate: now here");
         // Create the adapter that will return a fragment for each of the three

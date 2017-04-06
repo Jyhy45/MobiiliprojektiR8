@@ -48,7 +48,6 @@ public class EvolutionFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_evolution , container, false);
         TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        textView.setText("Evolution fragment");
         return rootView;
     }
 
