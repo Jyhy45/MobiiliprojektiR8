@@ -222,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void Reset()
+    public void bananaReset()
     {
         mDataContainer.resetHard();
     }
