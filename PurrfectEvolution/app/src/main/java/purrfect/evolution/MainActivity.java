@@ -44,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
     private Handler handler = new Handler();
 
 
+    TextView rahe;
+    ImageView raheKuva;
+    TextView onni;
+    ImageView onniKuva;
+    TextView dimangit;
+    ImageView dimangitKuva;
+
     CatFragment catFragment;
 
     public static int getmInterval() {
@@ -103,6 +110,20 @@ public class MainActivity extends AppCompatActivity {
         mDataContainer.calculateEverything();
         handler.postDelayed(updateTickRunnable,mInterval);
 
+
+        //let's bring headers on top
+        rahe = (TextView) findViewById(R.id.textView);
+        onni = (TextView) findViewById(R.id.textView2);
+        dimangit = (TextView) findViewById(R.id.textView3);
+        raheKuva = (ImageView) findViewById(R.id.imageView);
+        onniKuva = (ImageView) findViewById(R.id.imageView2);
+        dimangitKuva = (ImageView) findViewById(R.id.imageView3);
+        rahe.bringToFront();
+        onni.bringToFront();
+        dimangit.bringToFront();
+        raheKuva.bringToFront();
+        onniKuva.bringToFront();
+        dimangitKuva.bringToFront();
 
     }
 
@@ -177,9 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateText()
     {
-        TextView rahe = (TextView) findViewById(R.id.textView);
-        TextView onni = (TextView) findViewById(R.id.textView2);
-        rahe.bringToFront();
+
         rahe.setText("Cash: " + mDataContainer.getmCurrentMoney());
         onni.setText("Happiness: " + mDataContainer.getmCurrentHappines());
     }
