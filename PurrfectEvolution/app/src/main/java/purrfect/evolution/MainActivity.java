@@ -199,8 +199,10 @@ public class MainActivity extends AppCompatActivity {
     public void updateText()
     {
 
-        rahe.setText("Cash: " + mDataContainer.getmCurrentMoney());
-        onni.setText("Happiness: " + mDataContainer.getmCurrentHappines());
+        String raheString = String.format("Money: %f", mDataContainer.getmCurrentMoney());
+        rahe.setText(raheString);
+        String onniString = String.format("Happiness: %f", mDataContainer.getmCurrentHappines());
+        onni.setText(onniString);
     }
 
 
