@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
             <Item
-                android:drawable="@drawable/kissu"
-                android:background="@null"/>
+                android:drawable="@drawable/kissu" />
 
-            <item android:drawable="@drawable/kissu2"
-                android:background="@null"/>
+            <item android:drawable="@drawable/ic_heart_0" />
 
+            <item android:drawable="@drawable/kissu2" />
 
 
 </layer-list>
