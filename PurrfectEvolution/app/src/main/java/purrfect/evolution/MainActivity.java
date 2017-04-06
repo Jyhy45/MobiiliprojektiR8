@@ -177,9 +177,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateText()
     {
-        RelativeLayout v = (RelativeLayout) findViewById(R.id.cat_fragment);
-        TextView rahe = (TextView) v.findViewById(R.id.textView);
-        TextView onni = (TextView) v.findViewById(R.id.textView2);
+        TextView rahe = (TextView) findViewById(R.id.textView);
+        TextView onni = (TextView) findViewById(R.id.textView2);
         rahe.setText("Cash: " + mDataContainer.getmCurrentMoney());
         onni.setText("Happiness: " + mDataContainer.getmCurrentHappines());
     }
