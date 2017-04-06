@@ -23,6 +23,7 @@ public  class Building {
 
         private int _value;
 
+
         BuildingType(int value) {
             this._value = value;
         }
@@ -57,6 +58,7 @@ public  class Building {
     public int mImagePath;                  //=R.drawable.ic_heart_0;
     public int mAnimationPath;              //=R.drawable.animation_list_filling;
     private double mProductionAmountPerSecond;
+    private double mMultiplier = 1.07; //most of idles use 1.07 to 1.15
 
     public double getmCurrentBuildingCost() {
         return mCurrentBuildingCost;
@@ -91,15 +93,15 @@ public  class Building {
         if (mBType == BuildingType.NONE){
             mCurrentBuildingCost = Double.MAX_VALUE;
         }else if (mBType == BuildingType.SCRATCHINPOST){
-            mCurrentBuildingCost =1*this.mBuildingLevel;
+            mCurrentBuildingCost =1 * Math.pow(mMultiplier,this.mBuildingLevel);
         }else if(mBType == BuildingType.FEEDING_STATION){
-            mCurrentBuildingCost =5*this.mBuildingLevel;
+            mCurrentBuildingCost =5 * Math.pow(mMultiplier,this.mBuildingLevel);
         }else if(mBType == BuildingType.CHEW_MOUSE){
-            mCurrentBuildingCost =10*this.mBuildingLevel;
+            mCurrentBuildingCost =10 * Math.pow(mMultiplier,this.mBuildingLevel);
         }else if(mBType == BuildingType.YARN_BALL){
-            mCurrentBuildingCost =100*this.mBuildingLevel;
+            mCurrentBuildingCost =100 * Math.pow(mMultiplier,this.mBuildingLevel);
         }else if(mBType == BuildingType.CATNIP){
-            mCurrentBuildingCost =300*this.mBuildingLevel;
+            mCurrentBuildingCost =300 * Math.pow(mMultiplier,this.mBuildingLevel);
         }else{
             mCurrentBuildingCost = Double.MAX_VALUE;
             Log.d(TAG, "calculateAndSetBuildingLevelUpCost: unknow building type fix me");
