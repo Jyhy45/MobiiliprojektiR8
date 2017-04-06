@@ -220,6 +220,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    public void Reset()
+    {
+        mDataContainer.resetHard();
+    }
+
     @Override
     protected void onStop(){
         Log.d(TAG, "onStop: LIFECYCLE");
