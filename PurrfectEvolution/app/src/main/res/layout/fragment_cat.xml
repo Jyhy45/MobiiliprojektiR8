@@ -11,69 +11,73 @@
     app:rowCount="30"
     android:background="@drawable/kissatausta1">
 
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="33dp"
-        android:text="TextView" />
-
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onCatClick"
         app:srcCompat="@drawable/kissu2"
-        android:layout_below="@+id/section_label"
-        android:layout_centerHorizontal="true"
-        android:background="@null"/>
+        android:background="@null"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/section_label"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/section_label"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:adjustViewBounds="true"
-        android:gravity="top"
         android:scaleY="0.5"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/ic_heart_100"
+        android:visibility="visible"
+        app:srcCompat="@mipmap/ic_launcher"
         tools:scaleX="0.5" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:gravity="bottom"
-        android:visibility="invisible"
-        app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/imageView"
-        android:gravity="bottom"
         android:text="TextView"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:layout_toRightOf="@id/imageView"/>
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_toRightOf="@id/textView"
+        android:layout_alignParentTop="true"/>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView"
-        android:layout_toEndOf="@+id/imageView2"
         android:gravity="bottom"
         android:text="TextView"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/imageView2"
+        />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/textView2"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/imageView3"
+        android:text="TextView" />
 
 </RelativeLayout>
 
