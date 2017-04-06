@@ -2,6 +2,7 @@ package purrfect.evolution;
 
 
 import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.Image;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -80,34 +81,38 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
     public void onCatClick(View view, Context context, RelativeLayout relativeLayout) {
         switch (view.getId()) {
             case R.id.imageButton2:
+                // TODO: Create different animations for hearts
+                // TODO: Create coin sprite animaion for when a button is clicked many coins are released in multiple directions...
 
                 //Toast.makeText(context, "" + height + width, Toast.LENGTH_SHORT).show();
 
+                // Create new imageView, add it to ArrayList and set image and sprite animation XMLs
                 image = new ImageView(context);
 
                 imageList.add(image);
                 imageList.get(i).setImageResource(R.drawable.ic_heart_0);
+                imageList.get(i).setBackgroundResource(R.drawable.animation_list_filling);
 
-                // Keksi tapa lisätä "täyttö animaatio" luotaviin kuviin.
-                //imageList.get(i).setBackgroundResource((ImageView) findViewById(R.drawable.animation_list_filling));
-
-
+                // Create layout parameters for created ImageView
                 RelativeLayout r1 = (RelativeLayout) relativeLayout;
-
                 RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
                         RelativeLayout.LayoutParams.WRAP_CONTENT);
-
+                // Get random location for ImageViews on screen
                 lp.leftMargin = calculateLeftMargin();
                 lp.topMargin = calculateTopMargin();
-
+                // Add ImageView with set parameters to layout
                 r1.addView(imageList.get(i), lp);
 
+                // Add moving animation to ArrayList
                 animationList.add(AnimationUtils.loadAnimation(context, R.anim.move));
-
+                // Set animation listener
                 animationList.get(i).setAnimationListener(this);
-
+                // Start sprite animation
+                ((AnimationDrawable) imageList.get(i).getBackground()).start();
+                // Start move animation
                 imageList.get(i).startAnimation(animationList.get(i));
+
                 i++;
         }
     }
@@ -129,8 +134,13 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
 
     @Override
     public void onAnimationEnd(Animation animation) {
-
+        // On animation end removes first object from ArrayLists and "trims it down".
+        imageList.remove(0);
+        animationList.remove(0);
+        i--;
+       // Toast.makeText(c, "Animation end", Toast.LENGTH_SHORT).show();
     }
+
 
     @Override
     public void onAnimationRepeat(Animation animation) {
