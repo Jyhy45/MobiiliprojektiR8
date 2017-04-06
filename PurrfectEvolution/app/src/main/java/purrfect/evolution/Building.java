@@ -1,6 +1,10 @@
 package purrfect.evolution;
 
 
+import android.util.Log;
+
+import static android.content.ContentValues.TAG;
+
 /**
  * Created by jyhy on 3/24/17.
  */
@@ -64,24 +68,26 @@ public  class Building {
         return mProductionAmountPerSecond;
     }
     public void calculateAndSetProductionAmountPerSecond(){
-
+        //income=baseincome*lvl
         if (mBType == BuildingType.NONE){
             mProductionAmountPerSecond =0;
         }else if (mBType == BuildingType.SCRATCHINPOST){
-            mProductionAmountPerSecond =1*this.mBuildingLevel+1;
+            mProductionAmountPerSecond = 2*this.mBuildingLevel;
         }else if(mBType == BuildingType.FEEDING_STATION){
-            mProductionAmountPerSecond =5*this.mBuildingLevel+1;
+            mProductionAmountPerSecond = 5*this.mBuildingLevel;
         }else if(mBType == BuildingType.CHEW_MOUSE){
-            mProductionAmountPerSecond =10*this.mBuildingLevel+1;
+            mProductionAmountPerSecond = 30*this.mBuildingLevel;
         }else if(mBType == BuildingType.YARN_BALL){
-            mProductionAmountPerSecond =100*this.mBuildingLevel+1;
+            mProductionAmountPerSecond = 100*this.mBuildingLevel;
         }else if(mBType == BuildingType.CATNIP){
-            mProductionAmountPerSecond =300*this.mBuildingLevel+1;
+            mProductionAmountPerSecond = 300*this.mBuildingLevel;
         }else{
-            mProductionAmountPerSecond =0;
+            mProductionAmountPerSecond = 0;
+            Log.d(TAG, "calculateAndSetProductionAmountPerSecond: unknow buildingtype fix me");
         }
     }
     public void calculateAndSetBuildingLevelUpCost(){
+        //baseCost*multiplier^lvl
         if (mBType == BuildingType.NONE){
             mCurrentBuildingCost = Double.MAX_VALUE;
         }else if (mBType == BuildingType.SCRATCHINPOST){
@@ -96,6 +102,7 @@ public  class Building {
             mCurrentBuildingCost =300*this.mBuildingLevel;
         }else{
             mCurrentBuildingCost = Double.MAX_VALUE;
+            Log.d(TAG, "calculateAndSetBuildingLevelUpCost: unknow building type fix me");
         }
     }
 
