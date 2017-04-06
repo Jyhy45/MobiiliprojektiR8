@@ -163,6 +163,8 @@ public class MainActivity extends AppCompatActivity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position){
+                case 4:
+                    return ShopFragment.newInstance();
                 case 3:
                     return OptionsFragment.newInstance();
                 case 2:
