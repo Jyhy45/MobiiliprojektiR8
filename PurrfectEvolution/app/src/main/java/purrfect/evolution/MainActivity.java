@@ -179,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
     {
         TextView rahe = (TextView) findViewById(R.id.textView);
         TextView onni = (TextView) findViewById(R.id.textView2);
+        rahe.bringToFront();
         rahe.setText("Cash: " + mDataContainer.getmCurrentMoney());
         onni.setText("Happiness: " + mDataContainer.getmCurrentHappines());
     }
