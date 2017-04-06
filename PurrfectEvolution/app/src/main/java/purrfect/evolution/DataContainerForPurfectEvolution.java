@@ -431,7 +431,7 @@ final class DataContainerForPurfectEvolution {
         mCurrentMoneyIncrease=0;
         for (Building b: MainActivity.getMbuildingGrid().getBuildingArray()) {
             if (false){
-                //TODO:this
+                //TODO:not sure if there is periodic money ticker...
             }
         }
 
@@ -459,6 +459,12 @@ final class DataContainerForPurfectEvolution {
         }
         calculateHappinesIncrease();
         calculateMoneyIncrease();
+        calculateSuscripersToBeGained();
         Log.d(TAG, "calculateEverything: Now ended");
+    }
+
+    public void calculateSuscripersToBeGained(){
+       double leftOverMoney = (mThisCycleMoneyEarnings-(mCurrentSuscripers*1));
+
     }
 }
