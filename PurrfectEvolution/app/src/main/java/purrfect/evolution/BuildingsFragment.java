@@ -52,19 +52,19 @@ public class BuildingsFragment extends Fragment {
             }
                 else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(g).getBaseCost(Building.BuildingType.FEEDING_STATION))
                 {
-                    popup.getMenu().getItem(0).setEnabled(false);
+                    popup.getMenu().getItem(0).setEnabled(true);
                 }
                 else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(g).getBaseCost(Building.BuildingType.CHEW_MOUSE))
                 {
-                    popup.getMenu().getItem(1).setEnabled(false);
+                    popup.getMenu().getItem(1).setEnabled(true);
                 }
                 else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(g).getBaseCost(Building.BuildingType.YARN_BALL))
                 {
-                    popup.getMenu().getItem(2).setEnabled(false);
+                    popup.getMenu().getItem(2).setEnabled(true);
                 }
                 else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(g).getBaseCost(Building.BuildingType.CATNIP)) {
                 {
-                    popup.getMenu().getItem(3).setEnabled(false);
+                    popup.getMenu().getItem(3).setEnabled(true);
                 }
             }
 
