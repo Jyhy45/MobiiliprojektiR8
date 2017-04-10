@@ -41,6 +41,17 @@ public class BuildingsFragment extends Fragment {
 
     }
 
+    public void enableButtons(PopupMenu popup) {
+
+        for (int i = 0; i>4; i++)
+        {
+            popup.getMenu().getItem(i).setEnabled(false);
+        }
+
+        if(mDataContainer.getmCurrentMoney());
+
+    }
+
     public void popUpInflater(final View view, final Context context)
     {
         //Creating the instance of PopupMenu
@@ -49,7 +60,8 @@ public class BuildingsFragment extends Fragment {
         popup.getMenuInflater()
                 .inflate(R.menu.popup_menu, popup.getMenu());
 
-        popup.getMenu().getItem(1).setEnabled(false);
+
+
 
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
