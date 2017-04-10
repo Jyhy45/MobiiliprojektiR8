@@ -114,6 +114,11 @@ public  class Building {
 
         }
     }
+    public void levelUpBuilding(){
+        mBuildingLevel++;
+    }
+    
+
     public double getBaseCost(){
         return getBaseCost(this.mBType);
     }
