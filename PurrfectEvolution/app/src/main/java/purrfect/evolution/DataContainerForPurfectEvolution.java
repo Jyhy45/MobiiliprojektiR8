@@ -205,6 +205,11 @@ final class DataContainerForPurfectEvolution {
 
     }
 
+    public void convertHappinessToMoney(){
+        double _happines = getmCurrentHappines();
+        double _moneyToBeGained=0;
+        _moneyToBeGained = _happines * mCurrentSuscripers+1;
+    }
 
     /**
      * Incerements all happiness variables
