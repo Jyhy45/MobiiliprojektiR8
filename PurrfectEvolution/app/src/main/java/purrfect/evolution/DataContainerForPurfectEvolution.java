@@ -227,15 +227,14 @@ final class DataContainerForPurfectEvolution {
      * @return Return true if happiness was used; return false if happiness was not spent
      * */
     public  boolean spentHappiness(double mSpentHappiness){
-        if (Double.compare(mSpentHappiness,mCurrentMoney)>=0)
+        if (Double.compare(mSpentHappiness,mCurrentHappines)>=0)
         {
-            mCurrentMoney-=mSpentHappiness;
+            mCurrentHappines-=mSpentHappiness;
             return true;
         }else{
             return false;
         }
     }
-
 
     /**
      * Spends money if there is enough money to spend

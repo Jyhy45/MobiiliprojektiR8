@@ -1,6 +1,7 @@
 package purrfect.evolution;
 
 
+import android.provider.ContactsContract;
 import android.util.Log;
 
 import static android.content.ContentValues.TAG;
@@ -114,10 +115,20 @@ public  class Building {
 
         }
     }
-    public void levelUpBuilding(){
+    public void levelUpBuildingFree(){
         mBuildingLevel++;
     }
-    
+
+    public boolean levelUpBuildingNotFree(DataContainerForPurfectEvolution data){
+        calculateAndSetBuildingLevelUpCost();
+        boolean res = data.spentMoney(mCurrentBuildingCost);
+        if (res){
+            mBuildingLevel++;
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     public double getBaseCost(){
         return getBaseCost(this.mBType);
