@@ -35,9 +35,40 @@ public class BuildingsFragment extends Fragment {
 
     BuildingGrid buildingGrid = MainActivity.getMbuildingGrid();
     DataContainerForPurfectEvolution mDataContainer = MainActivity.getmDataContainer();
-
+    int buildingNumber = 0;
 
     public BuildingsFragment() {
+
+    }
+
+    public void enableButtons(int g, PopupMenu popup) {
+
+        for (int i = 0; i>4; i++) {
+            popup.getMenu().getItem(i).setEnabled(false);
+
+
+            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(g).getBaseCost(Building.BuildingType.SCRATCHINPOST)){
+
+            }
+                else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(g).getBaseCost(Building.BuildingType.FEEDING_STATION))
+                {
+                    popup.getMenu().getItem(0).setEnabled(true);
+                }
+                else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(g).getBaseCost(Building.BuildingType.CHEW_MOUSE))
+                {
+                    popup.getMenu().getItem(1).setEnabled(true);
+                }
+                else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(g).getBaseCost(Building.BuildingType.YARN_BALL))
+                {
+                    popup.getMenu().getItem(2).setEnabled(true);
+                }
+                else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(g).getBaseCost(Building.BuildingType.CATNIP)) {
+                {
+                    popup.getMenu().getItem(3).setEnabled(true);
+                }
+            }
+
+        }
 
     }
 
@@ -49,7 +80,42 @@ public class BuildingsFragment extends Fragment {
         popup.getMenuInflater()
                 .inflate(R.menu.popup_menu, popup.getMenu());
 
-        popup.getMenu().getItem(1).setEnabled(false);
+        buildingNumber = 0;
+
+        switch (view.getId())
+        {
+            case R.id.building1:
+                buildingNumber=0;
+                break;
+            case R.id.building2:
+                buildingNumber=1;
+                break;
+            case R.id.building3:
+                buildingNumber=2;
+                break;
+            case R.id.building4:
+                buildingNumber=3;
+                break;
+            case R.id.building5:
+                buildingNumber=4;
+                break;
+            case R.id.building6:
+                buildingNumber=5;
+                break;
+            case R.id.building7:
+                buildingNumber=6;
+                break;
+            case R.id.building8:
+                buildingNumber=7;
+                break;
+            case R.id.building9:
+                buildingNumber=8;
+                break;
+        }
+
+        enableButtons(buildingNumber,popup);
+
+
 
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
@@ -226,23 +292,18 @@ public class BuildingsFragment extends Fragment {
         switch(item.getItemId()) {
             case R.id.Scratching_Post:
                 building.setmBType(Building.BuildingType.SCRATCHINPOST);
-                building.levelUpBuilding();
                 break;
             case R.id.Feeding_Station:
                 building.setmBType(Building.BuildingType.FEEDING_STATION);
-                building.levelUpBuilding();
                 break;
             case R.id.Chew_Mouse:
                 building.setmBType(Building.BuildingType.CHEW_MOUSE);
-                building.levelUpBuilding();
                 break;
             case R.id.Yarn_Ball:
                 building.setmBType(Building.BuildingType.YARN_BALL);
-                building.levelUpBuilding();
                 break;
             case R.id.Catnip:
                 building.setmBType(Building.BuildingType.CATNIP);
-                building.levelUpBuilding();
                 break;
 
 
