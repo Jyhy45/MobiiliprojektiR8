@@ -84,23 +84,23 @@ public class BuildingsFragment extends Fragment {
             popup.getMenu().getItem(i).setEnabled(false);
             }
 
-            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.SCRATCHINPOST))
+            if (Double.compare(mDataContainer.getmCurrentMoney(),buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.SCRATCHINPOST)) >= 0)
             {
                 popup.getMenu().getItem(0).setEnabled(true);
             }
-            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.FEEDING_STATION))
+        if (Double.compare(mDataContainer.getmCurrentMoney(),buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.FEEDING_STATION)) >= 0)
             {
                 popup.getMenu().getItem(1).setEnabled(true);
             }
-            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.CHEW_MOUSE))
+        if (Double.compare(mDataContainer.getmCurrentMoney(),buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.CHEW_MOUSE)) >= 0)
             {
                 popup.getMenu().getItem(2).setEnabled(true);
             }
-            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.YARN_BALL))
+        if (Double.compare(mDataContainer.getmCurrentMoney(),buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.YARN_BALL)) >= 0)
             {
                 popup.getMenu().getItem(3).setEnabled(true);
             }
-            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.CATNIP))
+        if (Double.compare(mDataContainer.getmCurrentMoney(),buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.CATNIP)) >= 0)
             {
                 popup.getMenu().getItem(4).setEnabled(true);
             }
