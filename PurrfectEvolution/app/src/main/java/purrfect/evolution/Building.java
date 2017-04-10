@@ -23,6 +23,7 @@ public  class Building {
 
         private int _value;
 
+
         BuildingType(int value) {
             this._value = value;
         }
@@ -57,6 +58,7 @@ public  class Building {
     public int mImagePath;                  //=R.drawable.ic_heart_0;
     public int mAnimationPath;              //=R.drawable.animation_list_filling;
     private double mProductionAmountPerSecond;
+    private double mMultiplier = 1.07; //most of idles use 1.07 to 1.15
 
     public double getmCurrentBuildingCost() {
         return mCurrentBuildingCost;
@@ -72,7 +74,7 @@ public  class Building {
         if (mBType == BuildingType.NONE){
             mProductionAmountPerSecond =0;
         }else if (mBType == BuildingType.SCRATCHINPOST){
-            mProductionAmountPerSecond = 2*this.mBuildingLevel;
+            mProductionAmountPerSecond = 1*this.mBuildingLevel;
         }else if(mBType == BuildingType.FEEDING_STATION){
             mProductionAmountPerSecond = 5*this.mBuildingLevel;
         }else if(mBType == BuildingType.CHEW_MOUSE){
@@ -90,23 +92,31 @@ public  class Building {
         //baseCost*multiplier^lvl
         if (mBType == BuildingType.NONE){
             mCurrentBuildingCost = Double.MAX_VALUE;
-        }else if (mBType == BuildingType.SCRATCHINPOST){
-            mCurrentBuildingCost =1*this.mBuildingLevel;
-        }else if(mBType == BuildingType.FEEDING_STATION){
-            mCurrentBuildingCost =5*this.mBuildingLevel;
-        }else if(mBType == BuildingType.CHEW_MOUSE){
-            mCurrentBuildingCost =10*this.mBuildingLevel;
-        }else if(mBType == BuildingType.YARN_BALL){
-            mCurrentBuildingCost =100*this.mBuildingLevel;
-        }else if(mBType == BuildingType.CATNIP){
-            mCurrentBuildingCost =300*this.mBuildingLevel;
         }else{
-            mCurrentBuildingCost = Double.MAX_VALUE;
-            Log.d(TAG, "calculateAndSetBuildingLevelUpCost: unknow building type fix me");
+            mCurrentBuildingCost =getBaseCost() * Math.pow(mMultiplier,this.mBuildingLevel);
         }
     }
+    public double getBaseCost(BuildingType bType) {
+        if (bType == BuildingType.NONE) {
+            return Double.MAX_VALUE;
+        } else if (bType == BuildingType.SCRATCHINPOST) {
+            return 20.0d;
+        } else if (mBType == BuildingType.FEEDING_STATION) {
+            return 100.0d;
+        } else if (bType == BuildingType.CHEW_MOUSE) {
+            return 500.0d;
+        } else if (bType == BuildingType.YARN_BALL) {
+            return 2500.0d;
+        } else if (bType == BuildingType.CATNIP) {
+            return 10000.0d;
+        } else {
+            return Double.MAX_VALUE;
 
-
+        }
+    }
+    public double getBaseCost(){
+        return getBaseCost(this.mBType);
+    }
 
 
 
