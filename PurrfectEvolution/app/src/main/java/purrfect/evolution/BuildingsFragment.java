@@ -41,8 +41,7 @@ public class BuildingsFragment extends Fragment {
 
     }
 
-    public void popUpInflater(final View view, final Context context)
-    {
+    public void popUpInflater(final View view, final Context context) {
         //Creating the instance of PopupMenu
         PopupMenu popup = new PopupMenu(context, view);
         //Inflating the Popup using xml file
@@ -51,110 +50,103 @@ public class BuildingsFragment extends Fragment {
 
         buildingNumber = 0;
 
-        switch (view.getId())
-        {
+        switch (view.getId()) {
             case R.id.building1:
-                buildingNumber=0;
+                buildingNumber = 0;
                 break;
             case R.id.building2:
-                buildingNumber=1;
+                buildingNumber = 1;
                 break;
             case R.id.building3:
-                buildingNumber=2;
+                buildingNumber = 2;
                 break;
             case R.id.building4:
-                buildingNumber=3;
+                buildingNumber = 3;
                 break;
             case R.id.building5:
-                buildingNumber=4;
+                buildingNumber = 4;
                 break;
             case R.id.building6:
-                buildingNumber=5;
+                buildingNumber = 5;
                 break;
             case R.id.building7:
-                buildingNumber=6;
+                buildingNumber = 6;
                 break;
             case R.id.building8:
-                buildingNumber=7;
+                buildingNumber = 7;
                 break;
             case R.id.building9:
-                buildingNumber=8;
+                buildingNumber = 8;
                 break;
         }
 
-        for (int i = 0; i>4; i++) {
+        for (int i = 0; i > 4; i++) {
             popup.getMenu().getItem(i).setEnabled(false);
 
 
-            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.SCRATCHINPOST)){
+            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.SCRATCHINPOST)) {
 
-            }
-            else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.FEEDING_STATION))
-            {
+            } else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.FEEDING_STATION)) {
                 popup.getMenu().getItem(0).setEnabled(true);
-            }
-            else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.CHEW_MOUSE))
-            {
+            } else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.CHEW_MOUSE)) {
                 popup.getMenu().getItem(1).setEnabled(true);
-            }
-            else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.YARN_BALL))
-            {
+            } else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.YARN_BALL)) {
                 popup.getMenu().getItem(2).setEnabled(true);
-            }
-            else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.CATNIP)) {
+            } else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.CATNIP)) {
                 {
                     popup.getMenu().getItem(3).setEnabled(true);
                 }
             }
 
-        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (view.getId()) {
-                    case R.id.building1:
+            popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                public boolean onMenuItemClick(MenuItem item) {
+                    switch (view.getId()) {
+                        case R.id.building1:
 
-                        buildingGrid.setBuilding1(buildingSelector(item, buildingGrid.getBuilding1()));
-                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding1().getmBType(),Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.building2:
-                        buildingGrid.setBuilding2(buildingSelector(item, buildingGrid.getBuilding2()));
-                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding2().getmBType(),Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.building3:
-                        buildingGrid.setBuilding3(buildingSelector(item, buildingGrid.getBuilding3()));
-                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding3().getmBType(),Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.building4:
-                        buildingGrid.setBuilding4(buildingSelector(item, buildingGrid.getBuilding4()));
-                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding4().getmBType(),Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.building5:
-                        buildingGrid.setBuilding5(buildingSelector(item, buildingGrid.getBuilding5()));
-                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding5().getmBType(),Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.building6:
-                        buildingGrid.setBuilding6(buildingSelector(item, buildingGrid.getBuilding6()));
-                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding6().getmBType(),Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.building7:
-                        buildingGrid.setBuilding7(buildingSelector(item, buildingGrid.getBuilding7()));
-                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding7().getmBType(),Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.building8:
-                        buildingGrid.setBuilding8(buildingSelector(item, buildingGrid.getBuilding8()));
-                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding8().getmBType(),Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.building9:
-                        buildingGrid.setBuilding9(buildingSelector(item, buildingGrid.getBuilding9()));
-                        Toast.makeText(context,"Tääl on :" + buildingGrid.getBuilding9().getmBType(),Toast.LENGTH_SHORT).show();
-                        break;
+                            buildingGrid.setBuilding1(buildingSelector(item, buildingGrid.getBuilding1()));
+                            Toast.makeText(context, "Tääl on :" + buildingGrid.getBuilding1().getmBType(), Toast.LENGTH_SHORT).show();
+                            break;
+                        case R.id.building2:
+                            buildingGrid.setBuilding2(buildingSelector(item, buildingGrid.getBuilding2()));
+                            Toast.makeText(context, "Tääl on :" + buildingGrid.getBuilding2().getmBType(), Toast.LENGTH_SHORT).show();
+                            break;
+                        case R.id.building3:
+                            buildingGrid.setBuilding3(buildingSelector(item, buildingGrid.getBuilding3()));
+                            Toast.makeText(context, "Tääl on :" + buildingGrid.getBuilding3().getmBType(), Toast.LENGTH_SHORT).show();
+                            break;
+                        case R.id.building4:
+                            buildingGrid.setBuilding4(buildingSelector(item, buildingGrid.getBuilding4()));
+                            Toast.makeText(context, "Tääl on :" + buildingGrid.getBuilding4().getmBType(), Toast.LENGTH_SHORT).show();
+                            break;
+                        case R.id.building5:
+                            buildingGrid.setBuilding5(buildingSelector(item, buildingGrid.getBuilding5()));
+                            Toast.makeText(context, "Tääl on :" + buildingGrid.getBuilding5().getmBType(), Toast.LENGTH_SHORT).show();
+                            break;
+                        case R.id.building6:
+                            buildingGrid.setBuilding6(buildingSelector(item, buildingGrid.getBuilding6()));
+                            Toast.makeText(context, "Tääl on :" + buildingGrid.getBuilding6().getmBType(), Toast.LENGTH_SHORT).show();
+                            break;
+                        case R.id.building7:
+                            buildingGrid.setBuilding7(buildingSelector(item, buildingGrid.getBuilding7()));
+                            Toast.makeText(context, "Tääl on :" + buildingGrid.getBuilding7().getmBType(), Toast.LENGTH_SHORT).show();
+                            break;
+                        case R.id.building8:
+                            buildingGrid.setBuilding8(buildingSelector(item, buildingGrid.getBuilding8()));
+                            Toast.makeText(context, "Tääl on :" + buildingGrid.getBuilding8().getmBType(), Toast.LENGTH_SHORT).show();
+                            break;
+                        case R.id.building9:
+                            buildingGrid.setBuilding9(buildingSelector(item, buildingGrid.getBuilding9()));
+                            Toast.makeText(context, "Tääl on :" + buildingGrid.getBuilding9().getmBType(), Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+
+
+                    return true;
                 }
+            });
 
-
-                return true;
-            }
-        });
-
-        popup.show();
+            popup.show();
+        }
     }
 
     public void popUpInflater2(final View view, final Context context) {
