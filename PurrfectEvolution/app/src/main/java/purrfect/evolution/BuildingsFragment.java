@@ -1,6 +1,7 @@
 package purrfect.evolution;
 
 import android.media.Image;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -33,6 +34,8 @@ public class BuildingsFragment extends Fragment {
      */
 
     BuildingGrid buildingGrid = MainActivity.getMbuildingGrid();
+    DataContainerForPurfectEvolution mDataContainer;
+
 
     public BuildingsFragment() {
 
@@ -235,6 +238,16 @@ public class BuildingsFragment extends Fragment {
                 building.setmBType(Building.BuildingType.CATNIP);
                 break;
 
+
+            if(building.getmBaseCost(Building.BuildingType.SCRATCHINPOST) >= mDataContainer.getmCurrentMoney())
+            {
+                mDataContainer.
+            }
+            else
+            {
+
+            }
+
         }
 
         return building;
@@ -374,6 +387,7 @@ public class BuildingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_buildings , container, false);
+        mDataContainer = new DataContainerForPurfectEvolution();
 
 
         return rootView;
