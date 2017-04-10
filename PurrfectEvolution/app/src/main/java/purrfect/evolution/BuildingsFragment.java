@@ -84,7 +84,6 @@ public class BuildingsFragment extends Fragment {
 
         switch (view.getId())
         {
-
             case R.id.building1:
                 buildingNumber=0;
                 break;
