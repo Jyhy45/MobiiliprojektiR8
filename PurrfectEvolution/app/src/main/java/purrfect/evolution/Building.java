@@ -74,7 +74,7 @@ public  class Building {
         if (mBType == BuildingType.NONE){
             mProductionAmountPerSecond =0;
         }else if (mBType == BuildingType.SCRATCHINPOST){
-            mProductionAmountPerSecond = 2*this.mBuildingLevel;
+            mProductionAmountPerSecond = 1*this.mBuildingLevel;
         }else if(mBType == BuildingType.FEEDING_STATION){
             mProductionAmountPerSecond = 5*this.mBuildingLevel;
         }else if(mBType == BuildingType.CHEW_MOUSE){
@@ -92,23 +92,31 @@ public  class Building {
         //baseCost*multiplier^lvl
         if (mBType == BuildingType.NONE){
             mCurrentBuildingCost = Double.MAX_VALUE;
-        }else if (mBType == BuildingType.SCRATCHINPOST){
-            mCurrentBuildingCost =20 * Math.pow(mMultiplier,this.mBuildingLevel);
-        }else if(mBType == BuildingType.FEEDING_STATION){
-            mCurrentBuildingCost =50 * Math.pow(mMultiplier,this.mBuildingLevel);
-        }else if(mBType == BuildingType.CHEW_MOUSE){
-            mCurrentBuildingCost =150 * Math.pow(mMultiplier,this.mBuildingLevel);
-        }else if(mBType == BuildingType.YARN_BALL){
-            mCurrentBuildingCost =500 * Math.pow(mMultiplier,this.mBuildingLevel);
-        }else if(mBType == BuildingType.CATNIP){
-            mCurrentBuildingCost =1500 * Math.pow(mMultiplier,this.mBuildingLevel);
         }else{
-            mCurrentBuildingCost = Double.MAX_VALUE;
-            Log.d(TAG, "calculateAndSetBuildingLevelUpCost: unknow building type fix me");
+            mCurrentBuildingCost =getBaseCost() * Math.pow(mMultiplier,this.mBuildingLevel);
         }
     }
+    public double getBaseCost(BuildingType bType) {
+        if (bType == BuildingType.NONE) {
+            return Double.MAX_VALUE;
+        } else if (bType == BuildingType.SCRATCHINPOST) {
+            return 20.0d;
+        } else if (mBType == BuildingType.FEEDING_STATION) {
+            return 100.0d;
+        } else if (bType == BuildingType.CHEW_MOUSE) {
+            return 500.0d;
+        } else if (bType == BuildingType.YARN_BALL) {
+            return 2500.0d;
+        } else if (bType == BuildingType.CATNIP) {
+            return 10000.0d;
+        } else {
+            return Double.MAX_VALUE;
 
-
+        }
+    }
+    public double getBaseCost(){
+        return getBaseCost(this.mBType);
+    }
 
 
 
