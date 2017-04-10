@@ -21,27 +21,17 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  */
 public class EvolutionFragment extends Fragment {
-    /**
-     * The fragment argument representing the section number for this
-     * fragment.
-     */
-    private static final String ARG_SECTION_NUMBER = "section_number";
 
     public EvolutionFragment() {
+
     }
 
-    /**
-     * Returns a new instance of this fragment for the given section
-     * number.
-     */
     public static EvolutionFragment newInstance() {
         EvolutionFragment fragment = new EvolutionFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -32,22 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    public static DataContainerForPurfectEvolution getmDataContainer() {
-        return mDataContainer;
-    }
-
     private static DataContainerForPurfectEvolution mDataContainer;
     private static BuildingGrid mbuildingGrid = new BuildingGrid();
     private ViewPager mViewPager;
     private static int mInterval = 1000;
-
-    public static BuildingGrid getMbuildingGrid() {
-        return mbuildingGrid;
-    }
-    BuildingsFragment buildingsFragment;
-
-    private Handler handler = new Handler();
-
 
     TextView rahe;
     ImageView raheKuva;
@@ -56,12 +44,22 @@ public class MainActivity extends AppCompatActivity {
     TextView dimangit;
     ImageView dimangitKuva;
 
+    BuildingsFragment buildingsFragment;
     CatFragment catFragment;
+
+    private Handler handler = new Handler();
+
+    public static DataContainerForPurfectEvolution getmDataContainer() {
+        return mDataContainer;
+    }
+
+    public static BuildingGrid getMbuildingGrid() {
+        return mbuildingGrid;
+    }
 
     public static int getmInterval() {
         return mInterval;
     }
-
 
     public static void setmInterval(int Interval) {
         mInterval = Interval;
@@ -73,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             handler.postDelayed(updateTickRunnable, mInterval);
             mDataContainer.tickTime();
-            updateText(); //TODO: Aiheuttaa crashin viimesessä fragmentissä koska kursuu findbyId eikä kyseistä objektia ole
+            updateText();
             Log.d(TAG, "run: now at update ticker");
         }
     };
@@ -183,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        // Useless?
         @Override
         public int getCount() {
             // Show 4 total pages.

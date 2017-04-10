@@ -46,8 +46,6 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
     int height;
     int width;
 
-    private static final String ARG_SECTION_NUMBER = "section_number";
-
     public CatFragment() {
         imageList = new ArrayList<>();
         animationList = new ArrayList<>();
@@ -55,15 +53,6 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
         i = 0;
     }
 
-    public void setScreenSize(int heightp, int widthp) {
-        height = heightp;
-        width = widthp;
-    }
-
-    /**
-     * Returns a new instance of this fragment for the given section
-     * number.
-     */
     public static CatFragment newInstance() {
         CatFragment fragment = new CatFragment();
         Bundle args = new Bundle();
@@ -81,8 +70,12 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
     public void onCatClick(View view, Context context, RelativeLayout relativeLayout) {
         switch (view.getId()) {
             case R.id.imageButton2:
-                // TODO: Create different animations for hearts
-                // TODO: Create coin sprite animaion for when a button is clicked many coins are released in multiple directions...
+
+                // Cannot add onClickListeers to images, because the image coordinates don't change when move.xml moves them.
+                // TODO: Fix size of hearts
+                // TODO: Add animations ( Waiting for pictures )
+                // TODO: Create different animations for hearts ( Waiting for pictures )
+                // TODO: Create coin sprite animaion for when a button is clicked many coins are released in multiple directions... ( Waiting for pictures )
 
                 //Toast.makeText(context, "" + height + width, Toast.LENGTH_SHORT).show();
 
@@ -117,6 +110,11 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
         }
     }
 
+    public void setScreenSize(int heightp, int widthp) {
+        height = heightp;
+        width = widthp;
+    }
+
     public int calculateLeftMargin() {
         int finalX = random.nextInt(width);
         return finalX;
@@ -138,10 +136,8 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
         imageList.remove(0);
         animationList.remove(0);
         i--;
-       // Toast.makeText(c, "Animation end", Toast.LENGTH_SHORT).show();
     }
-
-
+    
     @Override
     public void onAnimationRepeat(Animation animation) {
 
