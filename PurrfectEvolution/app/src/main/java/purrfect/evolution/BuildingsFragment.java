@@ -97,6 +97,8 @@ public class BuildingsFragment extends Fragment {
                     popup.getMenu().getItem(3).setEnabled(true);
                 }
             }
+            popup.getMenu().getItem(0).setEnabled(true);
+
 
             popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 public boolean onMenuItemClick(MenuItem item) {
