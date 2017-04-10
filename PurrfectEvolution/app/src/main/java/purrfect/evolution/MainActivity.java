@@ -31,6 +31,11 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
+
+    public static DataContainerForPurfectEvolution getmDataContainer() {
+        return mDataContainer;
+    }
+
     private static DataContainerForPurfectEvolution mDataContainer;
     private static BuildingGrid mbuildingGrid = new BuildingGrid();
     private ViewPager mViewPager;

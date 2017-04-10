@@ -34,7 +34,7 @@ public class BuildingsFragment extends Fragment {
      */
 
     BuildingGrid buildingGrid = MainActivity.getMbuildingGrid();
-    DataContainerForPurfectEvolution mDataContainer;
+    DataContainerForPurfectEvolution mDataContainer = MainActivity.getmDataContainer();
 
 
     public BuildingsFragment() {
@@ -237,17 +237,6 @@ public class BuildingsFragment extends Fragment {
             case R.id.Catnip:
                 building.setmBType(Building.BuildingType.CATNIP);
                 break;
-
-
-            if(building.getmBaseCost(Building.BuildingType.SCRATCHINPOST) >= mDataContainer.getmCurrentMoney())
-            {
-                mDataContainer.
-            }
-            else
-            {
-
-            }
-
         }
 
         return building;
@@ -387,9 +376,6 @@ public class BuildingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_buildings , container, false);
-        mDataContainer = new DataContainerForPurfectEvolution();
-
-
         return rootView;
     }
 
