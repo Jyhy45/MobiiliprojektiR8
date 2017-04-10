@@ -99,7 +99,7 @@ public class BuildingsFragment extends Fragment {
             }
             popup.getMenu().getItem(0).setEnabled(true);
 
-
+        }
             popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 public boolean onMenuItemClick(MenuItem item) {
                     switch (view.getId()) {
@@ -149,7 +149,7 @@ public class BuildingsFragment extends Fragment {
 
             popup.show();
         }
-    }
+    
 
     public void popUpInflater2(final View view, final Context context) {
         //Creating the instance of PopupMenu
