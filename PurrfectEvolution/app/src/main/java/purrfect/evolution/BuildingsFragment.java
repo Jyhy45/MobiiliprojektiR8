@@ -82,24 +82,29 @@ public class BuildingsFragment extends Fragment {
 
         for (int i = 0; i > 4; i++) {
             popup.getMenu().getItem(i).setEnabled(false);
-
-
-            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.SCRATCHINPOST)) {
-
-            } else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.FEEDING_STATION)) {
-                popup.getMenu().getItem(0).setEnabled(true);
-            } else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.CHEW_MOUSE)) {
-                popup.getMenu().getItem(1).setEnabled(true);
-            } else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.YARN_BALL)) {
-                popup.getMenu().getItem(2).setEnabled(true);
-            } else if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.CATNIP)) {
-                {
-                    popup.getMenu().getItem(3).setEnabled(true);
-                }
             }
-            popup.getMenu().getItem(0).setEnabled(true);
 
-        }
+            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.SCRATCHINPOST))
+            {
+                popup.getMenu().getItem(0).setEnabled(true);
+            }
+            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.FEEDING_STATION))
+            {
+                popup.getMenu().getItem(1).setEnabled(true);
+            }
+            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.CHEW_MOUSE))
+            {
+                popup.getMenu().getItem(2).setEnabled(true);
+            }
+            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.YARN_BALL))
+            {
+                popup.getMenu().getItem(3).setEnabled(true);
+            }
+            if (mDataContainer.getmCurrentMoney() > buildingGrid.getBuildingArray().get(buildingNumber).getBaseCost(Building.BuildingType.CATNIP))
+            {
+                popup.getMenu().getItem(4).setEnabled(true);
+            }
+
             popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 public boolean onMenuItemClick(MenuItem item) {
                     switch (view.getId()) {
@@ -149,7 +154,7 @@ public class BuildingsFragment extends Fragment {
 
             popup.show();
         }
-    
+
 
     public void popUpInflater2(final View view, final Context context) {
         //Creating the instance of PopupMenu
