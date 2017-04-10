@@ -49,6 +49,8 @@ public class BuildingsFragment extends Fragment {
         popup.getMenuInflater()
                 .inflate(R.menu.popup_menu, popup.getMenu());
 
+        popup.getMenu().getItem(1).setEnabled(false);
+
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (view.getId()) {
@@ -224,19 +226,26 @@ public class BuildingsFragment extends Fragment {
         switch(item.getItemId()) {
             case R.id.Scratching_Post:
                 building.setmBType(Building.BuildingType.SCRATCHINPOST);
+                building.levelUpBuilding();
                 break;
             case R.id.Feeding_Station:
                 building.setmBType(Building.BuildingType.FEEDING_STATION);
+                building.levelUpBuilding();
                 break;
             case R.id.Chew_Mouse:
                 building.setmBType(Building.BuildingType.CHEW_MOUSE);
+                building.levelUpBuilding();
                 break;
             case R.id.Yarn_Ball:
                 building.setmBType(Building.BuildingType.YARN_BALL);
+                building.levelUpBuilding();
                 break;
             case R.id.Catnip:
                 building.setmBType(Building.BuildingType.CATNIP);
+                building.levelUpBuilding();
                 break;
+
+
         }
 
         return building;
