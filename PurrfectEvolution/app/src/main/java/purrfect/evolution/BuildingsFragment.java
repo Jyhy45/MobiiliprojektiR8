@@ -113,9 +113,12 @@ public class BuildingsFragment extends Fragment {
                 popup.getMenu().getItem(4).setEnabled(true);
             }
 
+
             popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 public boolean onMenuItemClick(MenuItem item) {
-                    switch (view.getId()) {
+
+                    buildingGrid.getBuildingArray().set(buildingNumber,buildingSelector(item,buildingGrid.getBuildingArray().get(buildingNumber)));
+                    /*switch (view.getId()) {
                         case R.id.building1:
 
                             buildingGrid.setBuilding1(buildingSelector(item, buildingGrid.getBuilding1()));
@@ -153,7 +156,7 @@ public class BuildingsFragment extends Fragment {
                             buildingGrid.setBuilding9(buildingSelector(item, buildingGrid.getBuilding9()));
                             Toast.makeText(context, "Tääl on :" + buildingGrid.getBuilding9().getmBType(), Toast.LENGTH_SHORT).show();
                             break;
-                    }
+                    }*/
 
 
                     return true;
