@@ -107,7 +107,7 @@ public  class Building {
             return Double.MAX_VALUE;
         } else if (bType == BuildingType.SCRATCHINPOST) {
             return 20.0d;
-        } else if (mBType == BuildingType.FEEDING_STATION) {
+        } else if (bType == BuildingType.FEEDING_STATION) {
             return 100.0d;
         } else if (bType == BuildingType.CHEW_MOUSE) {
             return 500.0d;
