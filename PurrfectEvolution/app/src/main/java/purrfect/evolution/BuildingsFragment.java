@@ -163,7 +163,7 @@ public class BuildingsFragment extends Fragment {
         popup.getMenuInflater()
                 .inflate(R.menu.popup_menu2, popup.getMenu());
 
-        for (int i = 0; i <= popup.getMenu().size(); i++) {
+        for (int i = 0; i < popup.getMenu().size(); i++) {
             popup.getMenu().getItem(i).setEnabled(false);
         }
 
