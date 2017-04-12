@@ -126,6 +126,7 @@ public  class Building {
     public boolean levelUpBuildingNotFree(DataContainerForPurfectEvolution data){
         calculateAndSetBuildingLevelUpCost();
         boolean res = data.spentMoney(mCurrentBuildingCost);
+        Log.d(TAG, "levelUpBuildingNotFree: used money?:" +res);
         if (res){
             mBuildingLevel++;
             this.calculateAndSetBuildingLevelUpCost();
