@@ -163,6 +163,18 @@ public class BuildingsFragment extends Fragment {
         popup.getMenuInflater()
                 .inflate(R.menu.popup_menu2, popup.getMenu());
 
+        for (int i = 0; i <= popup.getMenu().size(); i++) {
+            popup.getMenu().getItem(i).setEnabled(false);
+        }
+
+        if (Double.compare(mDataContainer.getmCurrentMoney(),buildingGrid.getBuildingArray().get(buildingNumber).getmCurrentBuildingCost()) >= 0)
+        {
+            popup.getMenu().getItem(0).setEnabled(true);
+        }
+
+
+
+
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
 
@@ -298,6 +310,8 @@ public class BuildingsFragment extends Fragment {
 
         }
 
+        mDataContainer.spentMoney(building.getBaseCost());
+
         return building;
 
     }
@@ -306,8 +320,7 @@ public class BuildingsFragment extends Fragment {
 
         switch (item.getItemId()) {
             case R.id.Upgrade:
-                double oldLVL = building.getmBuildingLevel();
-                building.setmBuildingLevel(oldLVL +1);
+                building.levelUpBuildingNotFree(mDataContainer);
                 return 0;
 
             case R.id.Destroy:
