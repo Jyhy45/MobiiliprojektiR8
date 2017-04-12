@@ -359,7 +359,18 @@ public class BuildingsFragment extends Fragment {
 
     public void onClick(View v,Context context) {
 
-        switch (v.getId()) {
+        buildingNumber(v);
+
+        if(buildingGrid.getBuildingArray().get(buildingNumber).getmBType() == Building.BuildingType.NONE)
+        {
+            popUpInflater(v,context);
+        }
+        else
+        {
+            popUpInflater2(v,context);
+        }
+
+        /*switch (v.getId()) {
             case R.id.building1:
                 if(buildingGrid.getBuilding1().getmBType() == Building.BuildingType.NONE)
                 {
@@ -450,7 +461,7 @@ public class BuildingsFragment extends Fragment {
                     popUpInflater2(v,context);
                 }
                 break;
-        }
+        }*/
 
     }
 
