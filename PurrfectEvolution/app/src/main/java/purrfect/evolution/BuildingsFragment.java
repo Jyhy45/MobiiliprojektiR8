@@ -194,7 +194,16 @@ public class BuildingsFragment extends Fragment {
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
 
-                switch (view.getId()) {
+                if(actionSelector(item, buildingGrid.getBuildingArray().get(buildingNumber)) == 1)
+                {
+                    buildingGrid.getBuildingArray().get(buildingNumber).setmBType(Building.BuildingType.NONE);
+                }
+                else
+                {
+
+                }
+
+                /*switch (view.getId()) {
                     case R.id.building1:
                         if(actionSelector(item, buildingGrid.getBuilding1())== 1)
                         {
@@ -294,7 +303,7 @@ public class BuildingsFragment extends Fragment {
 
                         }
                         break;
-                }
+                }*/
 
                 return true;
             }
