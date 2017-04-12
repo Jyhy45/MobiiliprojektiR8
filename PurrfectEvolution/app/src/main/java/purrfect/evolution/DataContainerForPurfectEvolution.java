@@ -464,7 +464,7 @@ final class DataContainerForPurfectEvolution {
     }
 
     public void calculateEverything(){
-        Log.d(TAG, "calculateEverything: Now Running");
+        //Log.d(TAG, "calculateEverything: Now Running");
         for (Building b: MainActivity.getMbuildingGrid().getBuildingArray()) {
             b.calculateAndSetBuildingLevelUpCost();
             b.calculateAndSetProductionAmountPerSecond();
@@ -472,7 +472,7 @@ final class DataContainerForPurfectEvolution {
         calculateHappinesIncrease();
         calculateMoneyIncrease();
         calculateSuscripersToBeGained();
-        Log.d(TAG, "calculateEverything: Now ended");
+        //Log.d(TAG, "calculateEverything: Now ended");
     }
 
     public void calculateSuscripersToBeGained(){
