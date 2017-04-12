@@ -119,6 +119,8 @@ public  class Building {
     }
     public void levelUpBuildingFree(){
         mBuildingLevel++;
+        this.calculateAndSetBuildingLevelUpCost();
+        this.calculateAndSetProductionAmountPerSecond();
     }
 
     public boolean levelUpBuildingNotFree(DataContainerForPurfectEvolution data){
