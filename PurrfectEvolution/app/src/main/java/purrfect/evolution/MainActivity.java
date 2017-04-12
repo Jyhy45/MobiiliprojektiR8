@@ -230,6 +230,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void moneyButtonOnClick(View view)
+    {
+        mDataContainer.convertHappinessToMoney();
+    }
+
 
     public void bananaReset(View view)
     {
