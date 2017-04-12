@@ -80,7 +80,7 @@ public class BuildingsFragment extends Fragment {
                 break;
         }
 
-        for (int i = 0; i > 4; i++) {
+        for (int i = 0; i < 5; i++) {
             popup.getMenu().getItem(i).setEnabled(false);
             }
 

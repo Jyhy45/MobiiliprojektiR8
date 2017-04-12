@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         return mDataContainer;
     }
 
-    private static DataContainerForPurfectEvolution mDataContainer;
+    private static DataContainerForPurfectEvolution mDataContainer = new DataContainerForPurfectEvolution();
     private static BuildingGrid mbuildingGrid = new BuildingGrid();
     private ViewPager mViewPager;
     private static int mInterval = 1000;
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-        mDataContainer = new DataContainerForPurfectEvolution();
+
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
