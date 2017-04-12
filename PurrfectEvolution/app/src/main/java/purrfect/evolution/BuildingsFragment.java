@@ -171,6 +171,9 @@ public class BuildingsFragment extends Fragment {
         {
             popup.getMenu().getItem(0).setEnabled(true);
         }
+        popup.getMenu().getItem(1).setEnabled(true);
+
+
 
 
 
