@@ -55,7 +55,6 @@ public  class Building {
     private BuildingType mBType;
     private double mBaseProductionAmount=0;
     private double mBuildingLevel=0;
-    private double mBaseCost=20;
     public int mImagePath;                  //=R.drawable.ic_heart_0;
     public int mAnimationPath;              //=R.drawable.animation_list_filling;
     private double mProductionAmountPerSecond;
@@ -70,6 +69,9 @@ public  class Building {
     public double getmProductionAmountPerSecond() {
         return mProductionAmountPerSecond;
     }
+
+
+
     public void calculateAndSetProductionAmountPerSecond(){
         //income=baseincome*lvl
         if (mBType == BuildingType.NONE){
@@ -124,6 +126,8 @@ public  class Building {
         boolean res = data.spentMoney(mCurrentBuildingCost);
         if (res){
             mBuildingLevel++;
+            this.calculateAndSetBuildingLevelUpCost();
+            this.calculateAndSetProductionAmountPerSecond();
             return true;
         }else{
             return false;
@@ -166,14 +170,6 @@ public  class Building {
 
     public void setmBuildingLevel(double mBuildingLevel) {
         this.mBuildingLevel = mBuildingLevel;
-    }
-
-    public double getmBaseCost() {
-        return mBaseCost;
-    }
-
-    public void setmBaseCost(double mBaseCost) {
-        this.mBaseCost = mBaseCost;
     }
 
     public int getmImagePath() {
