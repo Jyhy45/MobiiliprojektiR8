@@ -80,7 +80,7 @@ public class BuildingsFragment extends Fragment {
                 break;
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < popup.getMenu().size(); i++) {
             popup.getMenu().getItem(i).setEnabled(false);
             }
 
@@ -312,7 +312,7 @@ public class BuildingsFragment extends Fragment {
 
 
         }
-
+        building.setmBuildingLevel(1);
         mDataContainer.spentMoney(building.getBaseCost());
 
         return building;
