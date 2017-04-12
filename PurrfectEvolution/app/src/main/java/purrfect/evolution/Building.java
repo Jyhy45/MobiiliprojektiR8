@@ -54,7 +54,7 @@ public  class Building {
     private double mBaseProductionTime=0;
     private BuildingType mBType;
     private double mBaseProductionAmount=0;
-    private double mBuildingLevel=0;
+    private long mBuildingLevel=0;
     public int mImagePath;                  //=R.drawable.ic_heart_0;
     public int mAnimationPath;              //=R.drawable.animation_list_filling;
     private double mProductionAmountPerSecond;
@@ -70,6 +70,20 @@ public  class Building {
         return mProductionAmountPerSecond;
     }
 
+
+    public int getImageResource(){
+        return getImageResource(mBuildingLevel,mBType);
+    }
+    public int getImageResource(long level){
+        return getImageResource(level,this.mBType);
+    }
+    public int getImageResource(BuildingType type){
+
+        return getImageResource(mBuildingLevel,type);
+    }
+    public int getImageResource(long level,BuildingType type){
+        
+    }
 
 
     public void calculateAndSetProductionAmountPerSecond(){
@@ -167,11 +181,11 @@ public  class Building {
         this.mBaseProductionAmount = mBaseProductionAmount;
     }
 
-    public double getmBuildingLevel() {
+    public long getmBuildingLevel() {
         return mBuildingLevel;
     }
 
-    public void setmBuildingLevel(double mBuildingLevel) {
+    public void setmBuildingLevel(long mBuildingLevel) {
         this.mBuildingLevel = mBuildingLevel;
     }
 
