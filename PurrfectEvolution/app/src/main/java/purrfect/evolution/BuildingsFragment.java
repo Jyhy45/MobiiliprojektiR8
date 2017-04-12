@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,13 @@ public class BuildingsFragment extends Fragment {
 
     public BuildingsFragment() {
 
+    }
+
+    public void imageUpdate(View view)
+    {
+        ImageView imageView = (ImageView) view;
+
+        imageView.setImageResource(R.drawable.ic_heart_100);
     }
 
     public void buildingNumber(View view){
@@ -113,7 +121,6 @@ public class BuildingsFragment extends Fragment {
                 popup.getMenu().getItem(4).setEnabled(true);
             }
 
-
             popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 public boolean onMenuItemClick(MenuItem item) {
 
@@ -157,7 +164,7 @@ public class BuildingsFragment extends Fragment {
                             Toast.makeText(context, "Tääl on :" + buildingGrid.getBuilding9().getmBType(), Toast.LENGTH_SHORT).show();
                             break;
                     }*/
-
+                    imageUpdate(view);
 
                     return true;
                 }
@@ -197,10 +204,11 @@ public class BuildingsFragment extends Fragment {
                 if(actionSelector(item, buildingGrid.getBuildingArray().get(buildingNumber)) == 1)
                 {
                     buildingGrid.getBuildingArray().get(buildingNumber).setmBType(Building.BuildingType.NONE);
+                    imageUpdate(view);
                 }
                 else
                 {
-
+                    imageUpdate(view);
                 }
 
                 /*switch (view.getId()) {
@@ -335,6 +343,9 @@ public class BuildingsFragment extends Fragment {
 
         }
         building.setmBuildingLevel(1);
+
+
+
         mDataContainer.spentMoney(building.getBaseCost());
 
         return building;
@@ -346,6 +357,7 @@ public class BuildingsFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.Upgrade:
                 building.levelUpBuildingNotFree(mDataContainer);
+
                 return 0;
 
             case R.id.Destroy:
