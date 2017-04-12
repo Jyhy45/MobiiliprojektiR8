@@ -82,9 +82,71 @@ public  class Building {
         return getImageResource(mBuildingLevel,type);
     }
     public int getImageResource(long level,BuildingType type){
-        
+        final long threshold1 = 11;
+        final long threshold2 = 21;
+        final long threshold3 = 31;
+        switch (type){
+            case CATNIP:
+                if (level < threshold1){
+                    return mImagePath = 1;
+                }else if(level < threshold2){
+                    return mImagePath = 1;
+                }else{
+                    return mImagePath = 1;
+                }
+            case CHEW_MOUSE:
+                if (level < threshold1){
+                    return mImagePath = 1;
+                }else if(level < threshold2){
+                    return mImagePath = 1;
+                }else{
+                    return mImagePath = 1;
+                }
+            case FEEDING_STATION:
+                if (level < threshold1){
+                    return mImagePath = 1;
+                }else if(level < threshold2){
+                    return mImagePath = 1;
+                }else{
+                    return mImagePath = 1;
+                }
+            case SCRATCHINPOST:
+                if (level < threshold1){
+                    return mImagePath = 1;
+                }else if(level < threshold2){
+                    return mImagePath = 1;
+                }else{
+                    return mImagePath = 1;
+                }
+            case YARN_BALL:
+                if (level < threshold1){
+                    return mImagePath = 1;
+                }else if(level < threshold2){
+                    return mImagePath = 1;
+                }else{
+                    return mImagePath = 1;
+                }
+            case NONE:
+                //palauta under construction kuva
+                if (level < threshold1){
+                    return mImagePath = 1;
+                }else if(level < threshold2){
+                    return mImagePath = 1;
+                }else{
+                    return mImagePath = 1;
+                }
+            default:
+                // palauta not found kuva
+                if (level < threshold1){
+                    return mImagePath = 1;
+                }else if(level < threshold2){
+                    return mImagePath = 1;
+                }else{
+                    return mImagePath = 1;
+                }
+        }
 
-        return 0;
+        
     }
 
 
