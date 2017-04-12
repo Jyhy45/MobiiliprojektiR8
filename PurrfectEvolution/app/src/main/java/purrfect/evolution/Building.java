@@ -99,6 +99,9 @@ public  class Building {
             mCurrentBuildingCost =getBaseCost() * Math.pow(mMultiplier,this.mBuildingLevel);
         }
     }
+    public double getBaseCost(){
+        return getBaseCost(this.mBType);
+    }
     public double getBaseCost(BuildingType bType) {
         if (bType == BuildingType.NONE) {
             return Double.MAX_VALUE;
@@ -117,6 +120,7 @@ public  class Building {
 
         }
     }
+
     public void levelUpBuildingFree(){
         mBuildingLevel++;
         this.calculateAndSetBuildingLevelUpCost();
@@ -126,7 +130,7 @@ public  class Building {
     public boolean levelUpBuildingNotFree(DataContainerForPurfectEvolution data){
         calculateAndSetBuildingLevelUpCost();
         boolean res = data.spentMoney(mCurrentBuildingCost);
-        Log.d(TAG, "levelUpBuildingNotFree: used money?:" +res);
+        Log.d(TAG, "levelUpBuildingNotFree: used money?:" + res+ " " + mCurrentBuildingCost);
         if (res){
             mBuildingLevel++;
             this.calculateAndSetBuildingLevelUpCost();
@@ -135,10 +139,6 @@ public  class Building {
         }else{
             return false;
         }
-    }
-
-    public double getBaseCost(){
-        return getBaseCost(this.mBType);
     }
 
 

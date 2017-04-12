@@ -257,7 +257,7 @@ final class DataContainerForPurfectEvolution {
      * @return Return true if money was used; return false if money was not spent
      * */
     public  boolean spentMoney(double mSpentMoney){
-        if (Double.compare(mSpentMoney,mCurrentMoney)>=0)
+        if (Double.compare(mCurrentMoney,mSpentMoney)>=0)
         {
             mCurrentMoney-=mSpentMoney;
             return true;
