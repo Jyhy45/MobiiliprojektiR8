@@ -477,6 +477,6 @@ final class DataContainerForPurfectEvolution {
 
     public void calculateSuscripersToBeGained(){
        double leftOverMoney = (mThisCycleMoneyEarnings-(mCurrentSuscripers*1));
-
+        //TODO: implement me
     }
 }
