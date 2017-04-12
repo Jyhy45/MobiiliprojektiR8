@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             handler.postDelayed(updateTickRunnable, mInterval);
             mDataContainer.tickTime();
             updateText(); //TODO: Aiheuttaa crashin viimesessä fragmentissä koska kursuu findbyId eikä kyseistä objektia ole
-            Log.d(TAG, "run: now at update ticker");
+            //Log.d(TAG, "run: now at update ticker");
         }
     };
 

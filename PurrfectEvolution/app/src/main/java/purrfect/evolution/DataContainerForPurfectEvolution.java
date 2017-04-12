@@ -376,8 +376,8 @@ final class DataContainerForPurfectEvolution {
         mCurrentHappines+=(mCurrentHappinessIncrease);
         mCurrentMoney+=(mCurrentMoneyIncrease);
 
-        Log.d(TAG, "tickTime: Happines "+mCurrentHappines+" money "+mCurrentMoney);
-        Log.d(TAG, "tickTime: Increase Happines " +mCurrentHappinessIncrease+" money:" +mCurrentMoneyIncrease);
+        //Log.d(TAG, "tickTime: Happines "+mCurrentHappines+" money "+mCurrentMoney);
+        //Log.d(TAG, "tickTime: Increase Happines " +mCurrentHappinessIncrease+" money:" +mCurrentMoneyIncrease);
 
         //TODO: run this when buildings change .. not here .. only here for testing
         calculateEverything();
