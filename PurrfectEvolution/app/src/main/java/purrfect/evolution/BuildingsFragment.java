@@ -41,20 +41,7 @@ public class BuildingsFragment extends Fragment {
 
     }
 
-    public int buildingNumber(){
-
-
-
-
-        return buildingNumber;
-    }
-
-    public void popUpInflater(final View view, final Context context) {
-        //Creating the instance of PopupMenu
-        PopupMenu popup = new PopupMenu(context, view);
-        //Inflating the Popup using xml file
-        popup.getMenuInflater()
-                .inflate(R.menu.popup_menu, popup.getMenu());
+    public void buildingNumber(View view){
 
         buildingNumber = 0;
 
@@ -87,6 +74,19 @@ public class BuildingsFragment extends Fragment {
                 buildingNumber = 8;
                 break;
         }
+
+
+
+    }
+
+    public void popUpInflater(final View view, final Context context) {
+        //Creating the instance of PopupMenu
+        PopupMenu popup = new PopupMenu(context, view);
+        //Inflating the Popup using xml file
+        popup.getMenuInflater()
+                .inflate(R.menu.popup_menu, popup.getMenu());
+
+        buildingNumber(view);
 
         for (int i = 0; i < popup.getMenu().size(); i++) {
             popup.getMenu().getItem(i).setEnabled(false);
@@ -171,39 +171,7 @@ public class BuildingsFragment extends Fragment {
         popup.getMenuInflater()
                 .inflate(R.menu.popup_menu2, popup.getMenu());
 
-        buildingNumber = 0;
-
-        switch (view.getId()) {
-            case R.id.building1:
-                buildingNumber = 0;
-                break;
-            case R.id.building2:
-                buildingNumber = 1;
-                break;
-            case R.id.building3:
-                buildingNumber = 2;
-                break;
-            case R.id.building4:
-                buildingNumber = 3;
-                break;
-            case R.id.building5:
-                buildingNumber = 4;
-                break;
-            case R.id.building6:
-                buildingNumber = 5;
-                break;
-            case R.id.building7:
-                buildingNumber = 6;
-                break;
-            case R.id.building8:
-                buildingNumber = 7;
-                break;
-            case R.id.building9:
-                buildingNumber = 8;
-                break;
-        }
-
-
+        buildingNumber(view);
 
         for (int i = 0; i < popup.getMenu().size(); i++) {
             popup.getMenu().getItem(i).setEnabled(false);
