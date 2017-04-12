@@ -83,6 +83,8 @@ public  class Building {
     }
     public int getImageResource(long level,BuildingType type){
         
+
+        return 0;
     }
 
 
