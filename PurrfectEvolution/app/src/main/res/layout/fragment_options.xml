@@ -11,36 +11,32 @@
     app:rowCount="30"
     android:background="@drawable/kissatausta1">
 
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="33dp"
-        android:text="TextView" />
-
     <Button
         android:id="@+id/Reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/section_label"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
-        android:layout_toEndOf="@+id/section_label"
         android:onClick="bananaReset"
-        android:text="Button" />
+        android:text="Button"
+        android:layout_below="@+id/Reset"
+        android:layout_alignStart="@+id/Reset" />
 
     <Button
         android:id="@+id/moneyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/Reset"
-        android:layout_marginEnd="53dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="27dp"
         android:onClick="moneyButtonOnClick"
         android:text="Anna Rahea" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/optionikkuna"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
 
 
