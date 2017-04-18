@@ -124,7 +124,7 @@ public class BuildingsFragment extends Fragment {
             popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 public boolean onMenuItemClick(MenuItem item) {
                     buildingGrid.getBuildingArray().set(buildingNumber,buildingSelector(item,buildingGrid.getBuildingArray().get(buildingNumber)));
-                    imageUpdate(view);
+                    //imageUpdate(view);
 
                     return true;
                 }
@@ -164,11 +164,11 @@ public class BuildingsFragment extends Fragment {
                 if(actionSelector(item, buildingGrid.getBuildingArray().get(buildingNumber)) == 1)
                 {
                     buildingGrid.getBuildingArray().get(buildingNumber).setmBType(Building.BuildingType.NONE);
-                    imageUpdate(view);
+                    //imageUpdate(view);
                 }
                 else
                 {
-                    imageUpdate(view);
+                    //imageUpdate(view);
                 }
                 return true;
             }

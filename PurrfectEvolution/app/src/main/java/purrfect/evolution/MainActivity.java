@@ -91,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
     };
 
     //facebook stuff
-    CallbackManager callbackManager;
-    ShareDialog shareDialog;
+    //CallbackManager callbackManager;
+    //ShareDialog shareDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //facebook stuff
-        callbackManager = CallbackManager.Factory.create();
-        shareDialog = new ShareDialog(this);
+        //callbackManager = CallbackManager.Factory.create();
+        //shareDialog = new ShareDialog(this);
 
 
         buildingsFragment = new BuildingsFragment();
@@ -152,10 +152,10 @@ public class MainActivity extends AppCompatActivity {
         raheKuva.bringToFront();
         onniKuva.bringToFront();
         dimangitKuva.bringToFront();
-        //facebook stuff
-        ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
-        shareButton.setShareContent(facebookShareImage(BitmapFactory.decodeResource(getResources(),R.drawable.timangi)));
 
+        //facebook stuff
+        //ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
+        //shareButton.setShareContent(facebookShareImage(BitmapFactory.decodeResource(getResources(),R.drawable.timangi)));
     }
 
     @Override
@@ -178,11 +178,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
     //facebook stuff
-    @Override
+    /*@Override
     protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
-    }
+    }*/
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -262,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //facebook stuff
-    public SharePhotoContent facebookShareImage(Bitmap image)
+    /*public SharePhotoContent facebookShareImage(Bitmap image)
     {
             SharePhoto photo = new SharePhoto.Builder()
                     .setBitmap(image)
@@ -272,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
                     .build();
 
             return content;
-    }
+    }*/
 
 
 
