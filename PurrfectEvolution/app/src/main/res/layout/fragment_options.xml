@@ -11,14 +11,19 @@
     app:rowCount="30"
     android:background="@drawable/kissatausta1">
 
+    <com.facebook.share.widget.ShareButton
+        android:id="@+id/fb_share_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Reset"
+        android:layout_alignStart="@+id/Reset" />
     <Button
         android:id="@+id/Reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="bananaReset"
         android:text="Button"
-        android:layout_below="@+id/Reset"
-        android:layout_alignStart="@+id/Reset" />
+         />
 
     <Button
         android:id="@+id/moneyButton"

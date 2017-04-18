@@ -1,7 +1,10 @@
 package purrfect.evolution;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
@@ -20,6 +23,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.facebook.CallbackManager;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.model.SharePhoto;
+import com.facebook.share.model.SharePhotoContent;
+import com.facebook.share.widget.ShareButton;
+import com.facebook.share.widget.ShareDialog;
 
 import static android.content.ContentValues.TAG;
 
@@ -75,14 +85,25 @@ public class MainActivity extends AppCompatActivity {
             mDataContainer.tickTime();
             updateText(); //TODO: Aiheuttaa crashin viimesessä fragmentissä koska kursuu findbyId eikä kyseistä objektia ole
             //Log.d(TAG, "run: now at update ticker");
+
+
         }
     };
+
+    //facebook stuff
+    CallbackManager callbackManager;
+    ShareDialog shareDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "onCreate: LIFECYCLE");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //facebook stuff
+        callbackManager = CallbackManager.Factory.create();
+        shareDialog = new ShareDialog(this);
+
 
         buildingsFragment = new BuildingsFragment();
         catFragment = new CatFragment();
@@ -131,6 +152,9 @@ public class MainActivity extends AppCompatActivity {
         raheKuva.bringToFront();
         onniKuva.bringToFront();
         dimangitKuva.bringToFront();
+        //facebook stuff
+        ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
+        shareButton.setShareContent(facebookShareImage(BitmapFactory.decodeResource(getResources(),R.drawable.timangi)));
 
     }
 
@@ -153,6 +177,13 @@ public class MainActivity extends AppCompatActivity {
         handler.removeCallbacks(updateTickRunnable);
 
     }
+    //facebook stuff
+    @Override
+    protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -229,6 +260,23 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    //facebook stuff
+    public SharePhotoContent facebookShareImage(Bitmap image)
+    {
+            SharePhoto photo = new SharePhoto.Builder()
+                    .setBitmap(image)
+                    .build();
+            SharePhotoContent content = new SharePhotoContent.Builder()
+                    .addPhoto(photo)
+                    .build();
+
+            return content;
+    }
+
+
+
+
 
     public void moneyButtonOnClick(View view)
     {
