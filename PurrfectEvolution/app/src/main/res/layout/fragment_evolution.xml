@@ -5,18 +5,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="purrfect.evolution.OptionsFragment"
     android:visibility="visible"
     app:columnCount="10"
     app:rowCount="30"
-    android:background="@drawable/kissatausta1">
+    android:background="@drawable/kissatausta1"
+    android:id="@+id/fragment_evolution">
 
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/evoluutiokissa" />
+        android:layout_height="match_parent" />
+
+
 </RelativeLayout>
 
 

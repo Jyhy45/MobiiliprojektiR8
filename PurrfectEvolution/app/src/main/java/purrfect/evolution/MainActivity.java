@@ -2,6 +2,8 @@ package purrfect.evolution;
 
 import android.content.SharedPreferences;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static DataContainerForPurfectEvolution mDataContainer;
     private static BuildingGrid mbuildingGrid = new BuildingGrid();
+    private static CatData catData;
     private ViewPager mViewPager;
     private static int mInterval = 1000;
 
@@ -43,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView onniKuva;
     TextView dimangit;
     ImageView dimangitKuva;
+
+    Drawable kissapaa;
+    Drawable kissabody;
+    Drawable kissahanta;
 
     BuildingsFragment buildingsFragment;
     CatFragment catFragment;
@@ -56,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
     public static BuildingGrid getMbuildingGrid() {
         return mbuildingGrid;
     }
+
+    public static CatData getCatData() { return catData; }
 
     public static int getmInterval() {
         return mInterval;
@@ -84,6 +93,10 @@ public class MainActivity extends AppCompatActivity {
 
         buildingsFragment = new BuildingsFragment();
         catFragment = new CatFragment();
+
+        //CatData catData = new CatData(MainActivity.this);
+
+        EvolutionFragment evolutionFragment = new EvolutionFragment();
 
         // Get screen size and pass it to catFragment
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -130,6 +143,11 @@ public class MainActivity extends AppCompatActivity {
         onniKuva.bringToFront();
         dimangitKuva.bringToFront();
 
+        kissabody =  getDrawable(R.drawable.nokikissa_kroppa);
+        kissahanta = getDrawable(R.drawable.nokikissas_hanta);
+        kissapaa = getDrawable(R.drawable.nokikissa_paa);
+
+        catData = new CatData(kissahanta, kissabody, kissapaa);
     }
 
     @Override
