@@ -224,15 +224,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickBuilding(View view)
     {
-
-
-
         Context context = MainActivity.this;
 
         buildingsFragment.onClick(view, context);
-
-
-
     }
 
 
