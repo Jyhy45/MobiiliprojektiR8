@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         return mbuildingGrid;
     }
     BuildingsFragment buildingsFragment;
-
+    OptionsFragment optionsFragment;
     private Handler handler = new Handler();
 
 
@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView onniKuva;
     TextView dimangit;
     ImageView dimangitKuva;
+
+    ImageView options_text;
 
     CatFragment catFragment;
 
@@ -106,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         buildingsFragment = new BuildingsFragment();
+        optionsFragment = new OptionsFragment();
         catFragment = new CatFragment();
 
         // Get screen size and pass it to catFragment
@@ -146,12 +149,14 @@ public class MainActivity extends AppCompatActivity {
         raheKuva = (ImageView) findViewById(R.id.imageView);
         onniKuva = (ImageView) findViewById(R.id.imageView2);
         dimangitKuva = (ImageView) findViewById(R.id.imageView3);
+        options_text = (ImageView) findViewById((R.id.options_text));
         rahe.bringToFront();
         onni.bringToFront();
         dimangit.bringToFront();
         raheKuva.bringToFront();
         onniKuva.bringToFront();
         dimangitKuva.bringToFront();
+        options_text.bringToFront();
 
         //facebook stuff
         //ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
@@ -219,6 +224,13 @@ public class MainActivity extends AppCompatActivity {
             // Show 4 total pages.
             return 4;
         }
+    }
+
+    public void options_Onclick(View view)
+    {
+        Context context = MainActivity.this;
+
+        optionsFragment.onClick(view,context);
     }
 
 
