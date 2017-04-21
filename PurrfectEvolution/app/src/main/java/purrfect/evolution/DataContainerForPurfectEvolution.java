@@ -34,33 +34,56 @@ final class DataContainerForPurfectEvolution {
     double mSessionHappinessEarnings = 0;
     double mThisCycleHappinessEarnings = 0;
 
+    //options variables
+    int mSoundOnOff = 0;
+
+    int mAnimationsOnOff = 0;
+
     //Variables for buildings for saving purposes
     int mTypeBuilding1 = 0;
+
     long mLevelBuilding1 = 0;
-
     int mTypeBuilding2 = 0;
+
     long mLevelBuilding2 = 0;
-
     int mTypeBuilding3 = 0;
+
     long mLevelBuilding3 = 0;
-
     int mTypeBuilding4 = 0;
+
     long mLevelBuilding4 = 0;
-
     int mTypeBuilding5 = 0;
+
     long mLevelBuilding5 = 0;
-
     int mTypeBuilding6 = 0;
+
     long mLevelBuilding6 = 0;
-
     int mTypeBuilding7 = 0;
+
     long mLevelBuilding7 = 0;
-
     int mTypeBuilding8 = 0;
-    long mLevelBuilding8 = 0;
 
+    long mLevelBuilding8 = 0;
     int mTypeBuilding9 = 0;
+
     long mLevelBuilding9 = 0;
+
+
+    public int getmSoundOnOff() {
+        return mSoundOnOff;
+    }
+
+    public void setmSoundOnOff(int mSoundOnOff) {
+        this.mSoundOnOff = mSoundOnOff;
+    }
+
+    public int getmAnimationsOnOff() {
+        return mAnimationsOnOff;
+    }
+
+    public void setmAnimationsOnOff(int mAnimationsOnOff) {
+        this.mAnimationsOnOff = mAnimationsOnOff;
+    }
 
 
     public DataContainerForPurfectEvolution()
@@ -70,10 +93,10 @@ final class DataContainerForPurfectEvolution {
     /**
      * Loads values for all variables from sharedPreferences
      * @param data is instance of SharedPreferences in which persisting data is stored between sessions.
-     *          
+     *
      * @return Should return true if load was successful needs some TLC
      * */
-    
+
     public boolean loadDataFromPreference(SharedPreferences data){
         // TODO: 27.3.2017 Add resetting session variables.
         // FIXME: 27.3.2017 Return values and test if it actually load values correctly.
