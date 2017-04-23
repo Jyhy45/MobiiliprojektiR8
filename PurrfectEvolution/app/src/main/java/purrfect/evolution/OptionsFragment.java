@@ -27,6 +27,9 @@ public class OptionsFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     RelativeLayout optionsRelativeLayout;
+    int nappula = 0;
+    int nappula2 = 0;
+    DataContainerForPurfectEvolution mDataContainer = MainActivity.getmDataContainer();
 
     public OptionsFragment() {
     }
@@ -44,59 +47,112 @@ public class OptionsFragment extends Fragment {
 
     public void onClick(View view, Context context)
     {
-        int state = 0;
-        int state2 = 0;
+        ImageButton imageButton;
 
         switch(view.getId()) {
             case R.id.On1:
-                if (state == 1) {
-
+                nappula = 1;
+                nappula2 =2;
+                if (mDataContainer.getmSoundOnOff() == 1) {
                 }
-                else if (state == 0) {
+                else if (mDataContainer.getmSoundOnOff()== 0) {
+                    buttonToggle(view,context,nappula,nappula2);
+                    musicToggle(mDataContainer.getmSoundOnOff());
                 }
-
                 break;
             case R.id.On2:
-                if (state2 == 1) {
+                nappula = 3;
+                nappula2= 4;
+                if (mDataContainer.getmAnimationsOnOff()==1) {
                 }
-                else if (state2 == 0) {
+                else if (mDataContainer.getmAnimationsOnOff()==0) {
+                    buttonToggle(view,context,nappula,nappula2);
+                    animationsToggle(mDataContainer.getmAnimationsOnOff());
                 }
                 break;
             case R.id.Off1:
-                if (state == 1) {
+                nappula = 1;
+                nappula2 = 2;
+                if (mDataContainer.getmSoundOnOff() == 1) {
+                    buttonToggle(view,context,nappula,nappula2);
+                    musicToggle(mDataContainer.getmSoundOnOff());
                 }
-                else if (state == 0) {
+                else if (mDataContainer.getmSoundOnOff() == 0) {
                 }
                 break;
             case R.id.Off2:
-                if (state2 == 1) {
+                nappula = 3;
+                nappula2 = 4;
+                if (mDataContainer.getmAnimationsOnOff()==1 ) {
                 }
-                else if (state2 == 0) {
+                else if (mDataContainer.getmAnimationsOnOff()== 0) {
+                    buttonToggle(view,context,nappula,nappula2);
+                    animationsToggle(mDataContainer.getmAnimationsOnOff());
                 }
                 break;
-
-
     }
 
     }
 
-    public void buttonToggle(View view, Context context)
+    public void buttonToggle(View view, Context context,int nappula, int nappula2)
     {
         ImageButton imageButton;
         imageButton = (ImageButton)view;
         ImageButton imageButton2;
+        imageButton2 = (ImageButton)view;
 
+        switch (nappula) {
+            case 1:
+                imageButton = (ImageButton) optionsRelativeLayout.findViewById(R.id.On1);
+                break;
+            case 2:
+                imageButton2 = (ImageButton)optionsRelativeLayout.findViewById(R.id.On2);
+                break;
+        }
+        switch (nappula2) {
+            case 3:
+                imageButton2 = (ImageButton)optionsRelativeLayout.findViewById(R.id.Off1);
+                break;
+            case 4:
+                imageButton2 = (ImageButton)optionsRelativeLayout.findViewById(R.id.Off2);
+                break;
+        }
 
+        if(imageButton.getDrawable() ==getResources().getDrawable(R.drawable.on_vihr))
+        {
+            imageButton.setImageDrawable(getResources().getDrawable(R.drawable.on_harm));
+            imageButton2.setImageDrawable(getResources().getDrawable(R.drawable.off_pun));
 
+        }
+        else if(imageButton.getDrawable()== getResources().getDrawable((R.drawable.on_harm)))
+        {
+            imageButton.setImageDrawable(getResources().getDrawable(R.drawable.on_vihr));
+            imageButton2.setImageDrawable(getResources().getDrawable(R.drawable.off_harm));
+        }
+    }
 
-        imageButton.setImageDrawable(getResources().getDrawable(R.drawable.off_harm));
+    void musicToggle(int state)
+    {
+        switch (state) {
+            case 1:
+                mDataContainer.setmSoundOnOff(0);
+                break;
+            case 0:
+                mDataContainer.setmSoundOnOff(1);
+                break;
+        }
+    }
 
-        imageButton.setImageDrawable(getResources().getDrawable(R.drawable.off_pun));
-
-        imageButton.setImageDrawable(getResources().getDrawable(R.drawable.on_harm));
-
-        imageButton.setImageDrawable(getResources().getDrawable(R.drawable.on_vihr));
-
+    void animationsToggle(int state)
+    {
+        switch (state) {
+            case 1:
+                mDataContainer.setmAnimationsOnOff(0);
+                break;
+            case 0:
+                mDataContainer.setmAnimationsOnOff(1);
+                break;
+        }
     }
 
 
