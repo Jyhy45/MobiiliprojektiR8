@@ -149,14 +149,16 @@ public class MainActivity extends AppCompatActivity {
         raheKuva = (ImageView) findViewById(R.id.imageView);
         onniKuva = (ImageView) findViewById(R.id.imageView2);
         dimangitKuva = (ImageView) findViewById(R.id.imageView3);
-        options_text = (ImageView) findViewById((R.id.options_text));
+
         rahe.bringToFront();
         onni.bringToFront();
         dimangit.bringToFront();
         raheKuva.bringToFront();
         onniKuva.bringToFront();
         dimangitKuva.bringToFront();
-        options_text.bringToFront();
+        //Bliipbloop
+        //options_text = (ImageView) findViewById((R.id.options_text));
+        //options_text.bringToFront();
 
         //facebook stuff
         //ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
