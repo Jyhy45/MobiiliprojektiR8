@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.content.Context;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import static android.content.ContentValues.TAG;
 
 
 public class OptionsFragment extends Fragment {
@@ -47,6 +50,8 @@ public class OptionsFragment extends Fragment {
 
     public void onClick(View view, Context context)
     {
+        Log.i(TAG, "onClick: alussa");
+
         switch(view.getId()) {
             case R.id.On1:
                 nappula = 1;
@@ -88,15 +93,22 @@ public class OptionsFragment extends Fragment {
                     animationsToggle(mDataContainer.getmAnimationsOnOff());
                 }
                 break;
-    }
+        }
 
+        Log.i(TAG, "onClick: lopussa");
     }
 
     public void buttonToggle(View view, Context context,int nappula, int nappula2)
     {
+        Log.i(TAG, "buttonToggle: alussa");
         ImageButton imageButton;
         ImageButton imageButton2;
+<<<<<<< HEAD
 
+=======
+        imageButton2 = (ImageButton)view;
+        Log.i(TAG, "buttonToggle: declaraatiot loppu");
+>>>>>>> 978fd7f492c030d2f0a3b86301339155f9305534
         switch (nappula) {
             case 1:
                 imageButton = (ImageButton) optionsRelativeLayout.findViewById(R.id.On1);
@@ -119,7 +131,7 @@ public class OptionsFragment extends Fragment {
                 imageButton2 = (ImageButton)view;
                 break;
         }
-
+        Log.i(TAG, "buttonToggle: valissa");
         if(imageButton.getDrawable() == getResources().getDrawable(R.drawable.on_vihr))
         {
             imageButton.setImageDrawable(getResources().getDrawable(R.drawable.on_harm));
@@ -131,6 +143,7 @@ public class OptionsFragment extends Fragment {
             imageButton.setImageDrawable(getResources().getDrawable(R.drawable.on_vihr));
             imageButton2.setImageDrawable(getResources().getDrawable(R.drawable.off_harm));
         }
+        Log.i(TAG, "buttonToggle: lopussa");
     }
 
     void musicToggle(int state)

@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: LIFECYCLE");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //facebook stuff
         //callbackManager = CallbackManager.Factory.create();
         //shareDialog = new ShareDialog(this);
