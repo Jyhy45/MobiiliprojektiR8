@@ -140,6 +140,7 @@ public class OptionsFragment extends Fragment {
             imageButton2.setImageDrawable(context.getResources().getDrawable(R.drawable.off_harm));
         }
         Log.i(TAG, "buttonToggle: lopussa");
+        optionsRelativeLayout.invalidate();
     }
 
     void musicToggle(int state)
