@@ -103,12 +103,7 @@ public class OptionsFragment extends Fragment {
         Log.i(TAG, "buttonToggle: alussa");
         ImageButton imageButton;
         ImageButton imageButton2;
-<<<<<<< HEAD
 
-=======
-        imageButton2 = (ImageButton)view;
-        Log.i(TAG, "buttonToggle: declaraatiot loppu");
->>>>>>> 978fd7f492c030d2f0a3b86301339155f9305534
         switch (nappula) {
             case 1:
                 imageButton = (ImageButton) optionsRelativeLayout.findViewById(R.id.On1);
