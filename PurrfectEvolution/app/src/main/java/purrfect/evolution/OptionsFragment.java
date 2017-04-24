@@ -49,8 +49,9 @@ public class OptionsFragment extends Fragment {
         return fragment;
     }
 
-    public void onClick(View view, Context context)
+    public void onClick(View view, Context context, RelativeLayout optionsRelativeLayout2)
     {
+        optionsRelativeLayout = optionsRelativeLayout2;
         Log.i(TAG, "onClick: alussa");
 
         switch(view.getId()) {
@@ -103,16 +104,17 @@ public class OptionsFragment extends Fragment {
     {
         Log.i(TAG, "buttonToggle: alussa");
         ImageButton imageButton;
-        imageButton = (ImageButton)view;
         ImageButton imageButton2;
-        imageButton2 = (ImageButton)view;
-        Log.i(TAG, "buttonToggle: declaraatiot loppu");
+
         switch (nappula) {
             case 1:
                 imageButton = (ImageButton) optionsRelativeLayout.findViewById(R.id.On1);
                 break;
             case 3:
-                imageButton2 = (ImageButton)optionsRelativeLayout.findViewById(R.id.On2);
+                imageButton = (ImageButton)optionsRelativeLayout.findViewById(R.id.On2);
+                break;
+            default:
+                imageButton = (ImageButton)view;
                 break;
         }
         switch (nappula2) {
@@ -121,6 +123,9 @@ public class OptionsFragment extends Fragment {
                 break;
             case 4:
                 imageButton2 = (ImageButton)optionsRelativeLayout.findViewById(R.id.Off2);
+                break;
+            default:
+                imageButton2 = (ImageButton)view;
                 break;
         }
         Log.i(TAG, "buttonToggle: valissa");
@@ -168,7 +173,6 @@ public class OptionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_options , container, false);
-        optionsRelativeLayout = (RelativeLayout) rootView;
         return rootView;
     }
 
