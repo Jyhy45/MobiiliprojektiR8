@@ -95,16 +95,17 @@ public class OptionsFragment extends Fragment {
     public void buttonToggle(View view, Context context,int nappula, int nappula2)
     {
         ImageButton imageButton;
-        imageButton = (ImageButton)view;
         ImageButton imageButton2;
-        imageButton2 = (ImageButton)view;
 
         switch (nappula) {
             case 1:
                 imageButton = (ImageButton) optionsRelativeLayout.findViewById(R.id.On1);
                 break;
             case 3:
-                imageButton2 = (ImageButton)optionsRelativeLayout.findViewById(R.id.On2);
+                imageButton = (ImageButton)optionsRelativeLayout.findViewById(R.id.On2);
+                break;
+            default:
+                imageButton = (ImageButton)view;
                 break;
         }
         switch (nappula2) {
@@ -113,6 +114,9 @@ public class OptionsFragment extends Fragment {
                 break;
             case 4:
                 imageButton2 = (ImageButton)optionsRelativeLayout.findViewById(R.id.Off2);
+                break;
+            default:
+                imageButton2 = (ImageButton)view;
                 break;
         }
 
