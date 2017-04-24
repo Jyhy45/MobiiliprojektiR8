@@ -1,5 +1,6 @@
 package purrfect.evolution;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -60,7 +61,7 @@ public class OptionsFragment extends Fragment {
                 if (mDataContainer.getmSoundOnOff() == 1) {
                 }
                 else if (mDataContainer.getmSoundOnOff()== 0) {
-                    buttonToggle(view,context,nappula,nappula2);
+                    buttonToggle(view,context,nappula,nappula2,mDataContainer.getmAnimationsOnOff());
                     musicToggle(mDataContainer.getmSoundOnOff());
                 }
                 break;
@@ -70,7 +71,7 @@ public class OptionsFragment extends Fragment {
                 if (mDataContainer.getmAnimationsOnOff()==1) {
                 }
                 else if (mDataContainer.getmAnimationsOnOff()==0) {
-                    buttonToggle(view,context,nappula,nappula2);
+                    buttonToggle(view,context,nappula,nappula2,mDataContainer.getmAnimationsOnOff());
                     animationsToggle(mDataContainer.getmAnimationsOnOff());
                 }
                 break;
@@ -78,7 +79,7 @@ public class OptionsFragment extends Fragment {
                 nappula = 1;
                 nappula2 = 2;
                 if (mDataContainer.getmSoundOnOff() == 1) {
-                    buttonToggle(view,context,nappula,nappula2);
+                    buttonToggle(view,context,nappula,nappula2, mDataContainer.getmSoundOnOff());
                     musicToggle(mDataContainer.getmSoundOnOff());
                 }
                 else if (mDataContainer.getmSoundOnOff() == 0) {
@@ -90,7 +91,7 @@ public class OptionsFragment extends Fragment {
                 if (mDataContainer.getmAnimationsOnOff()==1 ) {
                 }
                 else if (mDataContainer.getmAnimationsOnOff()== 0) {
-                    buttonToggle(view,context,nappula,nappula2);
+                    buttonToggle(view,context,nappula,nappula2, mDataContainer.getmSoundOnOff());
                     animationsToggle(mDataContainer.getmAnimationsOnOff());
                 }
                 break;
@@ -99,7 +100,7 @@ public class OptionsFragment extends Fragment {
         Log.i(TAG, "onClick: lopussa");
     }
 
-    public void buttonToggle(View view, Context context,int nappula, int nappula2)
+    public void buttonToggle(View view, Context context,int nappula, int nappula2, int state)
     {
         Log.i(TAG, "buttonToggle: alussa");
         ImageButton imageButton;
@@ -128,14 +129,15 @@ public class OptionsFragment extends Fragment {
                 break;
         }
         Log.i(TAG, "buttonToggle: valissa");
-        if(imageButton.getDrawable().getConstantState().equals(context.getResources().getDrawable(R.drawable.on_vihr).getConstantState()))
+        if(state == 1)
         {
+
             Log.i(TAG,"buttonToggle: herp derp");
             imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_harm));
             imageButton2.setImageDrawable(context.getResources().getDrawable(R.drawable.off_pun));
 
         }
-        else if(imageButton.getDrawable().getConstantState().equals(context.getResources().getDrawable(R.drawable.on_harm).getConstantState()))
+        else if(state == 0)
         {
             Log.i(TAG,"buttonToggle: herp derp2");
             imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_vihr));

@@ -245,7 +245,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateText()
     {
-
         String raheString = String.format("Money: %4.3g", mDataContainer.getmCurrentMoney());
         rahe.setText(raheString);
         String onniString = String.format("Happiness: %4.3g", mDataContainer.getmCurrentHappines());
