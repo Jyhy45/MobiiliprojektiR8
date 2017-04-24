@@ -385,6 +385,7 @@ public class MainActivity extends AppCompatActivity {
         rahe.setText(raheString);
         String onniString = String.format("Happiness: %4.3g", mDataContainer.getmCurrentHappines());
         onni.setText(onniString);
+        dimangit.setText("Diamonds: 0");
     }
 
 
