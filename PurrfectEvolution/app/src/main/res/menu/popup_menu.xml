@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/Scratching_Post"
-        android:icon="@drawable/ic_heart_0"
+        android:icon="@drawable/sydan_0"
         android:title="Scratching Post" />
 
     <item

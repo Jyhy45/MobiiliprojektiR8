@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-            <Item
-                android:drawable="@drawable/kissu" />
 
-            <item android:drawable="@drawable/kissu" />
 
-            <item android:drawable="@drawable/kissu2" />
+    <Item
+        android:id="@+id/tail"
+        android:drawable="@drawable/kissa_hanta" />
+
+
+    <item
+        android:id="@+id/head"
+        android:drawable="@drawable/kissa_paa" />
+
+
+    <item
+        android:id="@+id/body"
+        android:drawable="@drawable/kissa_vartalo" />
 
 
 </layer-list>

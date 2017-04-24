@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Tail1"
+        android:icon="@drawable/kissa_hanta"
+        android:title="Tail1" />
+
+    <item
+        android:id="@+id/Tail2"
+        android:icon="@drawable/kissa_hanta2"
+        android:title="Tail2" />
+
+
+    <item
+        android:id="@+id/Tail3"
+        android:icon="@drawable/kissa_hanta3"
+        android:title="Tail3" />
+
+
+    <item
+        android:id="@+id/Tail4"
+        android:icon="@drawable/kissakala_hanta"
+        android:title="Tail4" />
+
+
+    <item
+        android:id="@+id/Tail5"
+        android:icon="@drawable/nokikissas_hanta"
+        android:title="Tail5" />
+
+
+    <item
+        android:id="@+id/Tail6"
+        android:icon="@drawable/porrokissa_hanta"
+        android:title="Tail6" />
+
+    <item
+        android:id="@+id/Tail7"
+        android:icon="@drawable/taikakissa_hanta"
+        android:title="Tail7" />
+
+</menu>

@@ -17,19 +17,10 @@ import android.widget.TextView;
 
 
 public class ShopFragment extends Fragment {
-    /**
-     * The fragment argument representing the section number for this
-     * fragment.
-     */
-    private static final String ARG_SECTION_NUMBER = "section_number";
 
     public ShopFragment() {
     }
 
-    /**
-     * Returns a new instance of this fragment for the given section
-     * number.
-     */
     public static ShopFragment newInstance() {
         ShopFragment fragment = new ShopFragment();
         Bundle args = new Bundle();

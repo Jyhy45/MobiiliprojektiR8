@@ -45,25 +45,15 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
     Random random;
     int height;
     int width;
-
-    private static final String ARG_SECTION_NUMBER = "section_number";
+    ImageButton catImage;
 
     public CatFragment() {
-        imageList = new ArrayList<>();
-        animationList = new ArrayList<>();
+        imageList = new ArrayList<>(25); // 25 is for testing purposes
+        animationList = new ArrayList<>(25);
         random = new Random();
         i = 0;
     }
 
-    public void setScreenSize(int heightp, int widthp) {
-        height = heightp;
-        width = widthp;
-    }
-
-    /**
-     * Returns a new instance of this fragment for the given section
-     * number.
-     */
     public static CatFragment newInstance() {
         CatFragment fragment = new CatFragment();
         Bundle args = new Bundle();
@@ -75,32 +65,36 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_cat, container, false);
+        catImage = (ImageButton) rootView.findViewById(R.id.imageButton2);
+
+        CatData catData = MainActivity.getCatData();
+        catImage.setImageDrawable(catData.getCat());
+
         return rootView;
     }
 
     public void onCatClick(View view, Context context, RelativeLayout relativeLayout) {
         switch (view.getId()) {
             case R.id.imageButton2:
-                // TODO: Create different animations for hearts
-                // TODO: Create coin sprite animaion for when a button is clicked many coins are released in multiple directions...
 
-                //Toast.makeText(context, "" + height + width, Toast.LENGTH_SHORT).show();
+                // TODO: Create coin sprite animaion for when a button is clicked many coins are released in multiple directions... ( Waiting for pictures )
 
                 // Create new imageView, add it to ArrayList and set image and sprite animation XMLs
                 image = new ImageView(context);
 
                 imageList.add(image);
-                imageList.get(i).setImageResource(R.drawable.ic_heart_0);
-                imageList.get(i).setBackgroundResource(R.drawable.animation_list_filling);
+
+                // Get random location for ImageViews on screen
+                imageList.get(i).setX(calculateRandomWidth());
+                imageList.get(i).setY(calculateRandomHeight());
+
+                imageList.get(i).setBackgroundResource(R.drawable.sydan_list);
 
                 // Create layout parameters for created ImageView
                 RelativeLayout r1 = (RelativeLayout) relativeLayout;
                 RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
-                        RelativeLayout.LayoutParams.WRAP_CONTENT,
-                        RelativeLayout.LayoutParams.WRAP_CONTENT);
-                // Get random location for ImageViews on screen
-                lp.leftMargin = calculateLeftMargin();
-                lp.topMargin = calculateTopMargin();
+                        150, 150);
+
                 // Add ImageView with set parameters to layout
                 r1.addView(imageList.get(i), lp);
 
@@ -117,13 +111,18 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
         }
     }
 
-    public int calculateLeftMargin() {
-        int finalX = random.nextInt(width);
+    public void setScreenSize(int heightp, int widthp) {
+        height = heightp;
+        width = widthp;
+    }
+
+    public float calculateRandomWidth() {
+        float finalX = random.nextFloat() * width;
         return finalX;
     }
 
-    public int calculateTopMargin() {
-        int finalY = random.nextInt(height);
+    public float calculateRandomHeight() {
+        float finalY = random.nextFloat() * height;
         return finalY;
     }
 
@@ -135,12 +134,11 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
     @Override
     public void onAnimationEnd(Animation animation) {
         // On animation end removes first object from ArrayLists and "trims it down".
+        imageList.get(0).setBackgroundResource(0);
         imageList.remove(0);
         animationList.remove(0);
         i--;
-       // Toast.makeText(c, "Animation end", Toast.LENGTH_SHORT).show();
     }
-
 
     @Override
     public void onAnimationRepeat(Animation animation) {

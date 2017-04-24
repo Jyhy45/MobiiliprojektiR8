@@ -7,11 +7,17 @@
     <translate
         android:fromYDelta="0%p"
         android:toYDelta="-75%p"
-        android:duration="2000" />
+        android:duration="1600"/>
 
-    <alpha
-        android:fromAlpha="1"
-        android:toAlpha="0"
-        android:duration="2000" >
-    </alpha>
+    <scale
+
+        android:fromXScale="0.5"
+        android:toXScale="1.5"
+        android:fromYScale="0.5"
+        android:toYScale="1.5"
+        android:duration="800"
+        android:pivotX="50%"
+        android:pivotY="50%" >
+    </scale>
+
 </set>
