@@ -263,8 +263,6 @@ public class MainActivity extends AppCompatActivity {
         updateText();
 
         mDataContainer.receivedClick();
-
-
     }
 
     //facebook stuff

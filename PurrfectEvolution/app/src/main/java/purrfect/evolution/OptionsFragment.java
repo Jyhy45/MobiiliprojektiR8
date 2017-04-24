@@ -36,6 +36,7 @@ public class OptionsFragment extends Fragment {
     DataContainerForPurfectEvolution mDataContainer = MainActivity.getmDataContainer();
 
     public OptionsFragment() {
+
     }
 
     /**
