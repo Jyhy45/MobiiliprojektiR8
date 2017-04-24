@@ -130,12 +130,14 @@ public class OptionsFragment extends Fragment {
         Log.i(TAG, "buttonToggle: valissa");
         if(imageButton.getDrawable().equals(context.getResources().getDrawable(R.drawable.on_vihr)))
         {
+            Log.i(TAG,"buttonToggle: herp derp");
             imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_harm));
             imageButton2.setImageDrawable(context.getResources().getDrawable(R.drawable.off_pun));
 
         }
         else if(imageButton.getDrawable().equals(context.getResources().getDrawable(R.drawable.on_harm)))
         {
+            Log.i(TAG,"buttonToggle: herp derp2");
             imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_vihr));
             imageButton2.setImageDrawable(context.getResources().getDrawable(R.drawable.off_harm));
         }
