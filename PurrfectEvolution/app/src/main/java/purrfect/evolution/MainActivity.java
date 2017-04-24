@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
     TextView dimangit;
     ImageView dimangitKuva;
 
-    ImageView options_text;
     Drawable kissapaa;
     Drawable kissabody;
     Drawable kissahanta;
@@ -167,9 +166,6 @@ public class MainActivity extends AppCompatActivity {
         raheKuva.bringToFront();
         onniKuva.bringToFront();
         dimangitKuva.bringToFront();
-        //Bliipbloop
-        //options_text = (ImageView) findViewById((R.id.options_text));
-        //options_text.bringToFront();
 
         //facebook stuff
         //ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
