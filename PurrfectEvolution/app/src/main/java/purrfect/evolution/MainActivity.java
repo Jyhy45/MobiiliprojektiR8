@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         optionsFragment = new OptionsFragment();
         catFragment = new CatFragment();
 
-
+        optionsFragment.buttonsAtStart(MainActivity.this,(RelativeLayout) findViewById(R.id.options_fragment));
         evolutionFragment = new EvolutionFragment();
 
         // Get screen size and pass it to catFragment
@@ -385,6 +385,7 @@ public class MainActivity extends AppCompatActivity {
         rahe.setText(raheString);
         String onniString = String.format("Happiness: %4.3g", mDataContainer.getmCurrentHappines());
         onni.setText(onniString);
+        dimangit.setText("Diamonds: 0");
     }
 
 
@@ -427,7 +428,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void bananaReset(View view)
     {
-        mDataContainer.resetHard();
+        mDataContainer.resetSoft();
     }
 
     @Override
