@@ -47,8 +47,6 @@ public class OptionsFragment extends Fragment {
 
     public void onClick(View view, Context context)
     {
-        ImageButton imageButton;
-
         switch(view.getId()) {
             case R.id.On1:
                 nappula = 1;
@@ -105,12 +103,12 @@ public class OptionsFragment extends Fragment {
             case 1:
                 imageButton = (ImageButton) optionsRelativeLayout.findViewById(R.id.On1);
                 break;
-            case 2:
+            case 3:
                 imageButton2 = (ImageButton)optionsRelativeLayout.findViewById(R.id.On2);
                 break;
         }
         switch (nappula2) {
-            case 3:
+            case 2:
                 imageButton2 = (ImageButton)optionsRelativeLayout.findViewById(R.id.Off1);
                 break;
             case 4:
@@ -118,7 +116,7 @@ public class OptionsFragment extends Fragment {
                 break;
         }
 
-        if(imageButton.getDrawable() ==getResources().getDrawable(R.drawable.on_vihr))
+        if(imageButton.getDrawable() == getResources().getDrawable(R.drawable.on_vihr))
         {
             imageButton.setImageDrawable(getResources().getDrawable(R.drawable.on_harm));
             imageButton2.setImageDrawable(getResources().getDrawable(R.drawable.off_pun));
