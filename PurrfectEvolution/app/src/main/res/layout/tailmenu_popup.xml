@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="3"
+    android:background="@drawable/rakennus_tausta"
+    >
+
+
+    <!--
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:text="Cancel" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="85dp"
+        android:scaleX="0.2"
+        android:scaleY="0.2"
+        app:srcCompat="@drawable/kissa_hanta2" />
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" >
+
+        <ImageButton
+            android:id="@+id/hanta1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onTailMenuClick"
+            app:srcCompat="@drawable/kissa_hanta"
+            android:background="@null" />
+
+        <ImageButton
+            android:id="@+id/hanta2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onTailMenuClick"
+            app:srcCompat="@drawable/kissa_hanta2"
+            android:background="@null" />
+
+        <ImageButton
+            android:id="@+id/hanta3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onTailMenuClick"
+            app:srcCompat="@drawable/kissa_hanta3"
+            android:background="@null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <ImageButton
+            android:id="@+id/hanta4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onTailMenuClick"
+            app:srcCompat="@drawable/nokikissas_hanta"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/hanta5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onTailMenuClick"
+            app:srcCompat="@drawable/taikakissa_hanta"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/hanta6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onTailMenuClick"
+            app:srcCompat="@drawable/porrokissa_hanta"
+            android:background="@null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" >
+
+        <ImageButton
+            android:id="@+id/hanta7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onTailMenuClick"
+            app:srcCompat="@drawable/kissakala_hanta"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/hanta8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onTailMenuClick"
+            app:srcCompat="@drawable/kissakala_hanta"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/hanta9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onTailMenuClick"
+            app:srcCompat="@drawable/kissa_hanta"
+            android:background="@null"/>
+    </LinearLayout>
+
+</LinearLayout>

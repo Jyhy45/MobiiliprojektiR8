@@ -51,7 +51,6 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
         imageList = new ArrayList<>(25); // 25 is for testing purposes
         animationList = new ArrayList<>(25);
         random = new Random();
-
         i = 0;
     }
 
@@ -67,9 +66,10 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_cat, container, false);
         catImage = (ImageButton) rootView.findViewById(R.id.imageButton2);
-        catImage.setScaleType(ImageView.ScaleType.FIT_XY);
+
         CatData catData = MainActivity.getCatData();
         catImage.setImageDrawable(catData.getCat());
+
         return rootView;
     }
 

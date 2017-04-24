@@ -21,29 +21,68 @@ import android.widget.ImageView;
 class CatData {
 
     LayerDrawable catImageList;
+    InsetDrawable[] layers;
+    Drawable hanta;
+    Drawable kroppa;
+    Drawable paa;
 
-    public CatData(Drawable d1, Drawable d2, Drawable d3) {
-        InsetDrawable[] layers = new InsetDrawable[3];
-        //Resources resources = context.getResources();
+    //(kissahanta, kissabody, kissapaa);
 
-        /*Drawable drawable = resources.getDrawable(R.drawable.kissa_hanta);
-        layers[0] = new InsetDrawable(drawable, 0);
-        Drawable drawable1 = resources.getDrawable(R.drawable.kissa_paa);
-        layers[1] = new InsetDrawable(drawable1, 0);
-        Drawable drawable2 = resources.getDrawable(R.drawable.kissa_vartalo);
-        layers[2] = new InsetDrawable(drawable2, 0);*/
+    public CatData(Drawable tail, Drawable body, Drawable head) {
+        layers = new InsetDrawable[3];
+        hanta = tail;
+        kroppa = body;
+        paa = head;
 
-        layers[0] = new InsetDrawable(d1, 0);
-        layers[1] = new InsetDrawable(d2, 0);
-        layers[2] = new InsetDrawable(d3, 0);
+        catUpdate();
 
-        catImageList = new LayerDrawable(layers);
+        //layers[0] = new InsetDrawable(tail, 0);
+        //layers[1] = new InsetDrawable(body, 0);
+        //layers[2] = new InsetDrawable(head, 0);
+
+        //catImageList = new LayerDrawable(layers);
 
         // Ao. komennolla voidaan vaihtaa kuvaa tietyssä sijainnissa
         //catImageList.setDrawable();
     }
 
+    public void createCat(Drawable drawable1, Drawable drawable2, Drawable drawable3) {
+
+        layers[0] = new InsetDrawable(drawable1, 0);
+        layers[1] = new InsetDrawable(drawable2, 0);
+        layers[2] = new InsetDrawable(drawable3, 0);
+
+        catImageList = new LayerDrawable(layers);
+    }
+
+    public void catUpdate() {
+
+        layers[0] = new InsetDrawable(hanta, 0);
+        layers[1] = new InsetDrawable(kroppa, 0);
+        layers[2] = new InsetDrawable(paa, 0);
+        //catImageList.setDrawable(0, hanta);
+        //catImageList.setDrawable(1, hanta);
+        //catImageList.setDrawable(2, hanta);
+
+        catImageList = new LayerDrawable(layers);
+    }
+
     public LayerDrawable getCat() {
         return catImageList;
+    }
+
+    public void setCatTail(Drawable drawable1) {
+        //catImageList.setDrawable(0, drawable1);
+        hanta = drawable1;
+    }
+
+    public void setCatHead(Drawable drawable2) {
+        //catImageList.setDrawable(1, drawable2);
+        paa = drawable2;
+    }
+
+    public void setCatBody(Drawable drawable3) {
+        //catImageList.setDrawable(2, drawable3);
+        kroppa = drawable3;
     }
 }

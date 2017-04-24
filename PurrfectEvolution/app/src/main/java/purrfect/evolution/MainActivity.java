@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     BuildingsFragment buildingsFragment;
     CatFragment catFragment;
+    EvolutionFragment evolutionFragment;
 
     private Handler handler = new Handler();
 
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
         //CatData catData = new CatData(MainActivity.this);
 
-        EvolutionFragment evolutionFragment = new EvolutionFragment();
+        evolutionFragment = new EvolutionFragment();
 
         // Get screen size and pass it to catFragment
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -143,9 +144,9 @@ public class MainActivity extends AppCompatActivity {
         onniKuva.bringToFront();
         dimangitKuva.bringToFront();
 
-        kissabody =  getDrawable(R.drawable.nokikissa_kroppa);
-        kissahanta = getDrawable(R.drawable.nokikissas_hanta);
-        kissapaa = getDrawable(R.drawable.nokikissa_paa);
+        kissabody =  getDrawable(R.drawable.kissakala_kroppa);
+        kissahanta = getDrawable(R.drawable.kissakala_hanta);
+        kissapaa = getDrawable(R.drawable.kissakala_paa);
 
         catData = new CatData(kissahanta, kissabody, kissapaa);
     }
@@ -203,24 +204,139 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 4 total pages.
-            return 4;
+            return 5;
         }
     }
 
+    public void onEvolutionCatClick(View view) {
+        evolutionFragment.showMainMenuPopUp(view, MainActivity.this);
+    }
+
+    public void onMainMenuClick(View view) {
+        evolutionFragment.onMainMenuClick(view, MainActivity.this);
+        switch (view.getId()) {
+            case (R.id.hantavalinta):
+
+                evolutionFragment.showTailMenuPopUp(view, MainActivity.this);
+                break;
+            case (R.id.bodyvalinta):
+
+                evolutionFragment.showBodyMenuPopUp(view, MainActivity.this);
+                break;
+            case (R.id.paavalinta):
+
+                evolutionFragment.showHeadMenuPopUp(view, MainActivity.this);
+                break;
+        }
+    }
+
+    public void onTailMenuClick(View view) {
+        evolutionFragment.onTailMenuClick(view, MainActivity.this);
+        switch (view.getId()) {
+            case (R.id.hanta1):
+                catData.setCatTail(getDrawable(R.drawable.kissa_hanta));
+                break;
+            case (R.id.hanta2):
+                catData.setCatTail(getDrawable(R.drawable.kissa_hanta2));
+                break;
+            case (R.id.hanta3):
+                catData.setCatTail(getDrawable(R.drawable.kissa_hanta3));
+                break;
+            case (R.id.hanta4):
+                catData.setCatTail(getDrawable(R.drawable.nokikissas_hanta));
+                break;
+            case (R.id.hanta5):
+                catData.setCatTail(getDrawable(R.drawable.taikakissa_hanta));
+                break;
+            case (R.id.hanta6):
+                catData.setCatTail(getDrawable(R.drawable.porrokissa_hanta));
+                break;
+            case (R.id.hanta7):
+                catData.setCatTail(getDrawable(R.drawable.kissakala_hanta));
+                break;
+            case (R.id.hanta8):
+                catData.setCatTail(getDrawable(R.drawable.nokikissas_hanta));
+                break;
+            case (R.id.hanta9):
+                catData.setCatTail(getDrawable(R.drawable.taikakissa_hanta));
+                break;
+        }
+     //   evolutionFragment.updateCat();
+    }
+
+    public void onBodyMenuClick(View view) {
+        evolutionFragment.onBodyMenuClick(view, MainActivity.this);
+        switch (view.getId()) {
+            case (R.id.body1):
+                catData.setCatBody(getDrawable(R.drawable.kissa_vartalo));
+                break;
+            case (R.id.body2):
+                catData.setCatBody(getDrawable(R.drawable.kissa_vartalo2));
+                break;
+            case (R.id.body3):
+                catData.setCatBody(getDrawable(R.drawable.kissa_vartalo3));
+                break;
+            case (R.id.body4):
+                catData.setCatBody(getDrawable(R.drawable.nokikissa_kroppa));
+                break;
+            case (R.id.body5):
+                catData.setCatBody(getDrawable(R.drawable.taikakissa_kroppa));
+                break;
+            case (R.id.body6):
+                catData.setCatBody(getDrawable(R.drawable.porrokissa_kroppa));
+                break;
+            case (R.id.body7):
+                catData.setCatBody(getDrawable(R.drawable.kissakala_kroppa));
+                break;
+            case (R.id.body8):
+                catData.setCatBody(getDrawable(R.drawable.nokikissa_kroppa));
+                break;
+            case (R.id.body9):
+                catData.setCatBody(getDrawable(R.drawable.taikakissa_kroppa));
+                break;
+        }
+    }
+
+    public void onHeadMenuClick(View view) {
+        evolutionFragment.onHeadMenuClick(view, MainActivity.this);
+        switch (view.getId()) {
+            case (R.id.head1):
+                catData.setCatHead(getDrawable(R.drawable.kissa_paa));
+                break;
+            case (R.id.head2):
+                catData.setCatHead(getDrawable(R.drawable.kissa_paa));
+                break;
+            case (R.id.head3):
+                catData.setCatHead(getDrawable(R.drawable.kissa_paa));
+                break;
+            case (R.id.head4):
+                catData.setCatHead(getDrawable(R.drawable.nokikissa_paa));
+                break;
+            case (R.id.head5):
+                catData.setCatHead(getDrawable(R.drawable.taikakissa_paa));
+                break;
+            case (R.id.head6):
+                catData.setCatHead(getDrawable(R.drawable.porrokissa_paa));
+                break;
+            case (R.id.head7):
+                catData.setCatHead(getDrawable(R.drawable.kissakala_paa));
+                break;
+            case (R.id.head8):
+                catData.setCatHead(getDrawable(R.drawable.kissa_paa));
+                break;
+            case (R.id.head9):
+                catData.setCatHead(getDrawable(R.drawable.kissa_paa));
+                break;
+        }
+       // evolutionFragment.updateCat();
+    }
 
     public void onClickBuilding(View view)
     {
-
-
-
         Context context = MainActivity.this;
 
         buildingsFragment.onClick(view, context);
-
-
-
     }
-
 
     public void updateText()
     {
@@ -230,9 +346,6 @@ public class MainActivity extends AppCompatActivity {
         String onniString = String.format("Happiness: %4.3g", mDataContainer.getmCurrentHappines());
         onni.setText(onniString);
     }
-
-
-
 
     public void onCatClick(View view)
     {
@@ -246,7 +359,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 
     public void bananaReset(View view)
     {

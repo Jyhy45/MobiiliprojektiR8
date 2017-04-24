@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="3"
+    android:background="@drawable/rakennus_tausta"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" >
+
+        <ImageButton
+            android:id="@+id/head1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onHeadMenuClick"
+            app:srcCompat="@drawable/kissa_paa"
+            android:background="@null" />
+
+        <ImageButton
+            android:id="@+id/head2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onHeadMenuClick"
+            app:srcCompat="@drawable/kissa_paa"
+            android:background="@null" />
+
+        <ImageButton
+            android:id="@+id/head3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onHeadMenuClick"
+            app:srcCompat="@drawable/kissa_paa"
+            android:background="@null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <ImageButton
+            android:id="@+id/head4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onHeadMenuClick"
+            app:srcCompat="@drawable/nokikissa_paa"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/head5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onHeadMenuClick"
+            app:srcCompat="@drawable/taikakissa_paa"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/head6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onHeadMenuClick"
+            app:srcCompat="@drawable/porrokissa_paa"
+            android:background="@null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" >
+
+        <ImageButton
+            android:id="@+id/head7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onHeadMenuClick"
+            app:srcCompat="@drawable/kissakala_paa"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/head8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onHeadMenuClick"
+            app:srcCompat="@drawable/kissa_paa"
+            android:background="@null"/>
+
+        <ImageButton
+            android:id="@+id/head9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:onClick="onHeadMenuClick"
+            app:srcCompat="@drawable/kissa_paa"
+            android:background="@null"/>
+    </LinearLayout>
+
+</LinearLayout>

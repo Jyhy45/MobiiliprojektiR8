@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rakennus_tausta"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" >
+
+        <ImageButton
+            android:id="@+id/paavalinta"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:onClick="onMainMenuClick"
+            app:srcCompat="@drawable/porrokissa_paa"
+            android:background="@null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <ImageButton
+            android:id="@+id/bodyvalinta"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:onClick="onMainMenuClick"
+            app:srcCompat="@drawable/porrokissa_kroppa"
+            android:background="@null"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" >
+
+        <ImageButton
+            android:id="@+id/hantavalinta"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:onClick="onMainMenuClick"
+            app:srcCompat="@drawable/porrokissa_hanta"
+            android:background="@null" />
+
+    </LinearLayout>
+
+</LinearLayout>
