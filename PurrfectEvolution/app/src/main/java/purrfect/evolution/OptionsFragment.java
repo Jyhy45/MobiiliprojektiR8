@@ -48,8 +48,9 @@ public class OptionsFragment extends Fragment {
         return fragment;
     }
 
-    public void onClick(View view, Context context)
+    public void onClick(View view, Context context, RelativeLayout optionsRelativeLayout2)
     {
+        optionsRelativeLayout = optionsRelativeLayout2;
         Log.i(TAG, "onClick: alussa");
 
         switch(view.getId()) {
@@ -171,7 +172,6 @@ public class OptionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_options , container, false);
-        optionsRelativeLayout = (RelativeLayout) rootView;
         return rootView;
     }
 

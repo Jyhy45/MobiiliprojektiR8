@@ -9,7 +9,9 @@
     android:visibility="visible"
     app:columnCount="10"
     app:rowCount="30"
-    android:background="@drawable/kissatausta1">
+    android:background="@drawable/kissatausta1"
+    android:id="@+id/options_fragment"
+    >
 
     <!--<com.facebook.share.widget.ShareButton
         android:id="@+id/fb_share_button"

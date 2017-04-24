@@ -230,8 +230,8 @@ public class MainActivity extends AppCompatActivity {
     public void options_Onclick(View view)
     {
         Context context = MainActivity.this;
-
-        optionsFragment.onClick(view,context);
+        RelativeLayout v = (RelativeLayout) findViewById(R.id.options_fragment);
+        optionsFragment.onClick(view,context,v);
     }
 
 
