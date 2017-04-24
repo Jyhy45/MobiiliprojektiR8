@@ -45,8 +45,6 @@ public class BuildingsFragment extends Fragment {
     public void imageUpdate(View view)
     {
         ImageView imageView = (ImageView) view;
-
-        imageView.setImageResource(R.drawable.ic_heart_100);
     }
 
     public void buildingNumber(View view){

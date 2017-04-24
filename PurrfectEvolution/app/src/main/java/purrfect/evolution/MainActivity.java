@@ -256,19 +256,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onClickBuilding(View view)
-    {
-
-
-
-        Context context = MainActivity.this;
-
-        buildingsFragment.onClick(view, context);
-
-
-
-    }
-
     public void onMainMenuClick(View view) {
         evolutionFragment.onMainMenuClick(view, MainActivity.this);
         switch (view.getId()) {

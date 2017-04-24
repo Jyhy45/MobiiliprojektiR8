@@ -7,9 +7,7 @@
     android:layout_height="match_parent"
     tools:context="purrfect.evolution.OptionsFragment"
     android:visibility="visible"
-    app:columnCount="10"
-    app:rowCount="30"
-    android:background="@drawable/kissatausta1"
+    android:background="@drawable/optionikkuna"
     android:id="@+id/options_fragment"
     >
 
@@ -29,13 +27,6 @@
         android:onClick="moneyButtonOnClick"
         android:text="Anna Rahea" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/optionikkuna"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
 
     <ImageButton
         android:id="@+id/Reset"
