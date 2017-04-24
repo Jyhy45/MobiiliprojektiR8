@@ -20,6 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import static android.content.ContentValues.TAG;
 
 
@@ -39,6 +41,58 @@ public class OptionsFragment extends Fragment {
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
+    }
+
+    public void buttonsAtStart(Context context, RelativeLayout relativeLayout)
+    {
+
+        ArrayList<View> touchables = relativeLayout.getTouchables();
+       for(View touchable: touchables){
+           ImageButton imageButton = (ImageButton) touchable;
+           switch (touchable.getId()){
+               case R.id.On1:
+                   if(mDataContainer.getmSoundOnOff() == 1){
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_vihr));
+
+                   }
+                   else if(mDataContainer.getmSoundOnOff() == 0)
+                   {
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_harm));
+                   }
+                   break;
+               case R.id.On2:
+                   if(mDataContainer.getmAnimationsOnOff() == 1){
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_vihr));
+
+                   }
+                   else if(mDataContainer.getmAnimationsOnOff() == 0)
+                   {
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_harm));
+                   }
+                   break;
+               case R.id.Off1:
+                   if(mDataContainer.getmSoundOnOff() == 1){
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.off_harm));
+
+                   }
+                   else if(mDataContainer.getmSoundOnOff() == 0)
+                   {
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.off_pun));
+                   }
+                   break;
+               case R.id.Off2:
+                   if(mDataContainer.getmAnimationsOnOff() == 1){
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.off_harm));
+
+                   }
+                   else if(mDataContainer.getmAnimationsOnOff() == 0)
+                   {
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.off_pun));
+                   }
+                   break;
+           }
+       }
+
     }
 
     public void onClick(View view, Context context, RelativeLayout optionsRelativeLayout2)
