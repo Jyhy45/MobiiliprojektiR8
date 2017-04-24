@@ -128,16 +128,16 @@ public class OptionsFragment extends Fragment {
                 break;
         }
         Log.i(TAG, "buttonToggle: valissa");
-        if(imageButton.getDrawable() == getResources().getDrawable(R.drawable.on_vihr))
+        if(imageButton.getDrawable() == context.getResources().getDrawable(R.drawable.on_vihr))
         {
-            imageButton.setImageDrawable(getResources().getDrawable(R.drawable.on_harm));
-            imageButton2.setImageDrawable(getResources().getDrawable(R.drawable.off_pun));
+            imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_harm));
+            imageButton2.setImageDrawable(context.getResources().getDrawable(R.drawable.off_pun));
 
         }
-        else if(imageButton.getDrawable()== getResources().getDrawable((R.drawable.on_harm)))
+        else if(imageButton.getDrawable()== context.getResources().getDrawable((R.drawable.on_harm)))
         {
-            imageButton.setImageDrawable(getResources().getDrawable(R.drawable.on_vihr));
-            imageButton2.setImageDrawable(getResources().getDrawable(R.drawable.off_harm));
+            imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_vihr));
+            imageButton2.setImageDrawable(context.getResources().getDrawable(R.drawable.off_harm));
         }
         Log.i(TAG, "buttonToggle: lopussa");
     }
