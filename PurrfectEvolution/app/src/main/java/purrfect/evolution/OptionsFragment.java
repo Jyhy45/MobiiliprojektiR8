@@ -136,10 +136,11 @@ public class OptionsFragment extends Fragment {
                 nappula = 3;
                 nappula2 = 4;
                 if (mDataContainer.getmAnimationsOnOff()==1 ) {
-                }
-                else if (mDataContainer.getmAnimationsOnOff()== 0) {
                     buttonToggle(view,context,nappula,nappula2, mDataContainer.getmAnimationsOnOff());
                     animationsToggle(mDataContainer.getmAnimationsOnOff());
+                }
+                else if (mDataContainer.getmAnimationsOnOff()== 0) {
+
                 }
                 break;
         }
