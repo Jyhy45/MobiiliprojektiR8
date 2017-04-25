@@ -22,12 +22,36 @@
         android:id="@+id/gieffMoney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="76dp"
-        android:layout_marginEnd="57dp"
         android:onClick="moneyButtonOnClick"
-        android:text="Button" />
+        android:text="Button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/imageView_hanta"
+        android:layout_width="329dp"
+        android:layout_height="400dp"
+        android:layout_alignStart="@+id/imageViewKroppa"
+        android:layout_alignTop="@+id/imageViewKroppa"
+        android:foreground="@drawable/porrokissa_hanta" />
+
+    <ImageView
+        android:id="@+id/imageViewKroppa"
+        android:layout_width="329dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:foreground="@drawable/porrokissa_kroppa"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/imageViewPaa"
+        android:layout_width="329dp"
+        android:layout_height="400dp"
+        android:layout_alignStart="@+id/imageViewKroppa"
+        android:layout_alignTop="@+id/imageViewKroppa"
+        android:foreground="@drawable/porrokissa_paa"
+        android:scaleType="fitXY" />
 
 </RelativeLayout>
 

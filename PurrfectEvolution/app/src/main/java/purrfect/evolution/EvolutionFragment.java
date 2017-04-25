@@ -47,16 +47,17 @@ public class EvolutionFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_evolution , container, false);
 
-        catImage = (ImageView) rootView.findViewById(R.id.imageView4);
+        //catImage = (ImageView) rootView.findViewById(R.id.imageView4);
 
-        catImage.setImageDrawable(catData.getCat());
+        //catImage.setImageDrawable(catData.getCat());
 
         //updateCat();
-
-
-        catImage.setImageDrawable(null);
+        rootView.findViewById(R.id.imageView_hanta).setForeground(getActivity().getDrawable(catData.getMhanta()));
+        rootView.findViewById(R.id.imageViewKroppa).setForeground(getActivity().getDrawable(catData.getMkroppa()));
+        rootView.findViewById(R.id.imageViewPaa).setForeground(getActivity().getDrawable(catData.getMpaa()));
+        //catImage.setImageDrawable(null);
         catData.catUpdate();
-        catImage.setImageDrawable(catData.getCat());
+        //catImage.setImageDrawable(catData.getCat());
 
         /*catImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -67,9 +68,8 @@ public class EvolutionFragment extends Fragment {
     }
 
     public void updateCat() {
-        catImage.setImageDrawable(null);
         catData.catUpdate();
-        catImage.setImageDrawable(catData.getCat());
+
 
 
     }

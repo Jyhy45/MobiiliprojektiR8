@@ -3,8 +3,10 @@ package purrfect.evolution;
 
 import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -46,6 +48,7 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
     int height;
     int width;
     ImageButton catImage;
+    ImageView tail,body,head;
 
     public CatFragment() {
         imageList = new ArrayList<>(25); // 25 is for testing purposes
@@ -68,8 +71,12 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
         catImage = (ImageButton) rootView.findViewById(R.id.imageButton2);
 
         CatData catData = MainActivity.getCatData();
-        catImage.setImageDrawable(catData.getCat());
-
+        tail = (ImageView) rootView.findViewById(R.id.imageView_hantaCat);
+        body = (ImageView) rootView.findViewById(R.id.imageViewKroppaCat);
+        head = (ImageView) rootView.findViewById(R.id.imageViewPaaCat);
+        tail.setForeground(getActivity().getDrawable(catData.getMhanta()));
+        body.setForeground(getActivity().getDrawable(catData.getMkroppa()));
+        head.setForeground(getActivity().getDrawable(catData.getMpaa()));
         return rootView;
     }
 
