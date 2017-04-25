@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -47,9 +48,9 @@ public class BuildingsFragment extends Fragment {
 
     }
 
-    public void buttonsAtStart(Context context, RelativeLayout relativeLayout) {
+    public void buttonsAtStart(Context context, LinearLayout linearLayout) {
 
-        ArrayList<View> touchables = relativeLayout.getTouchables();
+        ArrayList<View> touchables =linearLayout.getTouchables();
         for (View touchable : touchables) {
             Log.i(TAG, "bananaa");
             ImageButton imageButton = (ImageButton) touchable;
@@ -298,7 +299,7 @@ public class BuildingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_buildings , container, false);
         Context context = getContext();
-        buttonsAtStart(context,(RelativeLayout) rootView.findViewById(R.id.options_fragment));
+        buttonsAtStart(context,(LinearLayout) rootView.findViewById(R.id.fragment_buildings));
         return rootView;
     }
 

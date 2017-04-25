@@ -11,7 +11,9 @@
     app:rowCount="30"
     android:background="@drawable/kissatausta1"
     android:weightSum="4"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/fragment_buildings"
+    >
 
     <ImageView
         android:id="@+id/options_text"
