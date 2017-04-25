@@ -118,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
         optionsFragment = new OptionsFragment();
         catFragment = new CatFragment();
 
-        optionsFragment.buttonsAtStart(MainActivity.this,(RelativeLayout) findViewById(R.id.options_fragment));
         evolutionFragment = new EvolutionFragment();
 
         // Get screen size and pass it to catFragment
