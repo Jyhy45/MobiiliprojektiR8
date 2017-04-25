@@ -20,6 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import static android.content.ContentValues.TAG;
 
 
@@ -41,6 +43,59 @@ public class OptionsFragment extends Fragment {
         return fragment;
     }
 
+    public void buttonsAtStart(Context context, RelativeLayout relativeLayout)
+    {
+
+        ArrayList<View> touchables = relativeLayout.getTouchables();
+       for(View touchable: touchables){
+           Log.i(TAG,"bananaa");
+           ImageButton imageButton = (ImageButton) touchable;
+           switch (touchable.getId()){
+               case R.id.On1:
+                   if(mDataContainer.getmSoundOnOff() == 1){
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_vihr));
+
+                   }
+                   else if(mDataContainer.getmSoundOnOff() == 0)
+                   {
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_harm));
+                   }
+                   break;
+               case R.id.On2:
+                   if(mDataContainer.getmAnimationsOnOff() == 1){
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_vihr));
+
+                   }
+                   else if(mDataContainer.getmAnimationsOnOff() == 0)
+                   {
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.on_harm));
+                   }
+                   break;
+               case R.id.Off1:
+                   if(mDataContainer.getmSoundOnOff() == 1){
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.off_harm));
+
+                   }
+                   else if(mDataContainer.getmSoundOnOff() == 0)
+                   {
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.off_pun));
+                   }
+                   break;
+               case R.id.Off2:
+                   if(mDataContainer.getmAnimationsOnOff() == 1){
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.off_harm));
+
+                   }
+                   else if(mDataContainer.getmAnimationsOnOff() == 0)
+                   {
+                       imageButton.setImageDrawable(context.getResources().getDrawable(R.drawable.off_pun));
+                   }
+                   break;
+           }
+       }
+
+    }
+
     public void onClick(View view, Context context, RelativeLayout optionsRelativeLayout2)
     {
         optionsRelativeLayout = optionsRelativeLayout2;
@@ -53,7 +108,7 @@ public class OptionsFragment extends Fragment {
                 if (mDataContainer.getmSoundOnOff() == 1) {
                 }
                 else if (mDataContainer.getmSoundOnOff()== 0) {
-                    buttonToggle(view,context,nappula,nappula2,mDataContainer.getmAnimationsOnOff());
+                    buttonToggle(view,context,nappula,nappula2,mDataContainer.getmSoundOnOff());
                     musicToggle(mDataContainer.getmSoundOnOff());
                 }
                 break;
@@ -81,10 +136,11 @@ public class OptionsFragment extends Fragment {
                 nappula = 3;
                 nappula2 = 4;
                 if (mDataContainer.getmAnimationsOnOff()==1 ) {
+                    buttonToggle(view,context,nappula,nappula2, mDataContainer.getmAnimationsOnOff());
+                    animationsToggle(mDataContainer.getmAnimationsOnOff());
                 }
                 else if (mDataContainer.getmAnimationsOnOff()== 0) {
-                    buttonToggle(view,context,nappula,nappula2, mDataContainer.getmSoundOnOff());
-                    animationsToggle(mDataContainer.getmAnimationsOnOff());
+
                 }
                 break;
         }
@@ -169,6 +225,9 @@ public class OptionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_options , container, false);
+        //wtf.
+        Context context = getContext();
+        buttonsAtStart(context,(RelativeLayout) rootView.findViewById(R.id.options_fragment));
         return rootView;
     }
 

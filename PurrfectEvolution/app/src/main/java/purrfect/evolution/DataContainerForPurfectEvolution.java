@@ -1,6 +1,5 @@
 package purrfect.evolution;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.util.Log;
 
@@ -300,6 +299,9 @@ final class DataContainerForPurfectEvolution {
     public void resetSoft(){
         //TODO:reset most variables and gain suscripers
         //resets cycle variables
+        calculateAndSetSuscripersToBeGained();
+        mCurrentSuscripers+=mSuscripersToBeGained;
+
         mCurrentMoneyIncrease = 0;
         mCurrentHappinessIncrease = 0;
 
@@ -494,12 +496,14 @@ final class DataContainerForPurfectEvolution {
         }
         calculateHappinesIncrease();
         calculateMoneyIncrease();
-        calculateSuscripersToBeGained();
+        calculateAndSetSuscripersToBeGained();
         //Log.d(TAG, "calculateEverything: Now ended");
     }
 
-    public void calculateSuscripersToBeGained(){
-       double leftOverMoney = (mThisCycleMoneyEarnings-(mCurrentSuscripers*1));
-        //TODO: implement me
+    public void calculateAndSetSuscripersToBeGained(){
+        double leftOverMoney = (mThisCycleMoneyEarnings-(mCurrentSuscripers*10000d));
+        if(Double.compare(leftOverMoney,0f)>0){
+            mSuscripersToBeGained=leftOverMoney/10000d;
+        }
     }
 }

@@ -17,16 +17,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/Reset"
         android:layout_alignStart="@+id/Reset" />-->
-    <Button
-        android:id="@+id/moneyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="27dp"
-        android:onClick="moneyButtonOnClick"
-        android:text="Anna Rahea" />
-
 
     <ImageButton
         android:id="@+id/Reset"
@@ -36,65 +26,60 @@
         android:onClick="bananaReset"
         app:srcCompat="@drawable/reset"
         android:background="@null"
-        android:layout_marginBottom="39dp"
+        android:layout_marginBottom="44dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/On2" />
+        android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:id="@+id/On1"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignEnd="@+id/moneyButton"
-        android:layout_below="@+id/moneyButton"
-        android:layout_marginEnd="87dp"
-        android:layout_marginTop="150dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:onClick="options_Onclick"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/on_vihr" />
+        app:srcCompat="@drawable/on_vihr"
+        android:layout_marginBottom="12dp"
+        android:layout_above="@+id/On2"
+        android:layout_alignStart="@+id/On2" />
 
     <ImageButton
         android:id="@+id/Off1"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignEnd="@+id/moneyButton"
-        android:layout_below="@+id/moneyButton"
-        android:layout_marginEnd="37dp"
-        android:layout_marginTop="150dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:onClick="options_Onclick"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/off_harm" />
+        app:srcCompat="@drawable/off_harm"
+        android:layout_alignTop="@+id/On1"
+        android:layout_toEndOf="@+id/Reset" />
 
     <ImageButton
         android:id="@+id/On2"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignEnd="@+id/moneyButton"
-        android:layout_below="@+id/moneyButton"
-        android:layout_marginEnd="87dp"
-        android:layout_marginTop="200dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:onClick="options_Onclick"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/on_harm" />
+        app:srcCompat="@drawable/on_harm"
+        android:layout_marginBottom="96dp"
+        android:layout_above="@+id/Reset"
+        android:layout_alignEnd="@+id/Reset"
+        android:layout_marginEnd="14dp" />
 
     <ImageButton
         android:id="@+id/Off2"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignEnd="@+id/moneyButton"
-        android:layout_below="@+id/moneyButton"
-        android:layout_marginEnd="37dp"
-        android:layout_marginTop="200dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:onClick="options_Onclick"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/off_pun" />
+        app:srcCompat="@drawable/off_pun"
+        android:layout_alignTop="@+id/On2"
+        android:layout_alignStart="@+id/Off1" />
 </RelativeLayout>
 
 

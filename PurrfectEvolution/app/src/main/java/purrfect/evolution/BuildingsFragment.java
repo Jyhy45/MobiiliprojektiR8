@@ -42,9 +42,33 @@ public class BuildingsFragment extends Fragment {
 
     }
 
-    public void imageUpdate(View view)
+    public void imageUpdate(View view, Context context)
     {
         ImageView imageView = (ImageView) view;
+
+        switch (buildingGrid.getBuildingArray().get(buildingNumber).getmBType()) {
+            case NONE:
+                imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.rakennus_tausta));
+                break;
+            case SCRATCHINPOST:
+                imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.raapimapuutaso1));
+                break;
+            case FEEDING_STATION:
+                imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.fishie));
+                break;
+            case CHEW_MOUSE:
+                imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.leluhiiritaso1));
+                break;
+            case YARN_BALL:
+                imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.rakennus_tausta));
+                break;
+            case CATNIP:
+                imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.catler));
+                break;
+            default:
+                imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.rakennus_tausta));
+                break;
+        }
     }
 
     public void buildingNumber(View view){
@@ -122,7 +146,7 @@ public class BuildingsFragment extends Fragment {
             popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 public boolean onMenuItemClick(MenuItem item) {
                     buildingGrid.getBuildingArray().set(buildingNumber,buildingSelector(item,buildingGrid.getBuildingArray().get(buildingNumber)));
-                    imageUpdate(view);
+                    imageUpdate(view,context);
 
                     return true;
                 }
@@ -162,11 +186,11 @@ public class BuildingsFragment extends Fragment {
                 if(actionSelector(item, buildingGrid.getBuildingArray().get(buildingNumber)) == 1)
                 {
                     buildingGrid.getBuildingArray().get(buildingNumber).setmBType(Building.BuildingType.NONE);
-                    imageUpdate(view);
+                    imageUpdate(view,context);
                 }
                 else
                 {
-                    imageUpdate(view);
+                    imageUpdate(view,context);
                 }
                 return true;
             }
