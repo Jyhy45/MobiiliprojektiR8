@@ -108,7 +108,7 @@ public class OptionsFragment extends Fragment {
                 if (mDataContainer.getmSoundOnOff() == 1) {
                 }
                 else if (mDataContainer.getmSoundOnOff()== 0) {
-                    buttonToggle(view,context,nappula,nappula2,mDataContainer.getmAnimationsOnOff());
+                    buttonToggle(view,context,nappula,nappula2,mDataContainer.getmSoundOnOff());
                     musicToggle(mDataContainer.getmSoundOnOff());
                 }
                 break;
@@ -138,7 +138,7 @@ public class OptionsFragment extends Fragment {
                 if (mDataContainer.getmAnimationsOnOff()==1 ) {
                 }
                 else if (mDataContainer.getmAnimationsOnOff()== 0) {
-                    buttonToggle(view,context,nappula,nappula2, mDataContainer.getmSoundOnOff());
+                    buttonToggle(view,context,nappula,nappula2, mDataContainer.getmAnimationsOnOff());
                     animationsToggle(mDataContainer.getmAnimationsOnOff());
                 }
                 break;
