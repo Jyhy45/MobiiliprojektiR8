@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
         catFragment = new CatFragment();
 
         evolutionFragment = new EvolutionFragment();
+        catData = new CatData();
 
         // Get screen size and pass it to catFragment
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -145,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences data = getPreferences(0);
         mDataContainer.loadDataFromPreference(data);
         mDataContainer.loadBuildingDataToGrid(mbuildingGrid);
+        mDataContainer.loadCatDataFromGrid();
         //boolean silent = settings.getBoolean("silentMode", false);
 
         mDataContainer.calculateEverything();
@@ -169,11 +171,9 @@ public class MainActivity extends AppCompatActivity {
         //facebook stuff
         //ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
         //shareButton.setShareContent(facebookShareImage(BitmapFactory.decodeResource(getResources(),R.drawable.timangi)));
-        kissabody =  getDrawable(R.drawable.kissakala_kroppa);
-        kissahanta = getDrawable(R.drawable.kissakala_hanta);
-        kissapaa = getDrawable(R.drawable.kissakala_paa);
 
-        catData = new CatData(kissahanta, kissabody, kissapaa);
+
+
     }
 
     @Override
@@ -273,33 +273,43 @@ public class MainActivity extends AppCompatActivity {
         evolutionFragment.onTailMenuClick(view, MainActivity.this);
         switch (view.getId()) {
             case (R.id.hanta1):
-                catData.setCatTail(getDrawable(R.drawable.kissa_hanta));
+                catData.setMhanta(R.drawable.kissa_hanta);
+                findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
             case (R.id.hanta2):
-                catData.setCatTail(getDrawable(R.drawable.kissa_hanta2));
+                catData.setMhanta(R.drawable.kissa_hanta2);
+                findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
             case (R.id.hanta3):
-                catData.setCatTail(getDrawable(R.drawable.kissa_hanta3));
+                catData.setMhanta(R.drawable.kissa_hanta3);
+                findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
             case (R.id.hanta4):
-                catData.setCatTail(getDrawable(R.drawable.nokikissas_hanta));
+                catData.setMhanta(R.drawable.nokikissas_hanta);
+                findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
             case (R.id.hanta5):
-                catData.setCatTail(getDrawable(R.drawable.taikakissa_hanta));
+                catData.setMhanta(R.drawable.taikakissa_hanta);
+                findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
             case (R.id.hanta6):
-                catData.setCatTail(getDrawable(R.drawable.porrokissa_hanta));
+                catData.setMhanta(R.drawable.porrokissa_hanta);
+                findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
             case (R.id.hanta7):
-                catData.setCatTail(getDrawable(R.drawable.kissakala_hanta));
+                catData.setMhanta(R.drawable.kissakala_hanta);
+                findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
             case (R.id.hanta8):
-                catData.setCatTail(getDrawable(R.drawable.nokikissas_hanta));
+                catData.setMhanta(R.drawable.nokikissas_hanta);
+                findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
             case (R.id.hanta9):
-                catData.setCatTail(getDrawable(R.drawable.taikakissa_hanta));
+                catData.setMhanta(R.drawable.taikakissa_hanta);
+                findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
         }
+
      //   evolutionFragment.updateCat();
     }
 
@@ -307,66 +317,86 @@ public class MainActivity extends AppCompatActivity {
         evolutionFragment.onBodyMenuClick(view, MainActivity.this);
         switch (view.getId()) {
             case (R.id.body1):
-                catData.setCatBody(getDrawable(R.drawable.kissa_vartalo));
+                catData.setMkroppa(R.drawable.kissa_vartalo);
+                findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
             case (R.id.body2):
-                catData.setCatBody(getDrawable(R.drawable.kissa_vartalo2));
+                catData.setMkroppa(R.drawable.kissa_vartalo2);
+                findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
             case (R.id.body3):
-                catData.setCatBody(getDrawable(R.drawable.kissa_vartalo3));
+                catData.setMkroppa(R.drawable.kissa_vartalo3);
+                findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
             case (R.id.body4):
-                catData.setCatBody(getDrawable(R.drawable.nokikissa_kroppa));
+                catData.setMkroppa(R.drawable.nokikissa_kroppa);
+                findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
             case (R.id.body5):
-                catData.setCatBody(getDrawable(R.drawable.taikakissa_kroppa));
+                catData.setMkroppa(R.drawable.taikakissa_kroppa);
+                findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
             case (R.id.body6):
-                catData.setCatBody(getDrawable(R.drawable.porrokissa_kroppa));
+                catData.setMkroppa(R.drawable.porrokissa_kroppa);
+                findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
             case (R.id.body7):
-                catData.setCatBody(getDrawable(R.drawable.kissakala_kroppa));
+                catData.setMkroppa(R.drawable.kissakala_kroppa);
+                findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
             case (R.id.body8):
-                catData.setCatBody(getDrawable(R.drawable.nokikissa_kroppa));
+                catData.setMkroppa(R.drawable.nokikissa_kroppa);
+                findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
             case (R.id.body9):
-                catData.setCatBody(getDrawable(R.drawable.taikakissa_kroppa));
+                catData.setMkroppa(R.drawable.taikakissa_kroppa);
+                findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
         }
+
     }
 
     public void onHeadMenuClick(View view) {
         evolutionFragment.onHeadMenuClick(view, MainActivity.this);
         switch (view.getId()) {
             case (R.id.head1):
-                catData.setCatHead(getDrawable(R.drawable.kissa_paa));
+                catData.setMpaa(R.drawable.kissa_paa);
+                findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head2):
-                catData.setCatHead(getDrawable(R.drawable.kissa_paa));
+                catData.setMpaa(R.drawable.kissa_paa);
+                findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head3):
-                catData.setCatHead(getDrawable(R.drawable.kissa_paa));
+                catData.setMpaa(R.drawable.kissa_paa);
+                findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head4):
-                catData.setCatHead(getDrawable(R.drawable.nokikissa_paa));
+                catData.setMpaa(R.drawable.nokikissa_paa);
+                findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head5):
-                catData.setCatHead(getDrawable(R.drawable.taikakissa_paa));
+                catData.setMpaa(R.drawable.taikakissa_paa);
+                findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head6):
-                catData.setCatHead(getDrawable(R.drawable.porrokissa_paa));
+                catData.setMpaa(R.drawable.porrokissa_paa);
+                findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head7):
-                catData.setCatHead(getDrawable(R.drawable.kissakala_paa));
+                catData.setMpaa(R.drawable.kissakala_paa);
+                findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head8):
-                catData.setCatHead(getDrawable(R.drawable.kissa_paa));
+                catData.setMpaa(R.drawable.kissa_paa);
+                findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head9):
-                catData.setCatHead(getDrawable(R.drawable.kissa_paa));
+                catData.setMpaa(R.drawable.kissa_paa);
+                findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
         }
+
        // evolutionFragment.updateCat();
     }
 
@@ -440,6 +470,7 @@ public class MainActivity extends AppCompatActivity {
         handler.removeCallbacks(updateTickRunnable);
         mDataContainer.calculateEverything();
         mDataContainer.saveBuildingDataToDataContainer(mbuildingGrid);
+        mDataContainer.saveCatDataToGrid();
 
         SharedPreferences settings = getPreferences(0);
         SharedPreferences.Editor editor = settings.edit();

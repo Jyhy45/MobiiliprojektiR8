@@ -33,6 +33,8 @@ final class DataContainerForPurfectEvolution {
     double mSessionHappinessEarnings = 0;
     double mThisCycleHappinessEarnings = 0;
 
+    int catHead,catBody,catTail;
+
     //options variables
     int mSoundOnOff = 0;
 
@@ -462,6 +464,17 @@ final class DataContainerForPurfectEvolution {
         g.getBuilding9().setmBuildingLevel(mLevelBuilding9);
 
         return true;
+    }
+    public void saveCatDataToGrid(){
+        catBody = MainActivity.getCatData().getMkroppa();
+        catHead = MainActivity.getCatData().getMpaa();
+        catTail = MainActivity.getCatData().getMhanta();
+    }
+    public void loadCatDataFromGrid(){
+        MainActivity.getCatData().setMkroppa(catBody);
+        MainActivity.getCatData().setMpaa(catHead);
+        MainActivity.getCatData().setMhanta(catTail);
+
     }
 
     public void calculateMoneyIncrease(){
