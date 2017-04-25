@@ -48,6 +48,7 @@ public class OptionsFragment extends Fragment {
 
         ArrayList<View> touchables = relativeLayout.getTouchables();
        for(View touchable: touchables){
+           Log.i(TAG,"bananaa");
            ImageButton imageButton = (ImageButton) touchable;
            switch (touchable.getId()){
                case R.id.On1:
