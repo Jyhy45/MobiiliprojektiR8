@@ -15,17 +15,22 @@ import android.os.Bundle;
 import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import static android.R.attr.button;
+import static android.content.ContentValues.TAG;
 
 
 public class BuildingsFragment extends Fragment {
@@ -40,6 +45,17 @@ public class BuildingsFragment extends Fragment {
 
     public BuildingsFragment() {
 
+    }
+
+    public void buttonsAtStart(Context context, RelativeLayout relativeLayout) {
+
+        ArrayList<View> touchables = relativeLayout.getTouchables();
+        for (View touchable : touchables) {
+            Log.i(TAG, "bananaa");
+            ImageButton imageButton = (ImageButton) touchable;
+            buildingNumber(touchable);
+            imageUpdate(imageButton, context);
+        }
     }
 
     public void imageUpdate(View view, Context context)
@@ -281,6 +297,8 @@ public class BuildingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_buildings , container, false);
+        Context context = getContext();
+        buttonsAtStart(context,(RelativeLayout) rootView.findViewById(R.id.options_fragment));
         return rootView;
     }
 
