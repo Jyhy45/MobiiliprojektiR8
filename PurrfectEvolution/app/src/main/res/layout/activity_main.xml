@@ -21,7 +21,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:adjustViewBounds="true"
-            android:scaleY="0.5"
             android:visibility="visible"
 
             />
