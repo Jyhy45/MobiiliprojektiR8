@@ -304,7 +304,7 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
             case (R.id.hanta9):
-                catData.setMhanta(R.drawable.taikakissa_hanta);
+                catData.setMhanta(R.drawable.nokikissas_hanta);
                 findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
         }
@@ -348,7 +348,7 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
             case (R.id.body9):
-                catData.setMkroppa(R.drawable.taikakissa_kroppa);
+                catData.setMkroppa(R.drawable.nokikissa_kroppa);
                 findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
         }

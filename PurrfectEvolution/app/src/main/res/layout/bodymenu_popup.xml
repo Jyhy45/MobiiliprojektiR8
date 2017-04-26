@@ -116,7 +116,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             android:onClick="onBodyMenuClick"
-            app:srcCompat="@drawable/porrokissa_kroppa"
+            app:srcCompat="@drawable/nokikissa_kroppa"
             android:background="@null"/>
 
         <ImageButton
