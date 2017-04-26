@@ -22,7 +22,8 @@
         android:layout_weight="1"
         app:srcCompat="@drawable/rakennusteksti_01"
         android:scaleType="fitXY"
-        android:visibility="visible" />
+        android:visibility="visible"
+        />
 
 
     <LinearLayout
@@ -37,30 +38,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:background="@null"
             android:onClick="onClickBuilding"
-            app:srcCompat="@drawable/rakennus_tausta" />
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@null"
+            android:background="@drawable/rakennus_tausta"/>
 
         <ImageButton
             android:id="@+id/building2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:background="@null"
             android:onClick="onClickBuilding"
-            app:srcCompat="@drawable/rakennus_tausta" />
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@null"
+            android:background="@drawable/rakennus_tausta" />
 
         <ImageButton
             android:id="@+id/building3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:background="@null"
             android:onClick="onClickBuilding"
-            app:srcCompat="@drawable/rakennus_tausta" />
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@null"
+            android:background="@drawable/rakennus_tausta" />
 
         </LinearLayout>
 
@@ -75,30 +79,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:background="@null"
             android:onClick="onClickBuilding"
-            app:srcCompat="@drawable/rakennus_tausta" />
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@null"
+            android:background="@drawable/rakennus_tausta" />
 
         <ImageButton
             android:id="@+id/building5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:background="@null"
             android:onClick="onClickBuilding"
-            app:srcCompat="@drawable/rakennus_tausta" />
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@null"
+            android:background="@drawable/rakennus_tausta" />
 
         <ImageButton
             android:id="@+id/building6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:scaleType="fitXY"
-            android:background="@null"
             android:onClick="onClickBuilding"
-            app:srcCompat="@drawable/rakennus_tausta" />
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@null"
+            android:background="@drawable/rakennus_tausta" />
 
     </LinearLayout>
 
@@ -114,30 +121,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:scaleType="fitXY"
-        android:background="@null"
         android:onClick="onClickBuilding"
-        app:srcCompat="@drawable/rakennus_tausta" />
+        android:padding="3dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@null"
+        android:background="@drawable/rakennus_tausta" />
 
     <ImageButton
         android:id="@+id/building8"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:scaleType="fitXY"
-        android:background="@null"
         android:onClick="onClickBuilding"
-        app:srcCompat="@drawable/rakennus_tausta" />
+        android:padding="3dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@null"
+        android:background="@drawable/rakennus_tausta" />
 
     <ImageButton
         android:id="@+id/building9"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:scaleType="fitXY"
-        android:background="@null"
         android:onClick="onClickBuilding"
-        app:srcCompat="@drawable/rakennus_tausta" />
+        android:padding="3dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@null"
+        android:background="@drawable/rakennus_tausta" />
     </LinearLayout>
 
 </LinearLayout>

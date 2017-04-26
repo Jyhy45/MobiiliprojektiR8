@@ -71,13 +71,20 @@ public class BuildingsFragment extends Fragment {
                 imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.raapimapuutaso1));
                 break;
             case FEEDING_STATION:
-                imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.fishie));
+                if(buildingGrid.getBuildingArray().get(buildingNumber).getmBuildingLevel()>1)
+                {
+                    imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.fishielevel2));
+                }
+                else
+                {
+                    imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.fishie));
+                }
                 break;
             case CHEW_MOUSE:
                 imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.leluhiiritaso1));
                 break;
             case YARN_BALL:
-                imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.rakennus_tausta));
+                imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.yarnball));
                 break;
             case CATNIP:
                 imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.catler));
