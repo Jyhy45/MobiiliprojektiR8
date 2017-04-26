@@ -126,7 +126,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             android:onClick="onBodyMenuClick"
-            app:srcCompat="@drawable/kissa_vartalo"
+            app:srcCompat="@drawable/nokikissa_kroppa"
             android:background="@null"/>
     </LinearLayout>
 

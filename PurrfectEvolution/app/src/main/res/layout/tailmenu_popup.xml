@@ -148,7 +148,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             android:onClick="onTailMenuClick"
-            app:srcCompat="@drawable/kissa_hanta"
+            app:srcCompat="@drawable/nokikissas_hanta"
             android:background="@null"/>
     </LinearLayout>
 
