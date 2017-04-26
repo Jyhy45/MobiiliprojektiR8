@@ -66,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView raheKuva;
     TextView onni;
     ImageView onniKuva;
-    TextView dimangit;
-    ImageView dimangitKuva;
+
 
     Drawable kissapaa;
     Drawable kissabody;
@@ -156,17 +155,17 @@ public class MainActivity extends AppCompatActivity {
         //let's bring headers on top
         rahe = (TextView) findViewById(R.id.textView);
         onni = (TextView) findViewById(R.id.textView2);
-        dimangit = (TextView) findViewById(R.id.textView3);
+
         raheKuva = (ImageView) findViewById(R.id.imageView);
         onniKuva = (ImageView) findViewById(R.id.imageView2);
-        dimangitKuva = (ImageView) findViewById(R.id.imageView3);
+
 
         rahe.bringToFront();
         onni.bringToFront();
-        dimangit.bringToFront();
+
         raheKuva.bringToFront();
         onniKuva.bringToFront();
-        dimangitKuva.bringToFront();
+
 
         //facebook stuff
         //ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
@@ -414,7 +413,7 @@ public class MainActivity extends AppCompatActivity {
         rahe.setText(raheString);
         String onniString = String.format("Happiness: %4.3g", mDataContainer.getmCurrentHappines());
         onni.setText(onniString);
-        dimangit.setText("Diamonds: 0");
+
     }
 
 
