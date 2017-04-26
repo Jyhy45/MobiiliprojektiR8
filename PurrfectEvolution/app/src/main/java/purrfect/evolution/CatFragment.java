@@ -85,16 +85,17 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) {
-            CatData catData = MainActivity.getCatData();
-            tail = (ImageView) rootView.findViewById(R.id.imageView_hantaCat);
-            body = (ImageView) rootView.findViewById(R.id.imageViewKroppaCat);
-            head = (ImageView) rootView.findViewById(R.id.imageViewPaaCat);
-            tail.setForeground(getActivity().getDrawable(catData.getMhanta()));
-            body.setForeground(getActivity().getDrawable(catData.getMkroppa()));
-            head.setForeground(getActivity().getDrawable(catData.getMpaa()));
+        if(rootView!=null) {
+            if (isVisibleToUser) {
+                CatData catData = MainActivity.getCatData();
+                tail = (ImageView) rootView.findViewById(R.id.imageView_hantaCat);
+                body = (ImageView) rootView.findViewById(R.id.imageViewKroppaCat);
+                head = (ImageView) rootView.findViewById(R.id.imageViewPaaCat);
+                tail.setForeground(getActivity().getDrawable(catData.getMhanta()));
+                body.setForeground(getActivity().getDrawable(catData.getMkroppa()));
+                head.setForeground(getActivity().getDrawable(catData.getMpaa()));
+            }
         }
-
     }
 
     public void onCatClick(View view, Context context, RelativeLayout relativeLayout) {
