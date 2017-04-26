@@ -90,6 +90,8 @@ final class DataContainerForPurfectEvolution {
     public DataContainerForPurfectEvolution()
     {
 
+
+
     }
     /**
      * Loads values for all variables from sharedPreferences
@@ -466,15 +468,21 @@ final class DataContainerForPurfectEvolution {
         return true;
     }
     public void saveCatDataToGrid(){
+
         catBody = MainActivity.getCatData().getMkroppa();
         catHead = MainActivity.getCatData().getMpaa();
         catTail = MainActivity.getCatData().getMhanta();
     }
-    public void loadCatDataFromGrid(){
-        MainActivity.getCatData().setMkroppa(catBody);
-        MainActivity.getCatData().setMpaa(catHead);
-        MainActivity.getCatData().setMhanta(catTail);
+    public void loadCatDataFromGrid() {
+        if (catBody != 0){
+            MainActivity.getCatData().setMkroppa(catBody);
+        }
+        if(catHead!=0) {
+            MainActivity.getCatData().setMpaa(catHead);
 
+        }if(catTail!=0) {
+            MainActivity.getCatData().setMhanta(catTail);
+        }
     }
 
     public void calculateMoneyIncrease(){

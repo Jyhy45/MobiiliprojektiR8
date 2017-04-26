@@ -24,7 +24,11 @@ class CatData {
     int mhanta;
 
     public int getMpaa() {
-        return mpaa;
+        if (mhanta!=0){
+            return mpaa;
+        }else{
+            return mpaa = R.drawable.porrokissa_paa;
+        }
     }
 
     public void setMpaa(int mpaa) {
@@ -32,7 +36,11 @@ class CatData {
     }
 
     public int getMkroppa() {
-        return mkroppa;
+        if (mkroppa!=0){
+            return mkroppa;
+        }else{
+            return mkroppa = R.drawable.porrokissa_kroppa;
+        }
     }
 
     public void setMkroppa(int mkroppa) {
@@ -40,7 +48,11 @@ class CatData {
     }
 
     public int getMhanta() {
-        return mhanta;
+        if (mhanta!=0){
+            return mhanta;
+        }else{
+            return mhanta = R.drawable.porrokissa_hanta;
+        }
     }
 
     public void setMhanta(int mhanta) {
