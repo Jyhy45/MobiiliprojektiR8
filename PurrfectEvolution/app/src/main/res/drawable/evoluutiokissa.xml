@@ -4,17 +4,17 @@
 
     <Item
         android:id="@+id/tail"
-        android:drawable="@drawable/kissa_hanta" />
+        android:drawable="@drawable/kisse_hanta" />
 
 
     <item
         android:id="@+id/head"
-        android:drawable="@drawable/kissa_paa" />
+        android:drawable="@drawable/kisse_paa" />
 
 
     <item
         android:id="@+id/body"
-        android:drawable="@drawable/kissa_vartalo" />
+        android:drawable="@drawable/kisse_kroppa" />
 
 
 </layer-list>
