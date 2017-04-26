@@ -24,7 +24,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             android:onClick="onHeadMenuClick"
-            app:srcCompat="@drawable/kissa_paa"
+            app:srcCompat="@drawable/nokikissa_paa"
             android:background="@null" />
 
         <ImageButton
@@ -34,7 +34,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             android:onClick="onHeadMenuClick"
-            app:srcCompat="@drawable/kissa_paa"
+            app:srcCompat="@drawable/nokikissa_paa"
             android:background="@null" />
 
         <ImageButton
@@ -44,7 +44,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             android:onClick="onHeadMenuClick"
-            app:srcCompat="@drawable/kissa_paa"
+            app:srcCompat="@drawable/nokikissa_paa"
             android:background="@null"/>
 
     </LinearLayout>
@@ -116,7 +116,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             android:onClick="onHeadMenuClick"
-            app:srcCompat="@drawable/kissa_paa"
+            app:srcCompat="@drawable/nokikissa_paa"
             android:background="@null"/>
 
         <ImageButton
@@ -126,7 +126,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             android:onClick="onHeadMenuClick"
-            app:srcCompat="@drawable/kissa_paa"
+            app:srcCompat="@drawable/nokikissa_paa"
             android:background="@null"/>
     </LinearLayout>
 

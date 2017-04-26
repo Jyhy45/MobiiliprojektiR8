@@ -272,15 +272,15 @@ public class MainActivity extends AppCompatActivity {
         evolutionFragment.onTailMenuClick(view, MainActivity.this);
         switch (view.getId()) {
             case (R.id.hanta1):
-                catData.setMhanta(R.drawable.kissa_hanta);
+                catData.setMhanta(R.drawable.nokikissas_hanta);
                 findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
             case (R.id.hanta2):
-                catData.setMhanta(R.drawable.kissa_hanta2);
+                catData.setMhanta(R.drawable.nokikissas_hanta);
                 findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
             case (R.id.hanta3):
-                catData.setMhanta(R.drawable.kissa_hanta3);
+                catData.setMhanta(R.drawable.nokikissas_hanta);
                 findViewById(R.id.imageView_hanta).setForeground(getDrawable(catData.getMhanta()));
                 break;
             case (R.id.hanta4):
@@ -316,15 +316,15 @@ public class MainActivity extends AppCompatActivity {
         evolutionFragment.onBodyMenuClick(view, MainActivity.this);
         switch (view.getId()) {
             case (R.id.body1):
-                catData.setMkroppa(R.drawable.kissa_vartalo);
+                catData.setMkroppa(R.drawable.nokikissa_kroppa);
                 findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
             case (R.id.body2):
-                catData.setMkroppa(R.drawable.kissa_vartalo2);
+                catData.setMkroppa(R.drawable.nokikissa_kroppa);
                 findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
             case (R.id.body3):
-                catData.setMkroppa(R.drawable.kissa_vartalo3);
+                catData.setMkroppa(R.drawable.nokikissa_kroppa);
                 findViewById(R.id.imageViewKroppa).setForeground(getDrawable(catData.getMkroppa()));
                 break;
             case (R.id.body4):
@@ -359,15 +359,15 @@ public class MainActivity extends AppCompatActivity {
         evolutionFragment.onHeadMenuClick(view, MainActivity.this);
         switch (view.getId()) {
             case (R.id.head1):
-                catData.setMpaa(R.drawable.kissa_paa);
+                catData.setMpaa(R.drawable.nokikissa_paa);
                 findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head2):
-                catData.setMpaa(R.drawable.kissa_paa);
+                catData.setMpaa(R.drawable.nokikissa_paa);
                 findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head3):
-                catData.setMpaa(R.drawable.kissa_paa);
+                catData.setMpaa(R.drawable.nokikissa_paa);
                 findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head4):
@@ -387,11 +387,11 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head8):
-                catData.setMpaa(R.drawable.kissa_paa);
+                catData.setMpaa(R.drawable.nokikissa_paa);
                 findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
             case (R.id.head9):
-                catData.setMpaa(R.drawable.kissa_paa);
+                catData.setMpaa(R.drawable.nokikissa_paa);
                 findViewById(R.id.imageViewPaa).setForeground(getDrawable(catData.getMpaa()));
                 break;
         }
