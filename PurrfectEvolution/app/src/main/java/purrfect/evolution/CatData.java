@@ -61,9 +61,7 @@ class CatData {
 
 
     public CatData() {
-        mpaa=R.drawable.porrokissa_paa;
-        mkroppa=R.drawable.porrokissa_kroppa;
-        mpaa=R.drawable.porrokissa_paa;
+     
     }
 
 
