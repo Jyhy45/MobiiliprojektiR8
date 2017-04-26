@@ -64,10 +64,12 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
         return fragment;
     }
 
+    View rootView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_cat, container, false);
+        rootView = inflater.inflate(R.layout.fragment_cat, container, false);
         catImage = (ImageButton) rootView.findViewById(R.id.imageButton2);
 
         CatData catData = MainActivity.getCatData();
@@ -78,6 +80,21 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
         body.setForeground(getActivity().getDrawable(catData.getMkroppa()));
         head.setForeground(getActivity().getDrawable(catData.getMpaa()));
         return rootView;
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+            CatData catData = MainActivity.getCatData();
+            tail = (ImageView) rootView.findViewById(R.id.imageView_hantaCat);
+            body = (ImageView) rootView.findViewById(R.id.imageViewKroppaCat);
+            head = (ImageView) rootView.findViewById(R.id.imageViewPaaCat);
+            tail.setForeground(getActivity().getDrawable(catData.getMhanta()));
+            body.setForeground(getActivity().getDrawable(catData.getMkroppa()));
+            head.setForeground(getActivity().getDrawable(catData.getMpaa()));
+        }
+
     }
 
     public void onCatClick(View view, Context context, RelativeLayout relativeLayout) {
