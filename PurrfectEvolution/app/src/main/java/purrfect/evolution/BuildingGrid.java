@@ -1,9 +1,7 @@
 package purrfect.evolution;
 
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Created by jyhy on 3/28/17.

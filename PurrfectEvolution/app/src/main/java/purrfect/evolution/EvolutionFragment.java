@@ -2,7 +2,6 @@ package purrfect.evolution;
 
 
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 
 
@@ -10,13 +9,10 @@ import android.content.Context;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 
 
 /**
@@ -24,7 +20,6 @@ import android.widget.RelativeLayout;
  */
 public class EvolutionFragment extends Fragment {
 
-    ImageView catImage;
     PopupWindow popupWindow;
     PopupWindow tailPopUpWindow;
     PopupWindow bodyPopUpWindow;
@@ -47,46 +42,26 @@ public class EvolutionFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_evolution , container, false);
 
-        //catImage = (ImageView) rootView.findViewById(R.id.imageView4);
-
-        //catImage.setImageDrawable(catData.getCat());
-
-        //updateCat();
         rootView.findViewById(R.id.imageView_hanta).setForeground(getActivity().getDrawable(catData.getMhanta()));
         rootView.findViewById(R.id.imageViewKroppa).setForeground(getActivity().getDrawable(catData.getMkroppa()));
         rootView.findViewById(R.id.imageViewPaa).setForeground(getActivity().getDrawable(catData.getMpaa()));
-        //catImage.setImageDrawable(null);
-        catData.catUpdate();
-        //catImage.setImageDrawable(catData.getCat());
 
-        /*catImage.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Pop-up Menu
 
-        }});*/
         return rootView;
     }
 
-    public void updateCat() {
-        catData.catUpdate();
 
-
-
-    }
 
     public void onMainMenuClick(View view, Context context) {
         switch (view.getId()) {
             case (R.id.hantavalinta):
                 popupWindow.dismiss();
-                //showTailMenuPopUp(view, context);
                 break;
             case (R.id.bodyvalinta):
                 popupWindow.dismiss();
-                //showBodyMenuPopUp(view, context);
                 break;
             case (R.id.paavalinta):
                 popupWindow.dismiss();
-                //showHeadMenuPopUp(view, context);
                 break;
         }
     }
@@ -159,7 +134,6 @@ public class EvolutionFragment extends Fragment {
         switch (view.getId()) {
             case (R.id.head1):
                 headPopUpWindow.dismiss();
-                //catImage.setImageDrawable(catData.getCat());
                 break;
             case (R.id.head2):
                 headPopUpWindow.dismiss();
@@ -201,7 +175,6 @@ public class EvolutionFragment extends Fragment {
         popupWindow.setOutsideTouchable(true);
 
         popupWindow.showAtLocation(view, 1, 0, 0);
-        //popupWindow.showAsDropDown(view, 0, 0);
     }
 
     public void showTailMenuPopUp(final View view, final Context context) {

@@ -1,7 +1,6 @@
 package purrfect.evolution;
 
 
-import android.provider.ContactsContract;
 import android.util.Log;
 
 import static android.content.ContentValues.TAG;
@@ -14,7 +13,7 @@ import static android.content.ContentValues.TAG;
 
 public  class Building {
 
-    static enum BuildingType{
+    enum BuildingType {
         NONE(0),               //no type assigned
         SCRATCHINPOST(1),      //produces happines
         FEEDING_STATION(2),    //produces happines
@@ -28,37 +27,36 @@ public  class Building {
         BuildingType(int value) {
             this._value = value;
         }
-        public int get_value(){
+
+        public int get_value() {
             return _value;
         }
 
         public static BuildingType fromInt(int i) {
-            for (BuildingType b : BuildingType.values()){
-                if (b.get_value() == i){return b;}
+            for (BuildingType b : BuildingType.values()) {
+                if (b.get_value() == i) {
+                    return b;
+                }
             }
-        return null;
+            return null;
 
         }
 
     }
 
-    public Building(BuildingType buildingType,int buildingLevel){
+    public Building(BuildingType buildingType, int buildingLevel) {
         this.mBuildingLevel = buildingLevel;
         this.mBType = buildingType;
     }
-    public Building(){
-        this(BuildingType.NONE,0);
+
+    public Building() {
+        this(BuildingType.NONE, 0);
     }
 
 
-    private double mBaseProductionTime=0;
     private BuildingType mBType;
-    private double mBaseProductionAmount=0;
-    private long mBuildingLevel=0;
-    public int mImagePath;                  //=R.drawable.ic_heart_0;
-    public int mAnimationPath;              //=R.drawable.animation_list_filling;
+    private long mBuildingLevel = 0;
     private double mProductionAmountPerSecond;
-    private double mMultiplier = 1.07; //most of idles use 1.07 to 1.15
 
     public double getmCurrentBuildingCost() {
         return mCurrentBuildingCost;
@@ -71,53 +69,40 @@ public  class Building {
     }
 
 
-    public int getImageResource(){
-        return getImageResource(mBuildingLevel,mBType);
-    }
-    public int getImageResource(long level){
-        return getImageResource(level,this.mBType);
-    }
-    public int getImageResource(BuildingType type){
-
-        return getImageResource(mBuildingLevel,type);
-    }
-    public int getImageResource(long level,BuildingType type){
-        
-
-        return 0;
-    }
-
-
-    public void calculateAndSetProductionAmountPerSecond(){
+    public void calculateAndSetProductionAmountPerSecond() {
         //income=baseincome*lvl
-        if (mBType == BuildingType.NONE){
-            mProductionAmountPerSecond =0;
-        }else if (mBType == BuildingType.SCRATCHINPOST){
-            mProductionAmountPerSecond = 1*this.mBuildingLevel;
-        }else if(mBType == BuildingType.FEEDING_STATION){
-            mProductionAmountPerSecond = 5*this.mBuildingLevel;
-        }else if(mBType == BuildingType.CHEW_MOUSE){
-            mProductionAmountPerSecond = 30*this.mBuildingLevel;
-        }else if(mBType == BuildingType.YARN_BALL){
-            mProductionAmountPerSecond = 100*this.mBuildingLevel;
-        }else if(mBType == BuildingType.CATNIP){
-            mProductionAmountPerSecond = 300*this.mBuildingLevel;
-        }else{
+        if (mBType == BuildingType.NONE) {
+            mProductionAmountPerSecond = 0;
+        } else if (mBType == BuildingType.SCRATCHINPOST) {
+            mProductionAmountPerSecond = 1 * this.mBuildingLevel;
+        } else if (mBType == BuildingType.FEEDING_STATION) {
+            mProductionAmountPerSecond = 5 * this.mBuildingLevel;
+        } else if (mBType == BuildingType.CHEW_MOUSE) {
+            mProductionAmountPerSecond = 30 * this.mBuildingLevel;
+        } else if (mBType == BuildingType.YARN_BALL) {
+            mProductionAmountPerSecond = 100 * this.mBuildingLevel;
+        } else if (mBType == BuildingType.CATNIP) {
+            mProductionAmountPerSecond = 300 * this.mBuildingLevel;
+        } else {
             mProductionAmountPerSecond = 0;
             Log.d(TAG, "calculateAndSetProductionAmountPerSecond: unknow buildingtype fix me");
         }
     }
-    public void calculateAndSetBuildingLevelUpCost(){
+
+    public void calculateAndSetBuildingLevelUpCost() {
         //baseCost*multiplier^lvl
-        if (mBType == BuildingType.NONE){
+        if (mBType == BuildingType.NONE) {
             mCurrentBuildingCost = Double.MAX_VALUE;
-        }else{
-            mCurrentBuildingCost =getBaseCost() * Math.pow(mMultiplier,this.mBuildingLevel);
+        } else {
+            double mMultiplier = 1.07;
+            mCurrentBuildingCost = getBaseCost() * Math.pow(mMultiplier, this.mBuildingLevel);
         }
     }
-    public double getBaseCost(){
+
+    public double getBaseCost() {
         return getBaseCost(this.mBType);
     }
+
     public double getBaseCost(BuildingType bType) {
         if (bType == BuildingType.NONE) {
             return Double.MAX_VALUE;
@@ -137,35 +122,26 @@ public  class Building {
         }
     }
 
-    public void levelUpBuildingFree(){
+    public void levelUpBuildingFree() {
         mBuildingLevel++;
         this.calculateAndSetBuildingLevelUpCost();
         this.calculateAndSetProductionAmountPerSecond();
     }
 
-    public boolean levelUpBuildingNotFree(DataContainerForPurfectEvolution data){
+    public boolean levelUpBuildingNotFree(DataContainerForPurfectEvolution data) {
         calculateAndSetBuildingLevelUpCost();
         boolean res = data.spentMoney(mCurrentBuildingCost);
-        Log.d(TAG, "levelUpBuildingNotFree: used money?:" + res+ " " + mCurrentBuildingCost);
-        if (res){
+        Log.d(TAG, "levelUpBuildingNotFree: used money?:" + res + " " + mCurrentBuildingCost);
+        if (res) {
             mBuildingLevel++;
             this.calculateAndSetBuildingLevelUpCost();
             this.calculateAndSetProductionAmountPerSecond();
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-
-
-    public double getmBaseProductionTime() {
-        return mBaseProductionTime;
-    }
-
-    public void setmBaseProductionTime(double mBaseProductionTime) {
-        this.mBaseProductionTime = mBaseProductionTime;
-    }
 
     public BuildingType getmBType() {
         return mBType;
@@ -175,13 +151,6 @@ public  class Building {
         this.mBType = mBType;
     }
 
-    public double getmBaseProductionAmount() {
-        return mBaseProductionAmount;
-    }
-
-    public void setmBaseProductionAmount(double mBaseProductionAmount) {
-        this.mBaseProductionAmount = mBaseProductionAmount;
-    }
 
     public long getmBuildingLevel() {
         return mBuildingLevel;
@@ -191,19 +160,4 @@ public  class Building {
         this.mBuildingLevel = mBuildingLevel;
     }
 
-    public int getmImagePath() {
-        return mImagePath;
-    }
-
-    public void setmImagePath(int mImagePath) {
-        this.mImagePath = mImagePath;
-    }
-
-    public int getmAnimationPath() {
-        return mAnimationPath;
-    }
-
-    public void setmAnimationPath(int mAnimationPath) {
-        this.mAnimationPath = mAnimationPath;
-    }
 }

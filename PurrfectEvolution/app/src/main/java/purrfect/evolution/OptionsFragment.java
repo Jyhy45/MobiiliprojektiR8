@@ -1,24 +1,14 @@
 package purrfect.evolution;
 
-import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-
-
 import android.content.Context;
 import android.os.Bundle;
-
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -225,7 +215,6 @@ public class OptionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_options , container, false);
-        //wtf.
         Context context = getContext();
         buttonsAtStart(context,(RelativeLayout) rootView.findViewById(R.id.options_fragment));
         return rootView;

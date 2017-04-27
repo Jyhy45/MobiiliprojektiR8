@@ -1,41 +1,23 @@
 package purrfect.evolution;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
-
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.facebook.CallbackManager;
-import com.facebook.share.model.ShareLinkContent;
-import com.facebook.share.model.SharePhoto;
-import com.facebook.share.model.SharePhotoContent;
-import com.facebook.share.widget.ShareButton;
-import com.facebook.share.widget.ShareDialog;
-
 import static android.content.ContentValues.TAG;
-
-import java.util.List;
 
 //TODO: add some statistic calculations
 
@@ -67,10 +49,6 @@ public class MainActivity extends AppCompatActivity {
     TextView onni;
     ImageView onniKuva;
 
-
-    Drawable kissapaa;
-    Drawable kissabody;
-    Drawable kissahanta;
 
     CatFragment catFragment;
     EvolutionFragment evolutionFragment;
@@ -396,7 +374,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-       // evolutionFragment.updateCat();
     }
 
     public void onClickBuilding(View view)

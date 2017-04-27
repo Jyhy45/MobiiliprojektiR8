@@ -1,24 +1,11 @@
 package purrfect.evolution;
 
 
-import android.app.Activity;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-
 
 import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-
-import android.support.v7.widget.AppCompatImageView;
-import android.util.DisplayMetrics;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,11 +14,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -116,7 +100,7 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
                 imageList.get(i).setBackgroundResource(R.drawable.sydan_list);
 
                 // Create layout parameters for created ImageView
-                RelativeLayout r1 = (RelativeLayout) relativeLayout;
+                RelativeLayout r1 = relativeLayout;
                 RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                         150, 150);
 
@@ -142,13 +126,11 @@ public class CatFragment extends Fragment implements Animation.AnimationListener
     }
 
     public float calculateRandomWidth() {
-        float finalX = random.nextFloat() * width;
-        return finalX;
+        return random.nextFloat() * width;
     }
 
     public float calculateRandomHeight() {
-        float finalY = random.nextFloat() * height;
-        return finalY;
+        return random.nextFloat() * height;
     }
 
     @Override
